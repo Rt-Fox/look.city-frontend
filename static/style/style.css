@@ -243,11 +243,6 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
     z-index: 1002;
 
     width: 100vw;
@@ -460,10 +455,13 @@ body {
     justify-content: center;
     text-align: center;
 
+    word-wrap: break-word;
     color: var(--square-color);
     font-family: var(--font);
     font-weight: 700;
     font-size: var(--square-text-size);
+
+
 }
 .film {
     grid-area: film;
