@@ -601,6 +601,8 @@ body {
     border-radius: var(--img-radius);
     box-shadow: 5px -5px 20px rgba(0, 0, 0, 0.4);
 }
+
+
 /*film*/
 .headline {
     width: 80%;
@@ -669,4 +671,43 @@ body {
     left: 2px;
     width: 22px;
     height: 22px;
+}
+@media (max-device-width: 380px) {
+    .grid-main-wrapper {
+        width: 90vw;
+        height: 160vw;
+        grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+                "new new new zero krest"
+                "film film zero1 year year"
+                "genres genres zero1 personage personage"
+                "producer producer zero1 actors actors"
+                "popular popular zero1 top top";
+
+        grid-gap: 10px;
+    }
+    .new span {
+        width: 120%;
+        height: 80%;
+        margin-left: 5% ;
+        font-size: 3.8vw;
+    }
+    .krest div {
+        height: 0;
+        width: 80%;
+        padding-bottom: 80%;
+    }
+    .square {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin:10% ;
+        width: 80%;
+        padding-bottom: 80%;
+        height: 0;
+    }
+    .square span {
+        font-size: 3.8vw;
+    }
 }
