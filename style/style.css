@@ -849,7 +849,7 @@ html, body {
 .window{
     display: flex;
     flex-direction: column;
-    padding: 4%;
+    padding: 3%;
     width: 70%;
     height: 50%;
     background-color: #F4F4F4;
