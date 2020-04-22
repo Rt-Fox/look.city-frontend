@@ -5,15 +5,20 @@
     <meta charset="UTF-8">
     <title>Кинопутеводитель</title>
     <link rel="stylesheet" href="style/style.css">
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=0ebae56a-379d-4e2c-8821-bf1a67d366e2"
+        type="text/javascript"></script>
+    <script src="js/mapbasics.js" type="text/javascript"></script>
 </head>
 
 <body>
 
     <div id="root" class="mid">
-        <div v-if="map" class="map">
-            <img src="https://i.stack.imgur.com/OYTUy.jpg">
-        </div>
-        <div v-if="map" class="main-wrapper">
+        <div v-show="map" class="main-wrapper">
+
+            <!-- Карта -->
+            <div id="map" class="map"></div>
+
+            <!-- Поиск и фильтры -->
             <div class="header">
                 <div class="search">
                     <form action="">
@@ -33,11 +38,15 @@
                     <span @click="changeButtons" class="filtermin">&lt;</span>
                 </div>
             </div>
+
+            <!-- Кнопка меню -->
             <span @click="changeMenuState" class="menu">
                 М Е Н Ю
             </span>
         </div>
-        <div v-if="map" class="menu_open">
+
+        <!-- Поп-ап -->
+        <div class="menu_open">
             <div class="window">
                 <div class="headertwo">
                     <img src="img/film.png">
@@ -46,6 +55,8 @@
                 </div>
             </div>
         </div>
+
+        <!-- Открытое меню -->
         <div v-if="menu" class="grid-main-wrapper">
             <div class="new">
                 <span>НОВИИНКИ</span>
