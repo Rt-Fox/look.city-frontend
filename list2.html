@@ -1,47 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Кинопутеводитель</title>
     <link rel="stylesheet" href="style/style.css">
 </head>
-<body>
-<div class="mid">
-    <div class="map">
-        <img src="https://i.stack.imgur.com/OYTUy.jpg">
-    </div>
-    <div class="main-wrapper">
-        <div class="header">
-            <div class="search">
-                <form action="">
-                    <input type="text" placeholder=" Поиск"><img src="img/kino.png">
-                </form>
-            </div>
-            <div class="filters">
-                <span class="filter active">ФИЛЬМЫ</span>
-                <span class="filter">ЖАНРЫ</span>
-                <span class="filter">ГОДА</span>
-                <span class="filter">ДРУГОЕ</span>
 
-<!--                <span class="filterbig">ПЕРСОНАЖИ</span>-->
-<!--                <span class="filterbig">РЕЖИССЕРЫ</span>-->
-<!--                <span class="filterbig">АКТЕРЫ</span>-->
-<!--                <span class="filtermin">&lt;</span>-->
-            </div>
+<body>
+
+    <div id="root" class="mid">
+        <div v-if="map" class="map">
+            <img src="https://i.stack.imgur.com/OYTUy.jpg">
         </div>
-        <span class="menu">
-            М Е Н Ю
-        </span>
-    </div>
-    <div class="menu_open">
-        <div class="window">
-            <div class="headertwo">
-                <img src="img/film.png">
-                <div class="krestik">
+        <div v-if="map" class="main-wrapper">
+            <div class="header">
+                <div class="search">
+                    <form action="">
+                        <input type="text" placeholder=" Поиск"><img src="img/kino.png">
+                    </form>
+                </div>
+                <div v-if="!addButtons" class="filters">
+                    <span class="filter active">ФИЛЬМЫ</span>
+                    <span class="filter">ЖАНРЫ</span>
+                    <span class="filter">ГОДА</span>
+                    <span @click="changeButtons" class="filter">ДРУГОЕ</span>
+                </div>
+                <div v-else class="filters">
+                    <span class="filterbig">ПЕРСОНАЖИ</span>
+                    <span class="filterbig">РЕЖИССЕРЫ</span>
+                    <span class="filterbig active">АКТЕРЫ</span>
+                    <span @click="changeButtons" class="filtermin">&lt;</span>
+                </div>
+            </div>
+            <span @click="changeMenuState" class="menu">
+                М Е Н Ю
+            </span>
+        </div>
+        <div v-if="map" class="menu_open">
+            <div class="window">
+                <div class="headertwo">
+                    <img src="img/film.png">
+                    <div class="krestik">
+                    </div>
                 </div>
             </div>
         </div>
+        <div v-if="menu" class="grid-main-wrapper">
+            <div class="new">
+                <span>НОВИИНКИ</span>
+            </div>
+            <div @click="changeMenuState" class="krest">
+                <div></div>
+            </div>
+            <div class="film square">
+                <span>ФИЛЬМЫ</span>
+            </div>
+            <div class="year square">
+                <span>ГОДЫ</span>
+            </div>
+            <div class="genres square">
+                <span>ЖАНРЫ</span>
+            </div>
+            <div class="personage square">
+                <span>ПЕРСОНАЖИ</span>
+            </div>
+            <div class="producer square">
+                <span>РЕЖИССЕРЫ</span>
+            </div>
+            <div class="actors square">
+                <span>АКТЕРЫ</span>
+            </div>
+            <div class="popular square">
+                <span>ПОПУЛЯРНЫЕ<br>МЕСТА</span>
+            </div>
+            <div class="top square">
+                <span>ЛУЧШИЕ<br>КИНО-<br>РАССКАЗЫ</span>
+            </div>
+        </div>
     </div>
-</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/main.js"></script>
 </body>
+
 </html>
