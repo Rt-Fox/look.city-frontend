@@ -1,0 +1,444 @@
+
+/*menu*/
+@font-face {
+    font-family: "Acrom-Regular";
+    src: url("../fonts/Acrom-Regular.ttf") format("truetype");
+    font-size: 5pt;
+
+}
+@font-face {
+    font-family: "Montserrat-Medium_0";
+    src: url("../fonts/Montserrat-Medium_0.ttf") format("truetype");
+    font-size: 5pt;
+}
+html, body {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    overflow:  hidden;
+
+    --font: "Acrom-Regular";
+    --font1: "Acrom-Regular";
+    --font2: "Montserrat-Medium_0";
+    --font-text-size: x-large;
+
+    --new-color: #000000;
+    --new-border-radius: 2vw;
+    --new-bg-color: #FEF6E9;
+    --new-shadow:  0 5px 5px rgba(0,0,0,0.2);
+    --new-text-size: 2vh;
+
+    --square-color: #000000;
+    --square-border-radius: 10%;
+    --square-bg-color: #FEF6E9;
+    --square-text-size: 2vh;
+    --img-radius: 15%;
+    /*main*/
+
+
+    --search-color: #422B1F;
+    --search-bg-color: #F6F6F6;
+    --search-shadow: 5px 5px 5px rgba(0,0,0,0.2);
+    --search-border-radius: 30px;
+    --search-text-size: xx-large;
+
+    --filter-color: #422B1F;
+    --filter-border-radius: 30px;
+    --filter-bg-color: #F6F6F6;
+
+    --filter-shadow:  0 5px 5px rgba(0,0,0,0.2);
+    --filter-text-size: x-large;
+
+    --menu-color: #422B1F;
+    --menu-bg-color: #F6F6F6;
+    --menu-border-radius: 30px;
+    --menu-shadow: 0 5px 5px rgba(0,0,0,0.2);
+    --menu-text-size: xx-large;
+
+    --color-active: #FEF6E9;
+    --bg-color-active: #422B1F;
+}
+.mid{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.grid-main-wrapper{
+    display: grid;
+    width: 43vh;
+    height: 96vh;
+    grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        "new new new zero krest"
+        "film film zero1 year year"
+        "genres genres zero1 personage personage"
+        "producer producer zero1 actors actors"
+        "popular popular zero1 top top";
+
+    grid-gap: 10px;
+}
+.new{
+    grid-area: new
+}
+.new span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 120%;
+    height: 90%;
+
+    color: var(--new-color);
+    border-color: rgba(0,0,0,0);
+    background-color: var(--new-bg-color);
+    background-image: url(../img/new.png);
+    background-position-y: 50%;
+    background-position-x: -70%;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    border-radius: var(--new-border-radius);
+    box-shadow: -10px -10px 30px rgba(0,0,0,0.2);
+
+    font-family: var(--font);
+    font-weight: 700;
+    font-size: var(--new-text-size);
+}
+.krest {
+    grid-area: krest;
+    margin-right: 5%;
+    margin-top: 5%;
+}
+.krest div {
+    height: 0;
+    width: 100%;
+    padding-bottom: 100%;
+    background: url("../img/krest.png") center no-repeat;
+    background-color: #44250b;
+    background-size: 70%;
+    border-color: rgba(0,0,0,0);
+    border-radius: var(--img-radius);
+    box-shadow: 5px -5px 20px rgba(0,0,0,0.4);
+}
+.square {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    height: 0;
+    color: var(--square-color);
+    background-color: var(--square-bg-color);
+    border-radius: var(--square-border-radius);
+    border-color: rgba(0,0,0,0);
+}
+.square span{
+    position: absolute;
+    left:0; top: 0; height: 100%; width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    color: var(--square-color);
+    font-family: var(--font);
+    font-weight: 700;
+    font-size: var(--square-text-size);
+}
+.film {
+    grid-area: film;
+    box-shadow: -10px -10px 30px rgba(0,0,0,0.2);
+}
+.film span {
+    background-image: url("../img/film.png");
+    background-position-y: -10%;
+    background-position-x: 210%;
+    background-size: 130%;
+    background-repeat: no-repeat;
+}
+.year {
+    grid-area: year;
+    box-shadow: 10px -10px 30px rgba(0,0,0,0.2);
+}
+.year span {
+    background-image: url("../img/year.png");
+    background-position-y: -10%;
+    background-position-x: -85%;
+    background-size: 130%;
+    background-repeat: no-repeat;
+}
+.genres {
+    grid-area: genres;
+    box-shadow: -10px -10px 30px rgba(0,0,0,0.2);
+}
+.genres span {
+    background-image: url("../img/genres.png");
+    background-position-y: -5%;
+    background-position-x: 480%;
+    background-size: 110%;
+    background-repeat: no-repeat;
+}
+.personage {
+    grid-area: personage;
+    box-shadow: 15px -15px 30px rgba(0,0,0,0.2);
+}
+.personage span {
+    background-image: url("../img/personage.png");
+    background-position-y: -10%;
+    background-position-x: -70%;
+    background-size: 140%;
+    background-repeat: no-repeat;
+}
+.producer {
+    grid-area:producer;
+    box-shadow: -10px 10px 30px rgba(0,0,0,0.2);
+}
+.producer span {
+    background-image: url("../img/producer.png");
+    background-position-y: 0;
+    background-position-x: 210%;
+    background-size: 130%;
+    background-repeat: no-repeat;
+}
+.actors {
+    grid-area:actors;
+    box-shadow: 10px 10px 30px rgba(0,0,0,0.2);
+}
+.actors span {
+    background-image: url("../img/actors.png");
+    background-position-y: 0%;
+    background-position-x: -140%;
+    background-size: 120%;
+    background-repeat: no-repeat;
+}
+.popular {
+    grid-area:popular;
+    box-shadow: -10px 10px 30px rgba(0,0,0,0.2);
+}
+.popular span {
+    background-image: url("../img/popular.png");
+    background-position-y: 0;
+    background-position-x: 190%;
+    background-size: 130%;
+    background-repeat: no-repeat;
+}
+.top {
+    grid-area:top;
+    box-shadow: 10px 10px 30px rgba(0,0,0,0.2);
+}
+.top span {
+    background-image: url("../img/top.png");
+    background-position-y: 0%;
+    background-position-x: -100%;
+    background-size: 120%;
+    background-repeat: no-repeat;
+}
+/* main */
+.map {
+    width: 100vw;
+    height: 100vh;
+}
+.map img{
+    width: 100vw;
+    height: 100vh;
+}
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    position: absolute;
+    left:0; top: 0; height: 100%; width: 100%;
+    z-index: 1002;
+
+    width: 90vw;
+    height: 95vh;
+    margin-top: 2.5vh;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-bottom: 2.5vh;
+}
+.search form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 95%;
+    height: 5vh;
+    min-height: 70px;
+    margin: 3%;
+
+    background-color: var(--search-bg-color);
+    border-radius: var(--search-border-radius);
+    box-shadow:  var(--search-shadow);
+}
+.search input{
+    outline: none;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-left: 30px;
+
+    color: var(--search-color);
+    background-color:  rgba(0,0,0,0);
+    border-color: rgba(0,0,0,0);
+    border-radius: none;
+
+    font-family: var(--font1);
+    font-weight: bold;
+    font-size: var(--search-text-size);
+}
+.search img{
+    height: 100%;
+    margin-right: 30px;
+}
+.filters {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    height: 3vh;
+    min-height: 40px;
+    margin: 3%;
+}
+.filter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+    width: 23%;
+
+    background-color: var(--filter-bg-color);
+    color: var(--filter-color);
+    border-radius: var(--filter-border-radius);
+    border-color: rgba(0,0,0,0);
+
+    font-family: var(--font1);
+    font-weight: 700;
+    font-size: var(--filter-text-size);
+
+    box-shadow: var(--filter-shadow);
+    text-decoration: none;
+}
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 6vh;
+    min-height:70px;
+
+    color: var(--menu-color);
+    background-color: var(--menu-bg-color);
+    border-radius: var(--menu-border-radius);
+    border-color: rgba(0,0,0,0);
+
+    font-family: var(--font2);
+    font-weight: 900;
+    font-size: var(--menu-text-size);
+    box-shadow:  0 0 10px rgba(0,0,0,0.5);
+    margin: 3%;
+}
+
+/*more*/
+.filterbig {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+    width: 27%;
+
+    background-color: var(--filter-bg-color);
+    color: var(--filter-color);
+    border-radius: var(--filter-border-radius);
+    border-color: rgba(0,0,0,0);
+
+    font-family: var(--font1);
+    font-weight: 700;
+    font-size: var(--filter-text-size);
+
+    box-shadow: var(--filter-shadow);
+    text-decoration: none;
+}
+.filtermin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+    width: 7%;
+
+    background-color: var(--filter-bg-color);
+    color: var(--filter-color);
+    border-radius: var(--filter-border-radius);
+    border-color: rgba(0,0,0,0);
+
+    font-family: var(--font1);
+    font-weight: 700;
+    font-size: var(--filter-text-size);
+
+    box-shadow: var(--filter-shadow);
+    text-decoration: none;
+}
+.active {
+    background-color: var(--bg-color-active);
+    color: var(--color-active);
+}
+/*window menu*/
+.menu_open {
+    display: none; /*display: none;*/
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1003;
+    background-color: #4e4e4e90;
+}
+.window{
+    display: flex;
+    flex-direction: column;
+    padding: 3%;
+    width: 70%;
+    height: 50%;
+    background-color: #F4F4F4;
+    border-radius: var(--filter-border-radius);
+    color: #422B1F;
+    border-color: #F4F4F4;
+    box-shadow: 10px 10px 30px rgba(0,0,0,0.2);
+    font-family: var(--font1);
+    font-weight: 700;
+    font-size: x-large;
+}
+.headertwo {
+    display: grid;
+    height: 10%;
+    width: 100%;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+            "img img img zero krestik"
+}
+.headertwo img {
+    grid-area: img;
+    width: 100%;
+    height: 100%;
+}
+.krestik{
+    grid-area: krestik;
+    width: 100%;
+    height: 100%;
+
+}
+
