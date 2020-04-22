@@ -672,7 +672,7 @@ body {
     width: 22px;
     height: 22px;
 }
-@media (max-device-width: 380px) {
+@media (max-device-width: 380px) and (min-device-height:610px) {
     .grid-main-wrapper {
         width: 90vw;
         height: 160vw;
