@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <title>Кинопутеводитель</title>
     <link rel="stylesheet" href="../static/style/style.css">
+    <link rel="stylesheet" href="../static/style/menu.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--    <link rel="icon" sizes="192x192" href="kino.png">-->
     <meta name="theme-color" content="#FF422B1F">
-
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=0ebae56a-379d-4e2c-8821-bf1a67d366e2"
         type="text/javascript"></script>
     <script src="../static/js/mapbasics.js" type="text/javascript"></script>
@@ -23,11 +24,9 @@
 
             <!-- Поиск и фильтры -->
             <div class="header">
-                <div class="search">
-                    <form action="">
-                        <input type="text" placeholder="Поиск по адресу"><img src="../static/img/kino.png">
-                    </form>
-                </div>
+                <form class="search" action="">
+                    <input type="text" placeholder="Поиск по адресу">
+                </form>
                 <div v-if="!addButtons" class="filters">
                     <span class="filter active">ФИЛЬМЫ</span>
                     <span class="filter">ЖАНРЫ</span>
@@ -61,11 +60,20 @@
 
         <!-- Открытое меню -->
         <div v-if="menu" class="grid-main-wrapper">
-            <div class="new">
-                <span>НОВИИНКИ</span>
+            <div class="message">
+                <div></div>
+            </div>
+            <div class="city">
+                <span>ГОРОДА</span>
             </div>
             <div @click="changeMenuState" class="krest">
                 <div></div>
+            </div>
+            <div class="new square">
+                <span>НОВИНКИ</span>
+            </div>
+            <div class="top square">
+                <span>ЛУЧШИЕ КИНО-РАССКАЗЫ</span>
             </div>
             <div class="film square">
                 <span>ФИЛЬМЫ</span>
@@ -88,8 +96,8 @@
             <div class="popular square">
                 <span>ПОПУЛЯРНЫЕ МЕСТА</span>
             </div>
-            <div class="top square">
-                <span>ЛУЧШИЕ КИНО-РАССКАЗЫ</span>
+            <div class="places square">
+                <span>НЕОПОЗНАННЫЕ МЕСТА</span>
             </div>
         </div>
     </div>
