@@ -1,0 +1,80 @@
+/*film*/
+.wrap-film{
+    background-image: url("../img/actors.png");
+    background-position-y: 100%;
+    background-position-x: 100%;
+    background-size: 50vh;
+    background-repeat: no-repeat;
+}
+.headline{
+    width: 80%;
+    height: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: white;
+}
+.filt {
+    width: 80%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+
+    justify-content: center;
+    color: #EFE7DB;
+    background-color: #44250b;
+    border-radius: 30px;
+    font-family: var(--font1);
+    font-weight: 700;
+    font-size: 3vh;
+}
+.contents{
+    width: 80%;
+    height: 90%;
+    overflow: auto;
+    margin: 0;
+}
+.cont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    margin: 0 0 30px 0;
+    padding: 2%;
+
+    color: #958682;
+    border-bottom-color: #958682;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+
+    font-family: var(--font1);
+    font-weight: 700;
+    font-size: 4vh;
+}
+.checkbox {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+.checkbox + label {
+    position: relative;
+    padding: 0 0 0 7vh;
+    cursor: pointer;
+}
+.checkbox + label:before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 6vh;
+    height: 6vh;
+    border-radius: 10%;
+    background: #faf8f6;
+    box-shadow: inset 1vh 1vh 1vh  rgba(0,0,0,.2);
+}
+.checkbox:checked + label:before {
+    background: #44250b;
+    box-shadow: inset 1vh 1vh 1vh  rgba(0,0,0,.2);
+}
