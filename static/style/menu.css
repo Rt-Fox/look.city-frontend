@@ -32,7 +32,8 @@ html, body {
     grid-area: message;
     margin-top: 5%;
 }
-.message div {
+.message a {
+    display: block;
     height: 0;
     width: 100%;
     padding-bottom: 100%;
@@ -46,13 +47,14 @@ html, body {
 .city {
     grid-area: city;
 }
-.city span{
+.city a{
     display: flex;
     align-items: center;
     justify-content: center;
 
     width: 100%;
     height: 90%;
+    text-decoration: none;
 
     color: var(--new-color);
     border-color: rgba(0, 0, 0, 0);
@@ -100,7 +102,7 @@ html, body {
     border-radius: var(--square-border-radius);
     border-color: rgba(0, 0, 0, 0);
 }
-.square span {
+.square a {
     position: absolute;
     left: 0;
     top: 0;
@@ -112,6 +114,8 @@ html, body {
     justify-content: center;
     text-align: center;
 
+    text-decoration: none;
+
     color: var(--square-color);
     font-family: var(--font);
     font-weight: 700;
@@ -122,7 +126,7 @@ html, body {
     grid-area: new;
     box-shadow: -10px -10px 30px rgba(0, 0, 0, 0.2);
 }
-.new span {
+.new a {
     background-image: url(../img/new.png);
     background-position-y: -10%;
     background-position-x: 210%;
@@ -133,7 +137,7 @@ html, body {
     grid-area: top;
     box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
 }
-.top span {
+.top a {
     background-image: url("../img/top.png");
     background-position-y: 0%;
     background-position-x: -100%;
@@ -144,7 +148,7 @@ html, body {
     grid-area: film;
     box-shadow: -10px -10px 30px rgba(0, 0, 0, 0.2);
 }
-.film span {
+.film a {
     background-image: url("../img/film.png");
     background-position-y: -10%;
     background-position-x: 210%;
@@ -155,7 +159,7 @@ html, body {
     grid-area: year;
     box-shadow: 10px -10px 30px rgba(0, 0, 0, 0.2);
 }
-.year span {
+.year a {
     background-image: url("../img/year.png");
     background-position-y: -10%;
     background-position-x: -85%;
@@ -166,7 +170,7 @@ html, body {
     grid-area: genres;
     box-shadow: -10px -10px 30px rgba(0, 0, 0, 0.2);
 }
-.genres span {
+.genres a {
     background-image: url("../img/genres.png");
     background-position-y: -5%;
     background-position-x: 480%;
@@ -177,7 +181,7 @@ html, body {
     grid-area: personage;
     box-shadow: 15px -15px 30px rgba(0, 0, 0, 0.2);
 }
-.personage span {
+.personage a {
     background-image: url("../img/personage.png");
     background-position-y: -10%;
     background-position-x: -70%;
@@ -188,7 +192,7 @@ html, body {
     grid-area: producer;
     box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.2);
 }
-.producer span {
+.producer a {
     background-image: url("../img/producer.png");
     background-position-y: 0;
     background-position-x: 210%;
@@ -199,7 +203,7 @@ html, body {
     grid-area: actors;
     box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
 }
-.actors span {
+.actors a {
     background-image: url("../img/actors.png");
     background-position-y: 0%;
     background-position-x: -140%;
@@ -210,7 +214,7 @@ html, body {
     grid-area: popular;
     box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.2);
 }
-.popular span {
+.popular a {
     background-image: url("../img/popular.png");
     background-position-y: 0;
     background-position-x: 190%;
@@ -221,7 +225,7 @@ html, body {
     grid-area: places;
     box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.2);
 }
-.places span {
+.places a {
     background-image: url("../img/popular.png");
     background-position-y: 0;
     background-position-y: 0%;
@@ -229,7 +233,7 @@ html, body {
     background-size: 120%;
     background-repeat: no-repeat;
 }
-@media (max-device-width: 500px) {
+@media (max-device-width: 700px) {
     html, body {
         --new-text-size: 4vw;
         --square-text-size: 4vw;

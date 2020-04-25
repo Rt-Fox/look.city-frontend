@@ -32,7 +32,7 @@ html, body {
     --filter-bg-color: #f6f6f6;
 
     --filter-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
-    --filter-text-size: 3vw;
+    --filter-text-size: 1fr;
 
     --menu-color: #422b1f;
     --menu-bg-color: #f6f6f6;
@@ -87,12 +87,6 @@ html, body {
     background-color: var(--search-bg-color);
     border-radius: var(--search-border-radius);
     box-shadow: var(--search-shadow);
-
-    background-image: url("../img/kino.png");
-    background-position-y: 0%;
-    background-position-x: +100%;
-    background-size: 70px;
-    background-repeat: no-repeat;
 }
 .search input {
     outline: none;
@@ -110,14 +104,12 @@ html, body {
     border-radius: 0;
 
     font-family: var(--font1);
-    font-weight: bold;
+    font-weight: 900;
     font-size: var(--search-text-size);
-
-
 }
 .search img {
     background-color:  rgba(0, 0, 0, 0);
-    width: 20%;
+    height: 100%;
     margin-right: 30px;
 }
 .filters {
@@ -125,9 +117,10 @@ html, body {
     flex-direction: row;
     justify-content: space-around;
 
-    height: 3vh;
-    min-height: 40px;
-    margin: 3%;
+    width: 100%;
+    height: 4vh;
+    min-height: 35px;
+    margin:2% 0 2% 0;
 }
 .filter {
     display: flex;
@@ -266,4 +259,28 @@ html, body {
     border-color: rgba(0, 0, 0, 0);
     border-radius: var(--img-radius);
     box-shadow: 5px -5px 20px rgba(0, 0, 0, 0.4);
+}
+@media (max-device-width: 540px) {
+    html, body {
+        --filter-text-size: 0.8em;
+        --search-text-size: 0.9fr;
+    }
+    .search img {
+        background-color:  rgba(0, 0, 0, 0);
+        height: 70%;
+        margin-right: 20px;
+    }
+
+}
+@media (max-device-width: 370px) {
+    html, body {
+        --filter-text-size: 0.65em;
+        --menu-text-size: 1fr;
+    }
+    .search img {
+        background-color:  rgba(0, 0, 0, 0);
+        height: 50%;
+        margin-right: 10px;
+    }
+
 }
