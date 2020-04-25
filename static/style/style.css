@@ -9,27 +9,16 @@
     src: url("../fonts/Montserrat-Medium_0.ttf") format("truetype");
     font-size: 5pt;
 }
-html,
-body {
+html, body {
     margin: 0;
     overflow: hidden;
+    font-size: 100%;
 
     --font: "Acrom-Regular";
     --font1: "Acrom-Regular";
     --font2: "Montserrat-Medium_0";
     --font-text-size: x-large;
 
-    --new-color: #000000;
-    --new-border-radius: 2vw;
-    --new-bg-color: #fef6e9;
-    --new-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
-    --new-text-size: 2vh;
-
-    --square-color: #000000;
-    --square-border-radius: 10%;
-    --square-bg-color: #fef6e9;
-    --square-text-size: x-large;
-    --img-radius: 15%;
     /*main*/
 
     --search-color: #422b1f;
@@ -43,7 +32,7 @@ body {
     --filter-bg-color: #f6f6f6;
 
     --filter-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
-    --filter-text-size: x-large;
+    --filter-text-size: 3vw;
 
     --menu-color: #422b1f;
     --menu-bg-color: #f6f6f6;
@@ -63,174 +52,6 @@ body {
     width: 100vw;
     height: 100vh;
 }
-.grid-main-wrapper {
-    display: grid;
-    width: 43vh;
-    height: 96vh;
-    grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas:
-        "new new new zero krest"
-        "film film zero1 year year"
-        "genres genres zero1 personage personage"
-        "producer producer zero1 actors actors"
-        "popular popular zero1 top top";
-
-    grid-gap: 10px;
-}
-.new {
-    grid-area: new;
-}
-.new span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 120%;
-    height: 90%;
-
-    color: var(--new-color);
-    border-color: rgba(0, 0, 0, 0);
-    background-color: var(--new-bg-color);
-    background-image: url(../img/new.png);
-    background-position-y: 50%;
-    background-position-x: -70%;
-    background-size: 80%;
-    background-repeat: no-repeat;
-    border-radius: var(--new-border-radius);
-    box-shadow: -10px -10px 30px rgba(0, 0, 0, 0.2);
-
-    font-family: var(--font);
-    font-weight: 700;
-    font-size: var(--new-text-size);
-}
-.krest {
-    grid-area: krest;
-    margin-right: 5%;
-    margin-top: 5%;
-}
-.krest div {
-    height: 0;
-    width: 100%;
-    padding-bottom: 100%;
-    background: url("../img/krest.png") center no-repeat;
-    background-color: #44250b;
-    background-size: 70%;
-    border-color: rgba(0, 0, 0, 0);
-    border-radius: var(--img-radius);
-    box-shadow: 5px -5px 20px rgba(0, 0, 0, 0.4);
-}
-.square {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    width: 100%;
-    padding-bottom: 100%;
-    height: 0;
-    color: var(--square-color);
-    background-color: var(--square-bg-color);
-    border-radius: var(--square-border-radius);
-    border-color: rgba(0, 0, 0, 0);
-}
-.square span {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-
-    color: var(--square-color);
-    font-family: var(--font);
-    font-weight: 700;
-    font-size: var(--square-text-size);
-}
-.film {
-    grid-area: film;
-    box-shadow: -10px -10px 30px rgba(0, 0, 0, 0.2);
-}
-.film span {
-    background-image: url("../img/film.png");
-    background-position-y: -10%;
-    background-position-x: 210%;
-    background-size: 130%;
-    background-repeat: no-repeat;
-}
-.year {
-    grid-area: year;
-    box-shadow: 10px -10px 30px rgba(0, 0, 0, 0.2);
-}
-.year span {
-    background-image: url("../img/year.png");
-    background-position-y: -10%;
-    background-position-x: -85%;
-    background-size: 130%;
-    background-repeat: no-repeat;
-}
-.genres {
-    grid-area: genres;
-    box-shadow: -10px -10px 30px rgba(0, 0, 0, 0.2);
-}
-.genres span {
-    background-image: url("../img/genres.png");
-    background-position-y: -5%;
-    background-position-x: 480%;
-    background-size: 110%;
-    background-repeat: no-repeat;
-}
-.personage {
-    grid-area: personage;
-    box-shadow: 15px -15px 30px rgba(0, 0, 0, 0.2);
-}
-.personage span {
-    background-image: url("../img/personage.png");
-    background-position-y: -10%;
-    background-position-x: -70%;
-    background-size: 140%;
-    background-repeat: no-repeat;
-}
-.producer {
-    grid-area: producer;
-    box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.2);
-}
-.producer span {
-    background-image: url("../img/producer.png");
-    background-position-y: 0;
-    background-position-x: 210%;
-    background-size: 130%;
-    background-repeat: no-repeat;
-}
-.actors {
-    grid-area: actors;
-    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
-}
-.actors span {
-    background-image: url("../img/actors.png");
-    background-position-y: 0%;
-    background-position-x: -140%;
-    background-size: 120%;
-    background-repeat: no-repeat;
-}
-.popular {
-    grid-area: popular;
-    box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.2);
-}
-.popular span {
-    background-image: url("../img/popular.png");
-    background-position-y: 0;
-    background-position-x: 190%;
-    background-size: 130%;
-    background-repeat: no-repeat;
-}
-.top {
-    grid-area: top;
-    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
-}
-
 /* main */
 .map {
     position: fixed;
@@ -250,10 +71,9 @@ body {
 }
 .header {
     width: 90vw;
-
     z-index: 1010;
 }
-.search form {
+.search  {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -267,6 +87,12 @@ body {
     background-color: var(--search-bg-color);
     border-radius: var(--search-border-radius);
     box-shadow: var(--search-shadow);
+
+    background-image: url("../img/kino.png");
+    background-position-y: 0%;
+    background-position-x: +100%;
+    background-size: 70px;
+    background-repeat: no-repeat;
 }
 .search input {
     outline: none;
@@ -286,9 +112,12 @@ body {
     font-family: var(--font1);
     font-weight: bold;
     font-size: var(--search-text-size);
+
+
 }
 .search img {
-    height: 100%;
+    background-color:  rgba(0, 0, 0, 0);
+    width: 20%;
     margin-right: 30px;
 }
 .filters {
@@ -387,170 +216,7 @@ body {
     background-color: var(--bg-color-active);
     color: var(--color-active);
 }
-/*menu*/
-.new {
-    grid-area: new;
-}
-.new span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
-    width: 120%;
-    height: 90%;
-
-    color: var(--new-color);
-    border-color: rgba(0, 0, 0, 0);
-    background-color: var(--new-bg-color);
-    background-image: url(../img/new.png);
-    background-position-y: 50%;
-    background-position-x: -70%;
-    background-size: 80%;
-    background-repeat: no-repeat;
-    border-radius: var(--new-border-radius);
-    box-shadow: -10px -10px 30px rgba(0, 0, 0, 0.2);
-
-    font-family: var(--font);
-    font-weight: 700;
-    font-size: var(--new-text-size);
-}
-.krest {
-    grid-area: krest;
-    margin-right: 5%;
-    margin-top: 5%;
-}
-.krest div {
-    height: 0;
-    width: 100%;
-    padding-bottom: 100%;
-    background: url("../img/krest.png") center no-repeat;
-    background-color: #44250b;
-    background-size: 70%;
-    border-color: rgba(0, 0, 0, 0);
-    border-radius: var(--img-radius);
-    box-shadow: 5px -5px 20px rgba(0, 0, 0, 0.4);
-}
-.square {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    width: 100%;
-    padding-bottom: 100%;
-    height: 0;
-    color: var(--square-color);
-    background-color: var(--square-bg-color);
-    border-radius: var(--square-border-radius);
-    border-color: rgba(0, 0, 0, 0);
-}
-.square span {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-
-    word-wrap: break-word;
-    color: var(--square-color);
-    font-family: var(--font);
-    font-weight: 700;
-    font-size: var(--square-text-size);
-
-
-}
-.film {
-    grid-area: film;
-    box-shadow: -10px -10px 30px rgba(0, 0, 0, 0.2);
-}
-.film span {
-    background-image: url("../img/film.png");
-    background-position-y: -10%;
-    background-position-x: 210%;
-    background-size: 130%;
-    background-repeat: no-repeat;
-}
-.year {
-    grid-area: year;
-    box-shadow: 10px -10px 30px rgba(0, 0, 0, 0.2);
-}
-.year span {
-    background-image: url("../img/year.png");
-    background-position-y: -10%;
-    background-position-x: -85%;
-    background-size: 130%;
-    background-repeat: no-repeat;
-}
-.genres {
-    grid-area: genres;
-    box-shadow: -10px -10px 30px rgba(0, 0, 0, 0.2);
-}
-.genres span {
-    background-image: url("../img/genres.png");
-    background-position-y: -5%;
-    background-position-x: 480%;
-    background-size: 110%;
-    background-repeat: no-repeat;
-}
-.personage {
-    grid-area: personage;
-    box-shadow: 15px -15px 30px rgba(0, 0, 0, 0.2);
-}
-.personage span {
-    background-image: url("../img/personage.png");
-    background-position-y: -10%;
-    background-position-x: -70%;
-    background-size: 140%;
-    background-repeat: no-repeat;
-}
-.producer {
-    grid-area: producer;
-    box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.2);
-}
-.producer span {
-    background-image: url("../img/producer.png");
-    background-position-y: 0;
-    background-position-x: 210%;
-    background-size: 130%;
-    background-repeat: no-repeat;
-}
-.actors {
-    grid-area: actors;
-    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
-}
-.actors span {
-    background-image: url("../img/actors.png");
-    background-position-y: 0%;
-    background-position-x: -140%;
-    background-size: 120%;
-    background-repeat: no-repeat;
-}
-.popular {
-    grid-area: popular;
-    box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.2);
-}
-.popular span {
-    background-image: url("../img/popular.png");
-    background-position-y: 0;
-    background-position-x: 190%;
-    background-size: 130%;
-    background-repeat: no-repeat;
-}
-.top {
-    grid-area: top;
-    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
-}
-.top span {
-    background-image: url("../img/top.png");
-    background-position-y: 0%;
-    background-position-x: -100%;
-    background-size: 120%;
-    background-repeat: no-repeat;
-}
 /*window menu*/
 .menu_open {
     display: none; /*display: none;*/
@@ -600,114 +266,4 @@ body {
     border-color: rgba(0, 0, 0, 0);
     border-radius: var(--img-radius);
     box-shadow: 5px -5px 20px rgba(0, 0, 0, 0.4);
-}
-
-
-/*film*/
-.headline {
-    width: 80%;
-    height: 5%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-
-    background-color: white;
-}
-.filt {
-    width: 80%;
-    height: 100%;
-
-    display: flex;
-    align-items: center;
-
-    justify-content: center;
-    color: #efe7db;
-    background-color: #44250b;
-    border-radius: 30px;
-    font-family: var(--font1);
-    font-weight: 700;
-    font-size: 3vh;
-}
-.content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 2%;
-    color: #958682;
-    border-bottom-color: #958682;
-    border-bottom-style: solid;
-    border-bottom-width: 2px;
-
-    font-family: var(--font1);
-    font-weight: 700;
-    font-size: 3vh;
-}
-.checkbox {
-    position: absolute;
-    z-index: -1;
-    opacity: 0;
-}
-.checkbox + span {
-    position: relative;
-    padding: 0 0 0 60px;
-    cursor: pointer;
-}
-.checkbox + label:before {
-    content: "";
-    position: absolute;
-    top: -5px;
-    left: 0;
-    width: 3vh;
-    height: 3vh;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 20%;
-    background: #f4f4f4;
-    box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
-}
-.checkbox + label:after {
-    content: "";
-    position: absolute;
-    top: -2px;
-    left: 2px;
-    width: 22px;
-    height: 22px;
-}
-@media (max-device-width: 380px) and (min-device-height:500px) {
-    .grid-main-wrapper {
-        width: 90vw;
-        height: 160vw;
-        grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        grid-template-areas:
-                "new new new zero krest"
-                "film film zero1 year year"
-                "genres genres zero1 personage personage"
-                "producer producer zero1 actors actors"
-                "popular popular zero1 top top";
-
-        grid-gap: 10px;
-    }
-    .new span {
-        width: 120%;
-        height: 80%;
-        margin-left: 5% ;
-        font-size: 3.8vw;
-    }
-    .krest div {
-        height: 0;
-        width: 80%;
-        padding-bottom: 80%;
-    }
-    .square {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin:10% ;
-        width: 80%;
-        padding-bottom: 80%;
-        height: 0;
-    }
-    .square span {
-        font-size: 3.8vw;
-    }
 }
