@@ -2,14 +2,14 @@ ymaps.ready(init);
 
 function init() {
     var myMap = new ymaps.Map("map", {
-            center: [55.751574, 37.573856],
-            zoom: 9,
+            center: [59.94, 30.32],
+            zoom: 10,
             controls: [],
         }),
         // Создадим пользовательский макет ползунка масштаба.
         ZoomLayout = ymaps.templateLayoutFactory.createClass(
             "<div>" +
-                "<div id='zoom-in' style='z-index: 4010, position: absolute'  class='btn'><i class='icon-plus'></i></div><br>" +
+                "<div id='zoom-in' class='btn' style='margin-top:500px'><i class='icon-plus'></i></div><br>" +
                 "<div id='zoom-out' class='btn'><i class='icon-minus'></i></div>" +
                 "</div>",
             {
