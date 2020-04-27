@@ -1,80 +1,176 @@
 /*film*/
-.wrap-film{
+.wrap-film {
     background-image: url("../img/actors.png");
     background-position-y: 100%;
     background-position-x: 100%;
-    background-size: 50vh;
+    background-size: calc(25vh + 25vw);
     background-repeat: no-repeat;
 }
-.headline{
+
+.wrap-popular_places {
+    background-image: url("../img/popular.png");
+    background-position-y: 100%;
+    background-position-x: 100%;
+    background-size: calc(25vh + 25vw);
+    background-repeat: no-repeat;
+}
+
+.headline {
+    margin-top: 15px;
     width: 80%;
-    height: 5%;
+    height: calc(15px + 5%);
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    background-color: white;
+    background-color: none;
 }
-.film {
+
+.title {
+    margin-left: 5%;
     width: 80%;
     height: 100%;
 
     display: flex;
     align-items: center;
-
     justify-content: center;
+
     color: #EFE7DB;
     background-color: #44250b;
     border-radius: 30px;
     font-family: var(--font1);
     font-weight: 700;
     font-size: 3vh;
+    text-align: center;
 }
-.contents{
+
+.contents {
     width: 80%;
     height: 90%;
     overflow: auto;
     margin: 0;
 }
+
+.cont:first-child {
+    margin-top: 3vh;
+}
+
 .cont {
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     width: 100%;
 
     margin: 0 0 30px 0;
-    padding: 2%;
-
     color: #958682;
-    border-bottom-color: #958682;
-    border-bottom-style: solid;
-    border-bottom-width: 2px;
 
     font-family: var(--font1);
     font-weight: 700;
-    font-size: 4vh;
+    font-size: xx-large;
 }
+
+.hg {
+    height: 30vh;
+}
+
+.el {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 90%;
+    width: 70%;
+    border: 1px solid black;
+    border-radius: 30px;
+    background-color: #FEF6E9;
+    box-shadow: -3px -3px 20px rgba(0, 0, 0, 0.4);
+}
+
+.el video {
+    margin-left: 2vw;
+    margin-right: 2vw;
+    border-radius: 30px;
+    border: 1px solid black;
+    height: 80%;
+    width: 40%;
+}
+
+.el div {
+    display: flex;
+    flex-direction: column;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    word-break: break-all;
+}
+
 .checkbox {
     position: absolute;
     z-index: -1;
     opacity: 0;
 }
+
 .checkbox + label {
     position: relative;
     padding: 0 0 0 7vh;
     cursor: pointer;
 }
+
 .checkbox + label:before {
     content: '';
     position: absolute;
     top: -10px;
     left: 0;
-    width: 6vh;
-    height: 6vh;
+    width: 5vh;
+    height: 5vh;
     border-radius: 10%;
     background: #faf8f6;
-    box-shadow: inset 1vh 1vh 1vh  rgba(0,0,0,.2);
+    box-shadow: inset 1vh 1vh 1vh rgba(0, 0, 0, .2);
 }
+
 .checkbox:checked + label:before {
     background: #44250b;
-    box-shadow: inset 1vh 1vh 1vh  rgba(0,0,0,.2);
+    box-shadow: inset 1vh 1vh 1vh rgba(0, 0, 0, .2);
+}
+
+@media (max-device-width: 1200px) {
+    .title {
+        font-size: x-large;
+    }
+
+    .el {
+        width: 80%;
+    }
+
+    .el span {
+        font-size: x-large;
+    }
+}
+
+@media (max-device-width: 750px) {
+    .title {
+        font-size: large;
+    }
+
+    .el {
+        width: 80%;
+    }
+
+    .el span {
+        font-size: large;
+    }
+}
+
+@media (max-device-width: 560px), (max-device-height: 1px) {
+    .title {
+        font-size: large;
+    }
+
+    .el {
+        width: 80%;
+    }
+
+    .el span {
+        font-size: small;
+    }
 }
