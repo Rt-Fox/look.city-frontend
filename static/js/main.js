@@ -17,3 +17,10 @@ new Vue({
         },
     },
 });
+
+let reg = /android/g;
+if (reg.test(navigator.userAgent.toLowerCase())) {
+    document.write(
+        '<meta name="viewport" content="width=device-width, height=' + window.innerHeight + ', initial-scale=1.0">'
+    );
+}

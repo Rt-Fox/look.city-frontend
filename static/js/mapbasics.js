@@ -9,8 +9,8 @@ function init() {
         // Создадим пользовательский макет ползунка масштаба.
         ZoomLayout = ymaps.templateLayoutFactory.createClass(
             "<div>" +
-                "<div id='zoom-in' class='btn' style='margin-top:500px'><i class='icon-plus'></i></div><br>" +
-                "<div id='zoom-out' class='btn'><i class='icon-minus'></i></div>" +
+                "<div id='zoom-in' class='btn' style='margin-top: 200px'>+</div><br>" +
+                "<div id='zoom-out' class='btn'>-</div>" +
                 "</div>",
             {
                 // Переопределяем методы макета, чтобы выполнять дополнительные действия
