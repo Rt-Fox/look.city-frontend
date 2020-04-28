@@ -1,3 +1,5 @@
+//let info = axios.GET().then((response) => response.data)
+
 ymaps.ready(init);
 
 function init() {
@@ -50,6 +52,23 @@ function init() {
             }
         ),
         zoomControl = new ymaps.control.ZoomControl({ options: { layout: ZoomLayout } });
-
     myMap.controls.add(zoomControl);
+
+    // Создание точек
+    info.data.forEach((film) => {
+        myMap.geoObjects.add(
+            new ymaps.Placemark(
+                // Координаты
+                [+film.point.lat, +film.point.lon],
+                // Контент
+                {
+                    balloonContent: film.movie.name,
+                },
+                {
+                    preset: "islands#dotIcon",
+                    iconColor: "#735184",
+                }
+            )
+        );
+    });
 }

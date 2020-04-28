@@ -1,4 +1,4 @@
-new Vue({
+let vm = new Vue({
     el: "#root",
 
     data: {
