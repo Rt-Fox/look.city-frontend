@@ -4,38 +4,61 @@
 <head>
     <meta charset="UTF-8">
     <title>Кинопутеводитель</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <meta name="theme-color" content="#FF422B1F">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="/favicon.ico" rel="icon" type="image/x-icon">
+    <meta content="#FF422B1F" name="theme-color">
     <!-- <link href="https://yandex.st/bootstrap/2.2.2/css/bootstrap.min.css" rel="stylesheet"> -->
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=0ebae56a-379d-4e2c-8821-bf1a67d366e2"
             type="text/javascript"></script>
     <script src="https://yandex.st/jquery/2.2.3/jquery.min.js" type="text/javascript"></script>
     <script src="../static/js/mapbasics.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="../static/style/style.css">
-    <link rel="stylesheet" href="../static/style/menu.css">
+    <link href="../static/style/style.css" rel="stylesheet">
+    <link href="../static/style/menu.css" rel="stylesheet">
 </head>
 <body>
-<div id="root" class="mid">
-    <div v-show="map" class="main-wrapper">
+<div class="mid" id="root">
+    <div class="main-wrapper" v-show="map">
 
         <!-- Карта -->
-        <div id="map" class="map"></div>
+
+        <div class="map" id="map"></div>
+        <!-- Зум карты -->
+        <ul class="zoom">
+            <li>
+                <button>+</button>
+            </li>
+            <li>
+                <button>&#8722;</button>
+            </li>
+        </ul>
 
         <!-- Поиск и фильтры -->
         <div class="header">
+            <!--
             <div class="search">
                 <input type="text" placeholder="Поиск по адресу">
                 <img src="../static/img/kino.png" alt="Кинопутеводитель">
             </div>
-            <div v-if="!addButtons" class="filters">
+            -->
+            <!-- Кнопка меню -->
+            <div class="headerone">
+                <button class="brand">
+                    <img alt="Кинопутеводитель" src="../static/img/kino.png">
+                </button>
+                <span @click="changeMenuState" class="menu">МЕНЮ</span>
+                <button class="search">
+                    <img alt="Кинопутеводитель" src="../static/img/krest.png">
+                </button>
+            </div>
+
+            <div class="filters" v-if="!addButtons">
                 <span class="filter active">ФИЛЬМЫ</span>
                 <span class="filter">ЖАНРЫ</span>
                 <span class="filter">ГОДА</span>
                 <span @click="changeButtons" class="filter">ДРУГОЕ</span>
             </div>
-            <div v-else class="filters">
+            <div class="filters" v-else>
                 <span class="filterbig">ПЕРСОНАЖИ</span>
                 <span class="filterbig">РЕЖИССЕРЫ</span>
                 <span class="filterbig active">АКТЕРЫ</span>
@@ -43,10 +66,7 @@
             </div>
         </div>
 
-        <!-- Кнопка меню -->
-        <span @click="changeMenuState" class="menu">
-                М Е Н Ю
-            </span>
+
     </div>
 
     <!-- Поп-ап -->
@@ -61,7 +81,7 @@
     </div>
 
     <!-- Открытое меню -->
-    <div v-if="menu" class="grid-main-wrapper">
+    <div class="grid-main-wrapper" v-if="menu">
         <div class="message">
             <a href="/feedback"></a>
         </div>
