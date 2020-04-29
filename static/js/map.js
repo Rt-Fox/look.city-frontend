@@ -55,7 +55,8 @@ function init() {
     myMap.controls.add(zoomControl);
 
     // Создание точек
-    info.data.forEach((film) => {
+    console.log(vm.info.data);
+    vm.info.data.forEach((film) => {
         myMap.geoObjects.add(
             new ymaps.Placemark(
                 // Координаты

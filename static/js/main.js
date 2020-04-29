@@ -5,6 +5,7 @@ let vm = new Vue({
         menu: false,
         map: true,
         addButtons: false,
+        info: null,
     },
 
     methods: {
@@ -15,6 +16,12 @@ let vm = new Vue({
         changeButtons() {
             this.addButtons = !this.addButtons;
         },
+    },
+
+    mounted() {
+        axios.get("/points.json").then(function (response) {
+            vm.info = response.data;
+        });
     },
 });
 
