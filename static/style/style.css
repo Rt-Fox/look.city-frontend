@@ -26,7 +26,7 @@ html, body {
     --search-color: #422b1f;
     --search-bg-color: #f6f6f6;
     --search-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
-    --search-border-radius: 30px;
+    --search-border-radius: 20px;
     --search-text-size: x-large;
 
     --filter-color: #422b1f;
@@ -63,10 +63,51 @@ html, body {
     height: 100vh;
 }
 
+.zoom {
+    position: fixed;
+    top: 70vh;
+    right: 5vw;
+    width: 5vw;
+    min-width: 40px;
+    height: 10vh;
+    min-height: 80px;
+    padding: 0;
+    border-radius: 10px;
+    box-shadow: -5px -5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.zoom li {
+    list-style-type: none;
+    width: 5vw;
+    min-width: 40px;
+    height: 5vh;
+    height: 40px;
+    background-color: #EFE7DB;
+}
+
+.zoom li:first-child {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.zoom li:last-child {
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.zoom button {
+    font-size: 2em;
+    border-radius: 10px;
+    border: 0;
+    background-color: rgba(0, 0, 0, 0);
+    height: 100%;
+    width: 100%;
+}
+
 .main-wrapper {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     z-index: 1002;
 
@@ -77,8 +118,72 @@ html, body {
 .header {
     width: 90vw;
     z-index: 1010;
+    margin: 3%;
 }
 
+.headerone {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 5vh;
+    min-height: 70px;
+}
+
+.brand {
+    background-color: rgba(0, 0, 0, 0);
+    padding: 0;
+    height: 100%;
+    width: 150px;
+    margin-right: 10px;
+    border-radius: var(--search-border-radius);
+    border: 0;
+    box-shadow: -5px -5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.brand img {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--search-border-radius);
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 70%;
+    height: 100%;
+
+    color: var(--menu-color);
+    background-color: var(--menu-bg-color);
+    border-radius: var(--menu-border-radius);
+    border-color: rgba(0, 0, 0, 0);
+
+    font-family: var(--font2);
+    font-weight: 900;
+    font-size: var(--menu-text-size);
+    letter-spacing: 5px;
+    box-shadow: -5px -5px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1010;
+}
+
+.search {
+    margin-left: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: var(--search-border-radius);
+    box-shadow: -5px -5px 5px rgba(0, 0, 0, 0.2);
+    border: 0;
+}
+
+.search img {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--menu-border-radius);
+}
+
+/*
 .search {
     display: flex;
     flex-direction: row;
@@ -120,7 +225,7 @@ html, body {
     height: 100%;
     margin-right: 30px;
 }
-
+*/
 .filters {
     display: flex;
     flex-direction: row;
@@ -151,28 +256,6 @@ html, body {
 
     box-shadow: var(--filter-shadow);
     text-decoration: none;
-}
-
-.menu {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 90vw;
-    height: 6vh;
-    min-height: 70px;
-
-    color: var(--menu-color);
-    background-color: var(--menu-bg-color);
-    border-radius: var(--menu-border-radius);
-    border-color: rgba(0, 0, 0, 0);
-
-    font-family: var(--font2);
-    font-weight: 900;
-    font-size: var(--menu-text-size);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    margin: 3%;
-    z-index: 1010;
 }
 
 /*more*/
@@ -278,16 +361,20 @@ html, body {
     box-shadow: 5px -5px 20px rgba(0, 0, 0, 0.4);
 }
 
+button {
+    outline: none;
+    cursor: pointer;
+}
+
 @media (max-device-width: 540px) {
     html,
     body {
         --filter-text-size: 0.8em;
-        --search-text-size: 0.9fr;
+        --menu-text-size: x-large;
     }
 
-    .search img {
+    .brand img {
         background-color: rgba(0, 0, 0, 0);
-        height: 70%;
         margin-right: 20px;
     }
 }
@@ -296,7 +383,7 @@ html, body {
     html,
     body {
         --filter-text-size: 0.65em;
-        --menu-text-size: 1fr;
+        --menu-text-size: large;
     }
 
     .search img {
