@@ -4,107 +4,107 @@
 <head>
     <meta charset="UTF-8">
     <title>Кинопутеводитель</title>
-    <link rel="stylesheet" href="../static/style/style.css">
-    <link rel="stylesheet" href="../static/style/menu.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--    <link rel="icon" sizes="192x192" href="kino.png">-->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <meta name="theme-color" content="#FF422B1F">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=0ebae56a-379d-4e2c-8821-bf1a67d366e2"
-        type="text/javascript"></script>
+            type="text/javascript"></script>
     <script src="https://yandex.st/jquery/2.2.3/jquery.min.js" type="text/javascript"></script>
-    <script src="../static/js/info.js" type="text/javascript"></script>
-    <script src="../static/js/map.js" type="text/javascript"></script>
+    <script src="../static/js/mapbasics.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="../static/style/style.css">
+    <link rel="stylesheet" href="../static/style/menu.css">
 </head>
 
 <body>
-    <div id="root" class="mid">
-        <div v-show="map" class="main-wrapper">
+<div id="root" class="mid">
+    <div v-show="map" class="main-wrapper">
 
-            <!-- Карта -->
-            <div id="map" class="map"></div>
+        <!-- Карта -->
+        <div id="map" class="map"></div>
 
-            <!-- Поиск и фильтры -->
-            <div class="header">
-                <div class="search">
-                    <input type="text" placeholder="Поиск по адресу">
-                    <img src="../static/img/kino.png" alt="Кинопутеводитель">
-                </div>
-                <div v-if="!addButtons" class="filters">
-                    <span class="filter active">ФИЛЬМЫ</span>
-                    <span class="filter">ЖАНРЫ</span>
-                    <span class="filter">ГОДА</span>
-                    <span @click="changeButtons" class="filter">ДРУГОЕ</span>
-                </div>
-                <div v-else class="filters">
-                    <span class="filterbig">ПЕРСОНАЖИ</span>
-                    <span class="filterbig">РЕЖИССЕРЫ</span>
-                    <span class="filterbig active">АКТЕРЫ</span>
-                    <span @click="changeButtons" class="filtermin"> &lt;</span>
-                </div>
+        <!-- Поиск и фильтры -->
+        <div class="header">
+            <div class="search">
+                <input type="text" placeholder="Поиск по адресу">
+                <img src="../static/img/kino.png" alt="Кинопутеводитель">
             </div>
+            <div v-if="!addButtons" class="filters">
+                <span class="filter active">ФИЛЬМЫ</span>
+                <span class="filter">ЖАНРЫ</span>
+                <span class="filter">ГОДА</span>
+                <span @click="changeButtons" class="filter">ДРУГОЕ</span>
+            </div>
+            <div v-else class="filters">
+                <span class="filterbig">ПЕРСОНАЖИ</span>
+                <span class="filterbig">РЕЖИССЕРЫ</span>
+                <span class="filterbig active">АКТЕРЫ</span>
+                <span @click="changeButtons" class="filtermin"> &lt;</span>
+            </div>
+        </div>
 
-            <!-- Кнопка меню -->
-            <span @click="changeMenuState" class="menu">
+        <!-- Кнопка меню -->
+        <span @click="changeMenuState" class="menu">
                 М Е Н Ю
             </span>
-        </div>
+    </div>
 
-        <!-- Поп-ап -->
-        <div class="menu_open">
-            <div class="window">
-                <div class="headertwo">
-                    <img src="../static/img/film.png">
-                    <div class="krestik">
-                    </div>
+    <!-- Поп-ап -->
+    <div class="menu_open">
+        <div class="window">
+            <div class="headertwo">
+                <img src="../static/img/film.png">
+                <div class="krestik">
                 </div>
-            </div>
-        </div>
-
-        <!-- Открытое меню -->
-        <div v-if="menu" class="grid-main-wrapper">
-            <div class="message">
-                <a href="/feedback"></a>
-            </div>
-            <div class="city">
-                <a href="/cities">ГОРОДА</a>
-            </div>
-            <div @click="changeMenuState" class="krest">
-                <div></div>
-            </div>
-            <div class="new square">
-                <a href="/new_movies">НОВИНКИ</a>
-            </div>
-            <div class="top square">
-                <a href="/stories">ЛУЧШИЕ КИНО-РАССКАЗЫ</a>
-            </div>
-            <div class="film square">
-                <a href="/movies">ФИЛЬМЫ</a>
-            </div>
-            <div class="year square">
-                <a href="/decades">ГОДЫ</a>
-            </div>
-            <div class="genres square">
-                <a href="/genres">ЖАНРЫ</a>
-            </div>
-            <div class="personage square">
-                <a href="/heroes">ПЕРСОНАЖИ</a>
-            </div>
-            <div class="producer square">
-                <a href="/producers">РЕЖИССЕРЫ</a>
-            </div>
-            <div class="actors square">
-                <a href="/actors">АКТЕРЫ</a>
-            </div>
-            <div class="popular square">
-                <a href="/popular_places">ПОПУЛЯРНЫЕ МЕСТА</a>
-            </div>
-            <div class="places square">
-                <a href="/undefined_places">НЕОПОЗНАННЫЕ МЕСТА</a>
             </div>
         </div>
     </div>
+
+    <!-- Открытое меню -->
+    <div v-if="menu" class="grid-main-wrapper">
+        <div class="message">
+            <a href="/feedback"></a>
+        </div>
+        <div class="city">
+            <a href="/cities">ГОРОДА</a>
+        </div>
+        <div @click="changeMenuState" class="krest">
+            <div></div>
+        </div>
+        <div class="new square">
+            <a href="/new_movies">НОВИНКИ</a>
+        </div>
+        <div class="top square">
+            <a href="/stories">ЛУЧШИЕ КИНО-РАССКАЗЫ</a>
+        </div>
+        <div class="film square">
+            <a href="/movies">ФИЛЬМЫ</a>
+        </div>
+        <div class="year square">
+            <a href="/decades">ГОДЫ</a>
+        </div>
+        <div class="genres square">
+            <a href="/genres">ЖАНРЫ</a>
+        </div>
+        <div class="personage square">
+            <a href="/heroes">ПЕРСОНАЖИ</a>
+        </div>
+        <div class="producer square">
+            <a href="/producers">РЕЖИССЕРЫ</a>
+        </div>
+        <div class="actors square">
+            <a href="/actors">АКТЕРЫ</a>
+        </div>
+        <div class="popular square">
+            <a href="/popular_places">ПОПУЛЯРНЫЕ МЕСТА</a>
+        </div>
+        <div class="places square">
+            <a href="/undefined_places">НЕОПОЗНАННЫЕ МЕСТА</a>
+        </div>
+    </div>
+</div>
 
     <script src="../static/js/main.js"></script>
 
