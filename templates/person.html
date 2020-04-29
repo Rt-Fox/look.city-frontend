@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }} | Loook.city</title>
+    <style>
+        img {
+            width: 192px;
+            height: 108px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="header">
+        <div class="hedaline">
+            <span>{{ title|upper }}</span>
+        </div>
+        <div class="menu"></div>
+    </div>
+    <div class="container">
+        <span>ФИЛЬМЫ</span>
+        {% for elem in data %}
+            <div>
+                <a href="{{ elem.href }}">
+                    <p>{{ elem.h1 }}</p>
+                    <img src="/{{ elem.photo }}"/>
+                </a>
+            </div>
+            <hr>
+        {% endfor %}
+
+
+        {#    {% lorem 3 w %}#}
+    </div>
+</div>
+</body>
+</html>

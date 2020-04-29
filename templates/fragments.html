@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }} | Loook.city</title>
+    <style>
+        video {
+            width: 192px;
+            height: 108px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="header">
+        <div class="hedaline">
+            <span>{{ title|upper }}</span>
+        </div>
+        <div class="menu"></div>
+    </div>
+    <div class="container">
+        {% for elem in data %}
+            <div>
+                <p>{{ elem.h1 }}</p>
+                <p>{{ elem.h2 }}</p>
+                <video src="{{ elem.video }}" controls preload="none" poster="/{% if elem.photo != '' %}{{ elem.photo }}{% else %}{{ 'images/previews/default.png' }}{% endif %}">
+                    К сожалению, Ваш браузер не поддерживает просмотр видео,
+                    но Вы можете <a href="{{ elem.video }}">скачать</a> его.
+                </video>
+            {{ elem.text }}
+            </div>
+            <hr>
+        {% endfor %}
+
+
+        {#    {% lorem 3 w %}#}
+    </div>
+</div>
+</body>
+</html>

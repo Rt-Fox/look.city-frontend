@@ -46,7 +46,7 @@ let info = {
             link: "https://beta.loook.city/fragment/e0b34d83-4176-461f-9729-fc520b906f4e",
             name: "123",
             year: 1964,
-            movie: { id: 3, name: "Название фильма" },
+            movie: { id: 3, name: "Название фильма 3" },
             actors: [],
             producers: [],
             genre: [
@@ -66,7 +66,7 @@ let info = {
             link: "https://beta.loook.city/fragment/f54ba8aa-2258-438c-ab8a-be081e246ad9",
             name: "Название фрагмента",
             year: 1964,
-            movie: { id: 3, name: "Название фильма" },
+            movie: { id: 3, name: "Название фильма 1" },
             actors: [{ id: 1, fio: "Рыбкин Михаил Алексеевич" }],
             producers: [{ id: 1, fio: "Рыбкин Михаил Алексеевич" }],
             genre: [
@@ -86,7 +86,7 @@ let info = {
             link: "https://beta.loook.city/fragment/46c32223-7898-410d-9f40-4c04d9dadb60",
             name: "1234",
             year: 1964,
-            movie: { id: 3, name: "Название фильма" },
+            movie: { id: 3, name: "Название фильма 2" },
             actors: [{ id: 3, fio: "Береснев Андрей Каквастамович" }],
             producers: [],
             genre: [
