@@ -1,0 +1,391 @@
+{
+    "filters": {
+        "actors": {
+            "1": "Гомиашвили Арчил",
+            "2": "Филиппов Сергей",
+            "3": "Солоницын Анатолий",
+            "4": "Раневская Фаина",
+            "5": "Яковлев Юрий",
+            "6": "Демьяненко Александр",
+            "9": "Мягков Андрей"
+        },
+        "producers": {
+            "1": "Гайдай Леонид",
+            "2": "Тарковский Андрей",
+            "3": "Рязанов Эльдар"
+        },
+        "movies": {
+            "1": "12 сутльев",
+            "2": "Андрей Рублёв",
+            "3": "Подкидыш",
+            "4": "Иван Васильевич меняет профессию",
+            "5": "Ирония судьбы, или С лёгким паром!",
+            "6": "Брат-2"
+        },
+        "years": ["1970е", "1960е", "1930е", "2000е"],
+        "genre": {
+            "1": "Комедия",
+            "2": "Исторический",
+            "3": "Фантастика",
+            "4": "Мелодрама",
+            "5": "Драма",
+            "6": "Боевик"
+        }
+    },
+    "data": [
+        {
+            "id": 3,
+            "point": {
+                "city": "Москва",
+                "address": "Большой Ватин пер.",
+                "lat": "55.746765101862636",
+                "lon": "37.645243406295776"
+            },
+            "decade": "1970e",
+            "preview": "https://beta.loook.city/media/previews/47f9e7b3-48a8-4f7e-9b86-eb8395fb8b0d",
+            "link": "https://beta.loook.city/fragment/47f9e7b3-48a8-4f7e-9b86-eb8395fb8b0d",
+            "name": "Бендер и беспризорники",
+            "year": 1971,
+            "movie": {
+                "id": 1,
+                "name": "12 сутльев"
+            },
+            "actors": [
+                {
+                    "id": 1,
+                    "fio": "Гомиашвили Арчил"
+                }
+            ],
+            "producers": [
+                {
+                    "id": 1,
+                    "fio": "Гайдай Леонид"
+                }
+            ],
+            "genre": [
+                {
+                    "id": 1,
+                    "name": "Комедия"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "point": {
+                "city": "Москва",
+                "address": "Малая Молчановка, 8",
+                "lat": "55.753844885001584",
+                "lon": "37.59266674518585"
+            },
+            "decade": "1970e",
+            "preview": "https://beta.loook.city/media/previews/4878fa13-7c8c-4b90-93bb-8bc4820f97da",
+            "link": "https://beta.loook.city/fragment/4878fa13-7c8c-4b90-93bb-8bc4820f97da",
+            "name": "Дом поэта Ляписа-Трубецкого",
+            "year": 1971,
+            "movie": {
+                "id": 1,
+                "name": "12 сутльев"
+            },
+            "actors": [
+                {
+                    "id": 2,
+                    "fio": "Филиппов Сергей"
+                }
+            ],
+            "producers": [
+                {
+                    "id": 1,
+                    "fio": "Гайдай Леонид"
+                }
+            ],
+            "genre": [
+                {
+                    "id": 1,
+                    "name": "Комедия"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "point": {
+                "city": "Москва",
+                "address": "Воронцово поле, 12.",
+                "lat": "55.75352488841544",
+                "lon": "37.65285551548004"
+            },
+            "decade": "1970e",
+            "preview": "https://beta.loook.city/media/previews/c57dffe8-a963-4451-991a-1930c6276023",
+            "link": "https://beta.loook.city/fragment/c57dffe8-a963-4451-991a-1930c6276023",
+            "name": "Музей мебели",
+            "year": 1971,
+            "movie": {
+                "id": 1,
+                "name": "12 сутльев"
+            },
+            "actors": [
+                {
+                    "id": 2,
+                    "fio": "Филиппов Сергей"
+                },
+                {
+                    "id": 1,
+                    "fio": "Гомиашвили Арчил"
+                }
+            ],
+            "producers": [
+                {
+                    "id": 1,
+                    "fio": "Гайдай Леонид"
+                }
+            ],
+            "genre": [
+                {
+                    "id": 1,
+                    "name": "Комедия"
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "point": {
+                "city": "Москва",
+                "address": "Староконюшенный пер. 2 с1.",
+                "lat": "55.743446",
+                "lon": "37.595402"
+            },
+            "decade": "1970e",
+            "preview": "https://beta.loook.city/media/previews/7ed2c482-55eb-4df6-8fcd-add3e49214dc",
+            "link": "https://beta.loook.city/fragment/7ed2c482-55eb-4df6-8fcd-add3e49214dc",
+            "name": "Общежитие им. монаха Бертольда Шварца",
+            "year": 1971,
+            "movie": {
+                "id": 1,
+                "name": "12 сутльев"
+            },
+            "actors": [
+                {
+                    "id": 2,
+                    "fio": "Филиппов Сергей"
+                },
+                {
+                    "id": 1,
+                    "fio": "Гомиашвили Арчил"
+                }
+            ],
+            "producers": [
+                {
+                    "id": 1,
+                    "fio": "Гайдай Леонид"
+                }
+            ],
+            "genre": [
+                {
+                    "id": 1,
+                    "name": "Комедия"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "point": {
+                "city": "Москва",
+                "address": "проспект Андропова, 39 с10",
+                "lat": "55.673971",
+                "lon": "37.677472"
+            },
+            "decade": "1960e",
+            "preview": "https://beta.loook.city/media/previews/51ea3b42-87a6-4cf8-87ae-a1c195db22f0",
+            "link": "https://beta.loook.city/fragment/51ea3b42-87a6-4cf8-87ae-a1c195db22f0",
+            "name": "Проездная башня Монастыря",
+            "year": 1966,
+            "movie": {
+                "id": 2,
+                "name": "Андрей Рублёв"
+            },
+            "actors": [
+                {
+                    "id": 3,
+                    "fio": "Солоницын Анатолий"
+                }
+            ],
+            "producers": [
+                {
+                    "id": 2,
+                    "fio": "Тарковский Андрей"
+                }
+            ],
+            "genre": [
+                {
+                    "id": 2,
+                    "name": "Исторический"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "point": {
+                "city": "Москва",
+                "address": "Тверская 4",
+                "lat": "55.759003712895655",
+                "lon": "37.612069845199585"
+            },
+            "decade": "1930e",
+            "preview": "https://beta.loook.city/media/previews/08205a83-2943-4359-ba97-2af512af521f",
+            "link": "https://beta.loook.city/fragment/08205a83-2943-4359-ba97-2af512af521f",
+            "name": "Двухэтажный троллейбус",
+            "year": 1939,
+            "movie": {
+                "id": 3,
+                "name": "Подкидыш"
+            },
+            "actors": [
+                {
+                    "id": 4,
+                    "fio": "Раневская Фаина"
+                }
+            ],
+            "producers": [],
+            "genre": [
+                {
+                    "id": 1,
+                    "name": "Комедия"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "point": null,
+            "decade": "1930e",
+            "preview": "https://beta.loook.city/media/previews/15845717-3b44-4a9c-a756-4ca81af47873",
+            "link": "https://beta.loook.city/fragment/15845717-3b44-4a9c-a756-4ca81af47873",
+            "name": "Где-то в Москве",
+            "year": 1939,
+            "movie": {
+                "id": 3,
+                "name": "Подкидыш"
+            },
+            "actors": [],
+            "producers": [],
+            "genre": [
+                {
+                    "id": 1,
+                    "name": "Комедия"
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "point": {
+                "city": "Москва",
+                "address": "Новокузнецкая улица 13 с1",
+                "lat": "55.73769989644588",
+                "lon": "37.63121008872986"
+            },
+            "decade": "1970e",
+            "preview": "https://beta.loook.city/media/previews/944abb0c-64fd-4672-a161-d4f22cb7cb95",
+            "link": "https://beta.loook.city/fragment/944abb0c-64fd-4672-a161-d4f22cb7cb95",
+            "name": "Дом Шурика",
+            "year": 1973,
+            "movie": {
+                "id": 4,
+                "name": "Иван Васильевич меняет профессию"
+            },
+            "actors": [
+                {
+                    "id": 5,
+                    "fio": "Яковлев Юрий"
+                },
+                {
+                    "id": 6,
+                    "fio": "Демьяненко Александр"
+                }
+            ],
+            "producers": [
+                {
+                    "id": 1,
+                    "fio": "Гайдай Леонид"
+                }
+            ],
+            "genre": [
+                {
+                    "id": 1,
+                    "name": "Комедия"
+                },
+                {
+                    "id": 2,
+                    "name": "Исторический"
+                },
+                {
+                    "id": 3,
+                    "name": "Фантастика"
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "point": {
+                "city": "Москва",
+                "address": "пр-т Вернадского, 113",
+                "lat": "55.659785",
+                "lon": "37.483373"
+            },
+            "decade": "1970e",
+            "preview": "https://beta.loook.city/media/previews/d49e1fd4-4c55-40e9-a09a-8086af915efc",
+            "link": "https://beta.loook.city/fragment/d49e1fd4-4c55-40e9-a09a-8086af915efc",
+            "name": "Дом Нади",
+            "year": 1975,
+            "movie": {
+                "id": 5,
+                "name": "Ирония судьбы, или С лёгким паром!"
+            },
+            "actors": [
+                {
+                    "id": 9,
+                    "fio": "Мягков Андрей"
+                }
+            ],
+            "producers": [
+                {
+                    "id": 3,
+                    "fio": "Рязанов Эльдар"
+                }
+            ],
+            "genre": [
+                {
+                    "id": 4,
+                    "name": "Мелодрама"
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "point": {
+                "city": "Москва",
+                "address": "Хитровская пл.",
+                "lat": "55.75297847308195",
+                "lon": "37.6426899433136"
+            },
+            "decade": "2000e",
+            "preview": "https://beta.loook.city/media/previews/30a00160-6110-4f31-96c4-2fe1a1e209e5",
+            "link": "https://beta.loook.city/fragment/30a00160-6110-4f31-96c4-2fe1a1e209e5",
+            "name": "У Фашиста",
+            "year": 2000,
+            "movie": {
+                "id": 6,
+                "name": "Брат-2"
+            },
+            "actors": [],
+            "producers": [],
+            "genre": [
+                {
+                    "id": 5,
+                    "name": "Драма"
+                },
+                {
+                    "id": 6,
+                    "name": "Боевик"
+                }
+            ]
+        }
+    ]
+}
