@@ -46,7 +46,7 @@
                 </button>
                 <span @click="changeMenuState" class="menu">МЕНЮ</span>
                 <button class="search">
-                    <img alt="Кинопутеводитель" src="../static/img/krest.png">
+                    <img alt="Кинопутеводитель" src="../static/img/lupa.png">
                 </button>
             </div>
             <div class="filters" v-if="!addButtons">
@@ -65,15 +65,6 @@
     </div>
 
     <!-- Поп-ап -->
-    <div class="menu_open">
-        <div class="window">
-            <div class="headertwo">
-                <img src="../static/img/film.png">
-                <div class="krestik">
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Открытое меню -->
     <div class="grid-main-wrapper" v-if="menu">
@@ -115,6 +106,18 @@
         </div>
         <div class="places square">
             <a href="/undefined_places">НЕОПОЗНАННЫЕ МЕСТА</a>
+        </div>
+        <!-- Поп-ап -->
+        <div class="menu_open">
+            <div class="window">
+                <div class="krestik"></div>
+                <div class="af">
+                    <ul class="tar">
+                        <li>Оставить отзыв</li>
+                        <li>Предложить место</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </div>
