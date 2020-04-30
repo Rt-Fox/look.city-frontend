@@ -29,9 +29,9 @@ html, body {
     --search-border-radius: 20px;
     --search-text-size: x-large;
 
-    --filter-color: #422b1f;
+    --filter-color: #f6f6f6;
     --filter-border-radius: 30px;
-    --filter-bg-color: #f6f6f6;
+    --filter-bg-color: #422b1f;
 
     --filter-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
     --filter-text-size: 1fr;
@@ -41,9 +41,9 @@ html, body {
     --menu-border-radius: 30px;
     --menu-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
     --menu-text-size: xx-large;
-
-    --color-active: #fef6e9;
-    --bg-color-active: #422b1f;
+    --zoom-bg-color: #f6f6f6;
+    --color-active: #422b1f;
+    --bg-color-active: #f6f6f6;
 }
 
 .mid {
@@ -81,8 +81,8 @@ html, body {
     width: 5vw;
     min-width: 40px;
     height: 5vh;
-    height: 40px;
-    background-color: #EFE7DB;
+    min-height: 40px;
+    background-color: var(--zoom-bg-color);
 }
 
 .zoom li:first-child {
@@ -173,14 +173,13 @@ html, body {
     width: 60px;
     height: 60px;
     border-radius: var(--search-border-radius);
+    background-color: var(--menu-bg-color);
     box-shadow: -5px -5px 5px rgba(0, 0, 0, 0.2);
     border: 0;
 }
 
 .search img {
-    width: 100%;
-    height: 100%;
-    border-radius: var(--menu-border-radius);
+    height: 70%;
 }
 
 /*
@@ -306,12 +305,14 @@ html, body {
     color: var(--color-active);
 }
 
-/*window menu*/
+/*pop-up*/
 .menu_open {
     display: none; /*display: none;*/
     align-items: center;
     justify-content: center;
     position: fixed;
+    top: 0;
+    left: 0;
     width: 100vw;
     height: 100vh;
     z-index: 1003;
@@ -321,44 +322,83 @@ html, body {
 .window {
     display: flex;
     flex-direction: column;
-    padding: 2%;
-    width: 70vw;
+    justify-content: center;
+    align-items: center;
+    padding: 2vh;
+    width: 50vh;
     height: 50vh;
-    background-color: #f4f4f4;
-    border-radius: var(--filter-border-radius);
     color: #422b1f;
     border-color: #f4f4f4;
+    border-radius: var(--filter-border-radius);
     box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
     font-family: var(--font1);
     font-weight: 700;
     font-size: x-large;
+    background-color: #f4f4f4;
+    background-image: url(../img/konvert.png);
+    background-position-y: 50%;
+    background-position-x: -70%;
+    background-size: 40vh;
+    background-repeat: no-repeat;
 }
 
 .headertwo {
-    display: grid;
-    height: 4vh;
-    width: 100%;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr 1fr 1fr 1fr 5vh;
-    grid-template-areas: "img img img img krestik";
-}
-
-.headertwo img {
-    grid-area: img;
-    width: 98%;
-    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-end;
+    width: 95%;
+    height: calc(4vh + 2vw);
 }
 
 .krestik {
-    grid-area: krestik;
-    width: 4vh;
-    padding-top: 1%;
+    position: sticky;
+    top: 0;
+    left: 90%;
+
+    width: calc(3.5vh + 2vw);
+    padding-bottom: calc(3.5vh + 2vw);
+
     background: url("../img/krest.png") center no-repeat;
     background-color: #44250b;
     background-size: 65%;
     border-color: rgba(0, 0, 0, 0);
     border-radius: var(--img-radius);
-    box-shadow: 5px -5px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+.af {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 90%;
+    height: 100%;
+}
+
+.tar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+
+.tar li {
+    list-style-type: none;
+    height: 50%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: var(--menu-text-size);
+}
+
+.tar li:first-child {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 }
 
 button {
@@ -366,7 +406,7 @@ button {
     cursor: pointer;
 }
 
-@media (max-device-width: 540px) {
+@media (max-device-width: 540px),(max-device-height: 600px) {
     html, body {
         --filter-text-size: 0.8em;
         --menu-text-size: x-large;
@@ -377,18 +417,22 @@ button {
         margin-right: 20px;
     }
 
+    .search img {
+        margin-left: 5%;
+        height: 60%;
+        margin-right: 10px;
+    }
 }
 
-@media (max-device-width: 370px) {
+@media (max-device-width: 370px),(max-device-height: 420px) {
     html, body {
         --filter-text-size: 0.65em;
         --menu-text-size: large;
     }
 
-    .search img {
-        background-color: rgba(0, 0, 0, 0);
-        height: 50%;
-        margin-right: 10px;
+    .window {
+        border-radius: 15px;
     }
+
 
 }

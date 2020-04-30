@@ -11,6 +11,8 @@ html, body {
     --square-bg-color: #fef6e9;
     --square-text-size: 2.5vh;
     --img-radius: 15%;
+
+    --position: 0%;
 }
 
 .grid-main-wrapper {
@@ -19,7 +21,7 @@ html, body {
     height: 96vh;
     grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: "message city city city city city krest" "new new new zero1 top top top" "film film film zero1 year year year" "genres genres genres zero1 personage personage personage" "producer producer producer zero1 actors actors actors" "popular popular popular zero1 places places places";
+    grid-template-areas: "message city city city city city krest" "new new new zero1 top top top" "film film film zero1 year year year" "genres genres genres zero1 personage personage personage" "producer producer producer zero1 actors actors actors" "popular popular popular zero2 places places places";
     grid-gap: 10px;
 }
 
@@ -34,7 +36,7 @@ html, body {
     height: 0;
     width: 100%;
     padding-bottom: 100%;
-    background: url("../img/krest.png") center no-repeat;
+    background: url("../img/konvert.png") center no-repeat;
     background-color: #44250b;
     background-size: 70%;
     border-color: rgba(0, 0, 0, 0);
@@ -58,10 +60,10 @@ html, body {
     color: var(--new-color);
     border-color: rgba(0, 0, 0, 0);
     background-color: var(--new-bg-color);
-    background-image: url(../img/new.png);
-    background-position-y: 50%;
-    background-position-x: -70%;
-    background-size: 80%;
+    background-image: url(../img/city.png);
+    background-position-y: 30%;
+    background-position-x: -20%;
+    background-size: 54%;
     background-repeat: no-repeat;
     border-radius: var(--new-border-radius);
     box-shadow: -10px -10px 30px rgba(0, 0, 0, 0.2);
@@ -132,9 +134,9 @@ html, body {
 
 .new a {
     background-image: url(../img/new.png);
-    background-position-y: -10%;
-    background-position-x: 210%;
-    background-size: 130%;
+    background-position-y: calc(20% + var(--position));
+    background-position-x: -340%;
+    background-size: 90%;
     background-repeat: no-repeat;
 }
 
@@ -145,9 +147,9 @@ html, body {
 
 .top a {
     background-image: url("../img/top.png");
-    background-position-y: 0%;
-    background-position-x: -100%;
-    background-size: 120%;
+    background-position-y: calc(-10% + var(--position));
+    background-position-x: 150%;
+    background-size: 70%;
     background-repeat: no-repeat;
 }
 
@@ -158,9 +160,9 @@ html, body {
 
 .film a {
     background-image: url("../img/film.png");
-    background-position-y: -10%;
-    background-position-x: 210%;
-    background-size: 130%;
+    background-position-y: calc(-10% + var(--position));
+    background-position-x: -100%;
+    background-size: 80%;
     background-repeat: no-repeat;
 }
 
@@ -171,9 +173,9 @@ html, body {
 
 .year a {
     background-image: url("../img/year.png");
-    background-position-y: -10%;
-    background-position-x: -85%;
-    background-size: 130%;
+    background-position-y: calc(-10% + var(--position));
+    background-position-x: 150%;
+    background-size: 70%;
     background-repeat: no-repeat;
 }
 
@@ -184,9 +186,9 @@ html, body {
 
 .genres a {
     background-image: url("../img/genres.png");
-    background-position-y: -5%;
-    background-position-x: 480%;
-    background-size: 110%;
+    background-position-y: calc(0% + var(--position));
+    background-position-x: -100%;
+    background-size: 75%;
     background-repeat: no-repeat;
 }
 
@@ -197,9 +199,9 @@ html, body {
 
 .personage a {
     background-image: url("../img/personage.png");
-    background-position-y: -10%;
-    background-position-x: -70%;
-    background-size: 140%;
+    background-position-y: calc(-10% + var(--position));
+    background-position-x: 150%;
+    background-size: 70%;
     background-repeat: no-repeat;
 }
 
@@ -210,9 +212,9 @@ html, body {
 
 .producer a {
     background-image: url("../img/producer.png");
-    background-position-y: 0;
-    background-position-x: 210%;
-    background-size: 130%;
+    background-position-y: calc(0% + var(--position));
+    background-position-x: -100%;
+    background-size: 75%;
     background-repeat: no-repeat;
 }
 
@@ -223,9 +225,9 @@ html, body {
 
 .actors a {
     background-image: url("../img/actors.png");
-    background-position-y: 0%;
-    background-position-x: -140%;
-    background-size: 120%;
+    background-position-y: calc(-10% + var(--position));
+    background-position-x: 150%;
+    background-size: 70%;
     background-repeat: no-repeat;
 }
 
@@ -236,9 +238,9 @@ html, body {
 
 .popular a {
     background-image: url("../img/popular.png");
-    background-position-y: 0;
-    background-position-x: 190%;
-    background-size: 130%;
+    background-position-y: calc(-10% + var(--position));
+    background-position-x: -100%;
+    background-size: 80%;
     background-repeat: no-repeat;
 }
 
@@ -248,15 +250,148 @@ html, body {
 }
 
 .places a {
-    background-image: url("../img/popular.png");
-    background-position-y: 0;
-    background-position-y: 0%;
-    background-position-x: -140%;
-    background-size: 120%;
+    background-image: url("../img/question.png");
+    background-position-y: var(--position);
+    background-position-x: 100%;
+    background-size: 54%;
     background-repeat: no-repeat;
 }
 
-@media (max-device-width: 700px) {
+/*review*/
+.one {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin: 3vh;
+}
+
+.one div {
+    font-size: x-large;
+    color: var(--menu-color);
+    padding-left: 5vw;
+    padding-right: 10px;
+    width: 10vw;
+}
+
+.one input {
+    width: 60vw;
+    height: 4vh;
+    min-height: 20px;
+    padding: 5px;
+    font-size: smaller;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(145deg, rgba(0, 0, 0, 0.09), #ffffff);
+    outline: none;
+    cursor: pointer;
+}
+
+.two {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin: 3vh;
+}
+
+.two span {
+    align-self: flex-start;
+    padding-left: 5vw;
+    padding-right: 2vw;
+    font-size: x-large;
+    color: var(--menu-color);
+}
+
+.two textarea {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 5vh;
+    width: 95%;
+    height: 25vh;
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.09), #ffffff);
+    border: none;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.three {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin: 1vh;
+}
+
+.three div {
+    font-size: large;
+    color: var(--menu-color);
+    padding-left: 5vw;
+    padding-right: 10px;
+    width: 10vw;
+}
+
+.three input {
+    width: 60vw;
+    height: 2vh;
+    min-height: 20px;
+    padding: 5px;
+    font-size: smaller;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(145deg, rgba(0, 0, 0, 0.09), #ffffff);
+    outline: none;
+    cursor: pointer;
+}
+
+.dop {
+    height: 15vh;
+}
+
+.submit {
+    height: 5vh;
+    border-radius: 20px;
+    width: 20vw;
+    padding-right: 5px;
+    padding-left: 5px;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+
+}
+
+@media (max-device-height: 650px),(max-device-width: 600px) {
+    .window {
+        width: 70vw;
+    }
+
+    .one input {
+        width: 50vw;
+    }
+
+    .three div {
+        width: 20vw;
+        font-size: smaller;
+    }
+
+    .dop span {
+        font-size: smaller;
+    }
+
+    .three input {
+        width: 50vw;
+    }
+
+    .submit {
+        width: 30vw;
+    }
+}
+
+@media (max-device-width: 600px) {
     html, body {
         --new-text-size: 4vw;
         --square-text-size: 4vw;
@@ -267,7 +402,7 @@ html, body {
         width: 93vw;
         grid-template-rows: 15vw 15vh 15vh 15vh 15vh 15vh;
         grid-template-columns: 1fr 1fr 1fr 0.5fr 1fr 1fr 1fr;
-        grid-template-areas: "message city city city city city krest" "new new new zero1 top top top" "film film film zero1 year year year" "genres genres genres zero1 personage personage personage" "producer producer producer zero1 actors actors actors" "popular popular popular zero1 places places places";
+        grid-template-areas: "message city city city city city krest" "new new new zero1 top top top" "film film film zero1 year year year" "genres genres genres zero1 personage personage personage" "producer producer producer zero1 actors actors actors" "popular popular popular zero2 places places places";
         grid-gap: 10px;
     }
 
