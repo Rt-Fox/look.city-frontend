@@ -141,6 +141,10 @@ html, body {
     box-shadow: -5px -5px 5px rgba(0, 0, 0, 0.2);
 }
 
+.back {
+    display: none;
+}
+
 .brand img {
     width: 100%;
     height: 100%;
@@ -154,7 +158,7 @@ html, body {
 
     width: 70%;
     height: 100%;
-
+    text-align: center;
     color: var(--menu-color);
     background-color: var(--menu-bg-color);
     border-radius: var(--menu-border-radius);
@@ -171,7 +175,7 @@ html, body {
 .container {
     position: relative;
     width: 60px;
-    height: 60px;
+    padding-bottom: 60px;
     margin-left: 10px;
     border: 0;
 }
@@ -244,7 +248,7 @@ html, body {
     text-shadow: 0 0 10px white;
     padding: 0 55px 0 20px;
     border-radius: 30px;
-    box-shadow: 0 0 25px 0 black, 0 20px 25px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: -5px -5px 5px 0 rgba(0, 0, 0, 0.2);
     transition: all 1s;
     opacity: 0;
     z-index: 101;
@@ -527,15 +531,29 @@ button {
         --menu-text-size: x-large;
     }
 
-    .brand img {
-        background-color: rgba(0, 0, 0, 0);
-        margin-right: 20px;
+    .header {
+        width: 97vw;
+        height: 6vh;
+        min-height: 50px;
     }
 
-    .search img {
-        margin-left: 5%;
-        height: 60%;
-        margin-right: 10px;
+    .headerone {
+        height: 6vh;
+        min-height: 50px;
+    }
+
+    .brand {
+        background-color: rgba(0, 0, 0, 0);
+        margin: 0 0;
+    }
+
+    .menu {
+        margin: 0 2px;
+    }
+
+    .container {
+        margin-left: 0;
+        padding-bottom: 50px;
     }
 }
 
@@ -555,7 +573,6 @@ button {
         --filter-text-size: 0.65em;
         --menu-text-size: x-large;
         --filter-shadow: 0 4px 3px 2px rgba(0, 0, 0, 0.2);
-
     }
 
     .header {
@@ -589,11 +606,11 @@ button {
 
     .container input:focus {
         transform: translateX(-400px);
-        width: 600px;
+        width: 350px;
     }
 
     .container input:focus ~ .search {
-        left: 250px;
+        left: 0px;
     }
 
     .filters {
@@ -688,5 +705,60 @@ button {
     ::-webkit-scrollbar-thumb {
         background: #958682;
         border-radius: 15px;
+    }
+
+    .container1 {
+        width: 450px;
+        height: 60px;
+        cursor: pointer;
+        perspective: 1000px;
+        -webkit-perspective: 1000px;
+    }
+
+    .container1:hover .flipper {
+        transform: rotateX(-90deg);
+    }
+
+    .container1:hover .back {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .container1 .flipper {
+        height: 70px;
+        width: 450px;
+        transition: all 0.5s ease;
+        transform-style: preserve-3d;
+        position: relative;
+    }
+
+    .container1 .button {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        border-radius: 5px;
+        backface-visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        font-family: 'Gochi Hand', cursive;
+        color: white;
+        letter-spacing: 2px;
+    }
+
+    .button .fa {
+        font-size: 24px;
+    }
+
+    .front {
+        transform: translateZ(22px);
+    }
+
+    .back {
+        text-shadow: 1px 0 2px #000000;
+        transform: rotateX(90deg) translateZ(22px);
     }
 }
