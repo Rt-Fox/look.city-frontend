@@ -40,71 +40,73 @@
         <!-- Поиск и фильтры -->
         <div class="header">
             <!-- Кнопка меню -->
-            <div class="headerone">
+            <form class="headerone">
                 <button class="brand">
                     <img alt="Кинопутеводитель" src="../static/img/kino.png">
                 </button>
                 <span @click="changeMenuState" class="menu">МЕНЮ</span>
-                <button class="search">
-                    <img alt="Кинопутеводитель" src="../static/img/lupa.png">
-                </button>
-            </div>
-            <!--            для мобильных версий-->
-            <!--            <div>-->
-            <!--                <div class="filters" v-if="!addButtons">-->
-            <!--                    <span class="filter active">ФИЛЬМЫ</span>-->
-            <!--                    <span class="filter">ЖАНРЫ</span>-->
-            <!--                    <span class="filter">ГОДА</span>-->
-            <!--                    <span @click="changeButtons" class="filter">ДРУГОЕ</span>-->
-            <!--                </div>-->
-            <!--                <div class="filters" v-else>-->
-            <!--                    <span class="filterbig">ПЕРСОНАЖИ</span>-->
-            <!--                    <span class="filterbig">РЕЖИССЕРЫ</span>-->
-            <!--                    <span class="filterbig active">АКТЕРЫ</span>-->
-            <!--                    <span @click="changeButtons" class="filtermin"> &lt;</span>-->
-            <!--                </div>-->
-            <!--            </div>-->
-            <!--            для media (min-width: 1000px)-->
+                <div class="container">
+                    <input placeholder="Search..." type="text">
+                    <div class="search"></div>
+                </div>
+            </form>
+            <!--                        для мобильных версий-->
             <div>
                 <div class="filters" v-if="!addButtons">
-                    <span class="filter">ФИЛЬМЫ</span>
-                    <span class="filter active">ЖАНРЫ</span>
+                    <span class="filter active">ФИЛЬМЫ</span>
+                    <span class="filter">ЖАНРЫ</span>
                     <span class="filter">ГОДА</span>
-                    <span class="filterbig">ПЕРСОНАЖИ</span>
-                    <span class="filter">АКТЕРЫ</span>
-                    <span class="filterbig">РЕЖИССЕРЫ</span>
+                    <span @click="changeButtons" class="filter">ДРУГОЕ</span>
                 </div>
-                <div class="contents">
-                    <div class="cont neww">
-                        <input class="checkbox" id="checkbox" type="checkbox"/>
-                        <label for="checkbox">Режиссер, название фильма, год создания</label>
-                    </div>
-                    <div class="cont neww">
-                        <input class="checkbox" id="checkbox2" type="checkbox"/>
-                        <label for="checkbox2">Режиссер, название фильма, год создания</label>
-                    </div>
-                    <div class="cont neww">
-                        <input class="checkbox" id="checkbox3" type="checkbox"/>
-                        <label for="checkbox3">Режиссер, название фильма, год создания</label>
-                    </div>
-                    <div class="cont">
-                        <input class="checkbox" id="checkbox4" type="checkbox"/>
-                        <label for="checkbox4">Режиссер, название фильма, год создания</label>
-                    </div>
-                    <div class="cont">
-                        <input class="checkbox" id="checkbox5" type="checkbox"/>
-                        <label for="checkbox5">Режиссер, название фильма, год создания</label>
-                    </div>
-                    <div class="cont">
-                        <input class="checkbox" id="checkbox6" type="checkbox"/>
-                        <label for="checkbox6">Режиссер, название фильма, год создания</label>
-                    </div>
-                    <div class="cont">
-                        <input class="checkbox" id="checkbox7" type="checkbox"/>
-                        <label for="checkbox7">Режиссер, название фильма, год создания</label>
-                    </div>
+                <div class="filters" v-else>
+                    <span class="filterbig">ПЕРСОНАЖИ</span>
+                    <span class="filterbig">РЕЖИССЕРЫ</span>
+                    <span class="filterbig active">АКТЕРЫ</span>
+                    <span @click="changeButtons" class="filtermin"> &lt;</span>
                 </div>
             </div>
+            <!--                        для media (min-width: 1000px)-->
+            <!--            <div>-->
+            <!--                <div class="filters" v-if="!addButtons">-->
+            <!--                    <span class="filter">ФИЛЬМЫ</span>-->
+            <!--                    <span class="filter active">ЖАНРЫ</span>-->
+            <!--                    <span class="filter">ГОДА</span>-->
+            <!--                    <span class="filterbig">ПЕРСОНАЖИ</span>-->
+            <!--                    <span class="filter">АКТЕРЫ</span>-->
+            <!--                    <span class="filterbig">РЕЖИССЕРЫ</span>-->
+            <!--                </div>-->
+            <!--                -->
+            <!--                <div class="contents">-->
+            <!--                    <div class="cont neww">-->
+            <!--                        <input class="checkbox" id="checkbox" type="checkbox"/>-->
+            <!--                        <label for="checkbox">Режиссер, название фильма, год создания</label>-->
+            <!--                    </div>-->
+            <!--                    <div class="cont neww">-->
+            <!--                        <input class="checkbox" id="checkbox2" type="checkbox"/>-->
+            <!--                        <label for="checkbox2">Режиссер, название фильма, год создания</label>-->
+            <!--                    </div>-->
+            <!--                    <div class="cont neww">-->
+            <!--                        <input class="checkbox" id="checkbox3" type="checkbox"/>-->
+            <!--                        <label for="checkbox3">Режиссер, название фильма, год создания</label>-->
+            <!--                    </div>-->
+            <!--                    <div class="cont">-->
+            <!--                        <input class="checkbox" id="checkbox4" type="checkbox"/>-->
+            <!--                        <label for="checkbox4">Режиссер, название фильма, год создания</label>-->
+            <!--                    </div>-->
+            <!--                    <div class="cont">-->
+            <!--                        <input class="checkbox" id="checkbox5" type="checkbox"/>-->
+            <!--                        <label for="checkbox5">Режиссер, название фильма, год создания</label>-->
+            <!--                    </div>-->
+            <!--                    <div class="cont">-->
+            <!--                        <input class="checkbox" id="checkbox6" type="checkbox"/>-->
+            <!--                        <label for="checkbox6">Режиссер, название фильма, год создания</label>-->
+            <!--                    </div>-->
+            <!--                    <div class="cont">-->
+            <!--                        <input class="checkbox" id="checkbox7" type="checkbox"/>-->
+            <!--                        <label for="checkbox7">Режиссер, название фильма, год создания</label>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--            </div>-->
         </div>
     </div>
 

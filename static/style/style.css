@@ -127,14 +127,14 @@ html, body {
     align-items: center;
     justify-content: space-between;
     height: 5vh;
-    min-height: 70px;
+    min-height: 62px;
 }
 
 .brand {
     background-color: rgba(0, 0, 0, 0);
     padding: 0;
     height: 100%;
-    width: 150px;
+    width: 130px;
     margin-right: 10px;
     border-radius: var(--search-border-radius);
     border: 0;
@@ -165,21 +165,136 @@ html, body {
     font-size: var(--menu-text-size);
     letter-spacing: 5px;
     box-shadow: -5px -5px 5px rgba(0, 0, 0, 0.2);
-    z-index: 1010;
+    z-index: 100;
 }
 
-.search {
-    margin-left: 10px;
+.container {
+    position: relative;
     width: 60px;
     height: 60px;
-    border-radius: var(--search-border-radius);
-    background-color: var(--menu-bg-color);
-    box-shadow: -5px -5px 5px rgba(0, 0, 0, 0.2);
+    margin-left: 10px;
     border: 0;
 }
 
-.search img {
-    height: 70%;
+.container .search {
+    position: absolute;
+    color: #44250b;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: -5px -5px 5px rgba(0, 0, 0, 0.2);
+    background: white;
+    border-radius: 25%;
+    transition: all 1s;
+    z-index: 100;
+}
+
+.container .search:hover {
+    cursor: pointer;
+}
+
+.container .search::before {
+    content: "";
+    position: absolute;
+    margin: auto;
+    top: 22px;
+    right: 0;
+    bottom: 0;
+    left: 22px;
+    width: 12px;
+    height: 2px;
+    transform: rotate(45deg);
+    transition: all .5s;
+    background: #44250b;
+}
+
+.container .search::after {
+    content: "";
+    position: absolute;
+    margin: auto;
+    top: -5px;
+    right: 0;
+    bottom: 0;
+    left: -5px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 2px solid #44250b;
+    transition: all .5s;
+}
+
+.container input {
+    font-family: --font;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 120px;
+    height: 50px;
+    outline: none;
+    border: none;
+    background: white;
+    color: black;
+    text-shadow: 0 0 10px white;
+    padding: 0 55px 0 20px;
+    border-radius: 30px;
+    box-shadow: 0 0 25px 0 black, 0 20px 25px 0 rgba(0, 0, 0, 0.2);
+    transition: all 1s;
+    opacity: 0;
+    z-index: 101;
+    font-size: small;
+    font-weight: bolder;
+    letter-spacing: 0.1em;
+}
+
+.container input:hover {
+    cursor: pointer;
+}
+
+.container input:focus {
+    transform: translateX(-72vw);
+    transition: all 0.5s ease-out;
+    opacity: 1;
+    width: 55vw;
+    cursor: text;
+}
+
+.container input:focus ~ .search {
+    left: -10vw;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: #EFE7DB;
+    z-index: 102;
+}
+
+.container input:focus ~ .search::before {
+    top: 0;
+    left: 0;
+    width: 25px;
+}
+
+.container input:focus ~ .search::after {
+    top: 0;
+    left: 0;
+    width: 25px;
+    height: 2px;
+    border: none;
+    background: #44250b;
+    border-radius: 0%;
+    transform: rotate(-45deg);
+}
+
+.container input::placeholder {
+    color: black;
+    opacity: 0.5;
+    font-weight: bolder;
 }
 
 /*
@@ -429,10 +544,12 @@ button {
         --filter-text-size: 0.65em;
         --menu-text-size: large;
     }
+
     .window {
         border-radius: 15px;
     }
 }
+
 @media (min-width: 1200px) {
     html, body {
         --filter-text-size: 0.65em;
@@ -440,17 +557,19 @@ button {
         --filter-shadow: 0 4px 3px 2px rgba(0, 0, 0, 0.2);
 
     }
+
     .header {
         position: absolute;
         top: 3vh;
         left: 3vw;
-        width: 350px;
+        width: 450px;
         height: 70vh;
         background-color: #fef6e9;
         padding: 20px;
         border-radius: 20px;
-        box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
+        box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
     }
+
     .brand {
         background-color: rgba(0, 0, 0, 0);
         padding: 0;
@@ -461,11 +580,22 @@ button {
         border: 0;
         box-shadow: -5px -5px 5px rgba(0, 0, 0, 0.2);
     }
+
     .brand img {
         width: 100%;
         height: auto;
         border-radius: var(--search-border-radius);
     }
+
+    .container input:focus {
+        transform: translateX(-400px);
+        width: 600px;
+    }
+
+    .container input:focus ~ .search {
+        left: 250px;
+    }
+
     .filters {
         display: flex;
         flex-direction: row;
@@ -476,13 +606,15 @@ button {
         min-height: 35px;
         margin: 2% 0 2% 0;
     }
+
     .filter {
         width: 28%;
         height: 4vh;
-        margin: 2% 1% ;
+        margin: 2% 1%;
         box-shadow: var(--filter-shadow);
         font-size: var(--filter-text-size);
     }
+
     .filterbig {
         width: 32%;
         height: 4vh;
@@ -490,12 +622,14 @@ button {
         font-size: var(--filter-text-size);
         box-shadow: var(--filter-shadow);
     }
+
     .contents {
         width: 100%;
         height: 50vh;
         overflow: auto;
         margin: 0;
     }
+
     .cont {
         display: flex;
         flex-direction: row;
@@ -506,16 +640,18 @@ button {
         font-family: var(--font1);
         font-weight: 700;
         font-size: large;
-        border-bottom: 1px solid rgba(0,0,0,0.1);
-        padding:20px 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 20px 0;
     }
+
     .neww {
         background-image: url("../img/new.png");
-        background-position-x: 0%;
+        background-position-x: -0.5%;
         background-position-y: 50%;
-        background-size: 15%;
+        background-size: 13%;
         background-repeat: no-repeat;
     }
+
     .checkbox {
         position: absolute;
         z-index: -1;
@@ -539,13 +675,16 @@ button {
         background: #faf8f6;
         box-shadow: inset 1vh 1vh 1vh rgba(0, 0, 0, .2);
     }
+
     .checkbox:checked + label:before {
         background: #44250b;
         box-shadow: inset 1vh 1vh 1vh rgba(0, 0, 0, .2);
     }
+
     ::-webkit-scrollbar {
         width: 9px;
     }
+
     ::-webkit-scrollbar-thumb {
         background: #958682;
         border-radius: 15px;
