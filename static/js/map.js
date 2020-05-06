@@ -4,7 +4,7 @@ ymaps.ready(init);
 
 function init() {
     var myMap = new ymaps.Map("map", {
-            center: [59.94, 30.32],
+            center: [55.75, 37.61],
             zoom: 10,
             controls: [],
         }),
@@ -55,7 +55,6 @@ function init() {
     myMap.controls.add(zoomControl);
 
     // Создание точек
-    console.log(vm.info.data);
     vm.info.data.forEach((film) => {
         myMap.geoObjects.add(
             new ymaps.Placemark(

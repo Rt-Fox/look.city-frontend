@@ -253,27 +253,6 @@
             ]
         },
         {
-            "id": 7,
-            "point": null,
-            "decade": "1930e",
-            "preview": "https://beta.loook.city/media/previews/15845717-3b44-4a9c-a756-4ca81af47873",
-            "link": "https://beta.loook.city/fragment/15845717-3b44-4a9c-a756-4ca81af47873",
-            "name": "Где-то в Москве",
-            "year": 1939,
-            "movie": {
-                "id": 3,
-                "name": "Подкидыш"
-            },
-            "actors": [],
-            "producers": [],
-            "genre": [
-                {
-                    "id": 1,
-                    "name": "Комедия"
-                }
-            ]
-        },
-        {
             "id": 8,
             "point": {
                 "city": "Москва",
