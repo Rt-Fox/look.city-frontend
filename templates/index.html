@@ -17,6 +17,22 @@
     <script src="../static/js/mapbasics.js" type="text/javascript"></script>
     <link href="../static/style/style.css" rel="stylesheet">
     <link href="../static/style/menu.css" rel="stylesheet">
+    <script>
+        // var b = new Boolean(false);
+        // function hideBag(){
+        //     if (b) {
+        //         $('.headerone',).css('flex-direction','row-reverse');
+        //         $('.menu',).css('display','none');
+        //         $('.brand',).css('display','none');
+        //         b = false;
+        //     } else {
+        //         $('.headerone',).css('flex-direction','row');
+        //         $('.menu',).css('display','block');
+        //         $('.brand',).css('display','block');
+        //         b= true;
+        //     }
+        // }
+    </script>
 </head>
 
 <body>
@@ -24,8 +40,8 @@
     <div class="main-wrapper" v-show="map">
 
         <!-- Карта -->
-
         <div class="map" id="map"></div>
+
         <!-- Зум карты -->
         <ul class="zoom">
             <li>
@@ -35,53 +51,94 @@
                 <button>&#8722;</button>
             </li>
         </ul>
-
         <!-- Поиск и фильтры -->
         <div class="header">
-            <!--
-            <div class="search">
-                <input type="text" placeholder="Поиск по адресу">
-                <img src="../static/img/kino.png" alt="Кинопутеводитель">
-            </div>
-            -->
             <!-- Кнопка меню -->
-            <div class="headerone">
-                <button class="brand">
-                    <img alt="Кинопутеводитель" src="../static/img/kino.png">
-                </button>
-                <span @click="changeMenuState" class="menu">МЕНЮ</span>
-                <button class="search">
-                    <img alt="Кинопутеводитель" src="../static/img/krest.png">
-                </button>
+            <div class="container1">
+                <div class="flipper">
+                    <div class="button front">
+                        <div class="headerone">
+                            <button class="brand">
+                                <img alt="Кинопутеводитель" src="../static/img/kino.png">
+                            </button>
+                            <span @click="changeMenuState" class="menu">МЕНЮ</span>
+                            <form class="container">
+                                <input onclick="hideBag()" placeholder="Search..." type="text">
+                                <div class="search" onclick="hideBag()"></div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="button back">
+                        <form class="container">
+                            <input placeholder="Search..." type="text">
+                            <div class="search"></div>
+                        </form>
+                    </div>
+                </div>
             </div>
 
-            <div class="filters" v-if="!addButtons">
-                <span class="filter active">ФИЛЬМЫ</span>
-                <span class="filter">ЖАНРЫ</span>
-                <span class="filter">ГОДА</span>
-                <span @click="changeButtons" class="filter">ДРУГОЕ</span>
-            </div>
-            <div class="filters" v-else>
-                <span class="filterbig">ПЕРСОНАЖИ</span>
-                <span class="filterbig">РЕЖИССЕРЫ</span>
-                <span class="filterbig active">АКТЕРЫ</span>
-                <span @click="changeButtons" class="filtermin"> &lt;</span>
-            </div>
-        </div>
 
+            <!--                        для мобильных версий-->
+            <!--            <div>-->
+            <!--                <div class="filters" v-if="!addButtons">-->
+            <!--                    <span class="filter active">ФИЛЬМЫ</span>-->
+            <!--                    <span class="filter">ЖАНРЫ</span>-->
+            <!--                    <span class="filter">ГОДА</span>-->
+            <!--                    <span @click="changeButtons" class="filter">ДРУГОЕ</span>-->
+            <!--                </div>-->
+            <!--                <div class="filters" v-else>-->
+            <!--                    <span class="filterbig">ПЕРСОНАЖИ</span>-->
+            <!--                    <span class="filterbig">РЕЖИССЕРЫ</span>-->
+            <!--                    <span class="filterbig active">АКТЕРЫ</span>-->
+            <!--                    <span @click="changeButtons" class="filtermin"> &lt;</span>-->
+            <!--                </div>-->
+            <!--            </div>-->
+            <!--                        для media (min-width: 1000px)-->
+            <div>
+                <div class="filters" v-if="!addButtons">
+                    <span class="filter">ФИЛЬМЫ</span>
+                    <span class="filter active">ЖАНРЫ</span>
+                    <span class="filter">ГОДА</span>
+                    <span class="filterbig">ПЕРСОНАЖИ</span>
+                    <span class="filter">АКТЕРЫ</span>
+                    <span class="filterbig">РЕЖИССЕРЫ</span>
+                </div>
 
-    </div>
-
-    <!-- Поп-ап -->
-    <div class="menu_open">
-        <div class="window">
-            <div class="headertwo">
-                <img src="../static/img/film.png">
-                <div class="krestik">
+                <div class="contents">
+                    <div class="cont neww">
+                        <input class="checkbox" id="checkbox" type="checkbox"/>
+                        <label for="checkbox">Режиссер, название фильма, год создания</label>
+                    </div>
+                    <div class="cont neww">
+                        <input class="checkbox" id="checkbox2" type="checkbox"/>
+                        <label for="checkbox2">Режиссер, название фильма, год создания</label>
+                    </div>
+                    <div class="cont neww">
+                        <input class="checkbox" id="checkbox3" type="checkbox"/>
+                        <label for="checkbox3">Режиссер, название фильма, год создания</label>
+                    </div>
+                    <div class="cont">
+                        <input class="checkbox" id="checkbox4" type="checkbox"/>
+                        <label for="checkbox4">Режиссер, название фильма, год создания</label>
+                    </div>
+                    <div class="cont">
+                        <input class="checkbox" id="checkbox5" type="checkbox"/>
+                        <label for="checkbox5">Режиссер, название фильма, год создания</label>
+                    </div>
+                    <div class="cont">
+                        <input class="checkbox" id="checkbox6" type="checkbox"/>
+                        <label for="checkbox6">Режиссер, название фильма, год создания</label>
+                    </div>
+                    <div class="cont">
+                        <input class="checkbox" id="checkbox7" type="checkbox"/>
+                        <label for="checkbox7">Режиссер, название фильма, год создания</label>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Поп-ап -->
 
     <!-- Открытое меню -->
     <div class="grid-main-wrapper" v-if="menu">
@@ -124,10 +181,22 @@
         <div class="places square">
             <a href="/undefined_places">НЕОПОЗНАННЫЕ МЕСТА</a>
         </div>
+        <!-- Поп-ап -->
+        <div class="menu_open">
+            <div class="window">
+                <div class="krestik"></div>
+                <div class="af">
+                    <ul class="tar">
+                        <li>Оставить отзыв</li>
+                        <li>Предложить место</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
-    <script src="../static/js/main.js"></script>
+<script src="../static/js/main.js"></script>
 
 </body>
 
