@@ -212,7 +212,7 @@ html, body {
     width: 12px;
     height: 2px;
     transform: rotate(45deg);
-    transition: all .5s;
+    transition: all 0.5s;
     background: #44250b;
 }
 
@@ -228,7 +228,7 @@ html, body {
     height: 25px;
     border-radius: 50%;
     border: 2px solid #44250b;
-    transition: all .5s;
+    transition: all 0.5s;
 }
 
 .container input {
@@ -274,7 +274,7 @@ html, body {
     width: 70px;
     height: 70px;
     border-radius: 50%;
-    background: #EFE7DB;
+    background: #efe7db;
     z-index: 102;
 }
 
@@ -525,7 +525,7 @@ button {
     cursor: pointer;
 }
 
-@media (max-device-width: 540px),(max-device-height: 600px) {
+@media (max-device-width: 540px), (max-device-height: 600px) {
     html, body {
         --filter-text-size: 0.8em;
         --menu-text-size: x-large;
@@ -557,7 +557,7 @@ button {
     }
 }
 
-@media (max-device-width: 370px),(max-device-height: 420px) {
+@media (max-device-width: 370px), (max-device-height: 420px) {
     html, body {
         --filter-text-size: 0.65em;
         --menu-text-size: large;
@@ -599,167 +599,223 @@ button {
     }
 }
 
-    .brand img {
-        width: 100%;
-        height: auto;
-        border-radius: var(--search-border-radius);
-    }
+.brand img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--search-border-radius);
+}
 
-    .container input:focus {
-        transform: translateX(-400px);
-        width: 350px;
-    }
+.container input:focus {
+    transform: translateX(-400px);
+    width: 350px;
+}
 
-    .container input:focus ~ .search {
-        left: 0px;
-    }
+.container input:focus ~ .search {
+    left: 0px;
+}
 
-    .filters {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        width: 100%;
-        height: auto;
-        min-height: 35px;
-        margin: 2% 0 2% 0;
-    }
+.filters {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    min-height: 35px;
+    margin: 2% 0 2% 0;
+}
 
-    .filter {
-        width: 28%;
-        height: 4vh;
-        margin: 2% 1%;
-        box-shadow: var(--filter-shadow);
-        font-size: var(--filter-text-size);
-    }
+.filter {
+    width: 28%;
+    height: 4vh;
+    margin: 2% 1%;
+    box-shadow: var(--filter-shadow);
+    font-size: var(--filter-text-size);
+}
 
-    .filterbig {
-        width: 32%;
-        height: 4vh;
-        margin: 3% 1%;
-        font-size: var(--filter-text-size);
-        box-shadow: var(--filter-shadow);
-    }
+.filterbig {
+    width: 32%;
+    height: 4vh;
+    margin: 3% 1%;
+    font-size: var(--filter-text-size);
+    box-shadow: var(--filter-shadow);
+}
 
-    .contents {
-        width: 100%;
-        height: 50vh;
-        overflow: auto;
-        margin: 0;
-    }
+.contents {
+    width: 100%;
+    height: 50vh;
+    overflow: auto;
+    margin: 0;
+}
 
-    .cont {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        color: #958682;
-        font-family: var(--font1);
-        font-weight: 700;
-        font-size: large;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        padding: 20px 0;
-    }
+.cont {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    color: #958682;
+    font-family: var(--font1);
+    font-weight: 700;
+    font-size: large;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+}
 
-    .neww {
-        background-image: url("../img/new.png");
-        background-position-x: -0.5%;
-        background-position-y: 50%;
-        background-size: 13%;
-        background-repeat: no-repeat;
-    }
+.neww {
+    background-image: url("../img/new.png");
+    background-position-x: -0.5%;
+    background-position-y: 50%;
+    background-size: 13%;
+    background-repeat: no-repeat;
+}
 
-    .checkbox {
-        position: absolute;
-        z-index: -1;
-        opacity: 0;
-    }
+.checkbox {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
 
-    .checkbox + label {
-        position: relative;
-        padding: 0 0 0 100px;
-        cursor: pointer;
-    }
+.checkbox + label {
+    position: relative;
+    padding: 0 0 0 100px;
+    cursor: pointer;
+}
 
-    .checkbox + label:before {
-        content: '';
-        position: absolute;
-        top: 5px;
-        left: 60px;
-        width: 30px;
-        height: 30px;
-        border-radius: 10%;
-        background: #faf8f6;
-        box-shadow: inset 1vh 1vh 1vh rgba(0, 0, 0, .2);
-    }
+.checkbox + label:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 60px;
+    width: 30px;
+    height: 30px;
+    border-radius: 10%;
+    background: #faf8f6;
+    box-shadow: inset 1vh 1vh 1vh rgba(0, 0, 0, 0.2);
+}
 
-    .checkbox:checked + label:before {
-        background: #44250b;
-        box-shadow: inset 1vh 1vh 1vh rgba(0, 0, 0, .2);
-    }
+.checkbox:checked + label:before {
+    background: #44250b;
+    box-shadow: inset 1vh 1vh 1vh rgba(0, 0, 0, 0.2);
+}
 
-    ::-webkit-scrollbar {
-        width: 9px;
-    }
+::-webkit-scrollbar {
+    width: 9px;
+}
 
-    ::-webkit-scrollbar-thumb {
-        background: #958682;
-        border-radius: 15px;
-    }
+::-webkit-scrollbar-thumb {
+    background: #958682;
+    border-radius: 15px;
+}
 
-    .container1 {
-        width: 450px;
-        height: 60px;
-        cursor: pointer;
-        perspective: 1000px;
-        -webkit-perspective: 1000px;
-    }
+.container1 {
+    width: 450px;
+    height: 60px;
+    cursor: pointer;
+    perspective: 1000px;
+    -webkit-perspective: 1000px;
+}
 
-    .container1:hover .flipper {
-        transform: rotateX(-90deg);
-    }
+.container1:hover .flipper {
+    transform: rotateX(-90deg);
+}
 
-    .container1:hover .back {
-        display: flex;
-        align-items: flex-end;
-    }
+.container1:hover .back {
+    display: flex;
+    align-items: flex-end;
+}
 
-    .container1 .flipper {
-        height: 70px;
-        width: 450px;
-        transition: all 0.5s ease;
-        transform-style: preserve-3d;
-        position: relative;
-    }
+.container1 .flipper {
+    height: 70px;
+    width: 450px;
+    transition: all 0.5s ease;
+    transform-style: preserve-3d;
+    position: relative;
+}
 
-    .container1 .button {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        border-radius: 5px;
-        backface-visibility: hidden;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        font-family: 'Gochi Hand', cursive;
-        color: white;
-        letter-spacing: 2px;
-    }
+.container1 .button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-family: "Gochi Hand", cursive;
+    color: white;
+    letter-spacing: 2px;
+}
 
-    .button .fa {
-        font-size: 24px;
-    }
+.button .fa {
+    font-size: 24px;
+}
 
-    .front {
-        transform: translateZ(22px);
-    }
+.front {
+    transform: translateZ(22px);
+}
 
-    .back {
-        text-shadow: 1px 0 2px #000000;
-        transform: rotateX(90deg) translateZ(22px);
-    }
+.back {
+    text-shadow: 1px 0 2px #000000;
+    transform: rotateX(90deg) translateZ(22px);
+}
+
+/* Точки на карте */
+.point {
+    width: 20px;
+}
+
+.p1900 {
+    fill: #1F1E1C;
+}
+
+.p1910 {
+    fill: #1F1E1C;
+}
+
+.p1920 {
+    fill: #1F1E1C;
+}
+
+.p1930 {
+    fill: #77563D;
+}
+
+.p1940 {
+    fill: #D9AE6E;
+}
+
+.p1950 {
+    fill: #F8DA84;
+}
+
+.p1960 {
+    fill: #ABC573;
+}
+
+.p1970 {
+    fill: #418353;
+}
+
+.p1980 {
+    fill: #39523D;
+}
+
+.p1990 {
+    fill: #1E2E52;
+}
+
+.p2000 {
+    fill: #693E69;
+}
+
+.p2010 {
+    fill: #E39FAB;
+}
+
+.p2020 {
+    fill: #B00121;
 }

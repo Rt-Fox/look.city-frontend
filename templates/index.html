@@ -39,17 +39,7 @@
         <div class="main-wrapper" v-show="map">
 
             <!-- Карта -->
-
             <div class="map" id="map"></div>
-            <!-- Зум карты -->
-            <ul class="zoom">
-                <li>
-                    <button>+</button>
-                </li>
-                <li>
-                    <button>&#8722;</button>
-                </li>
-            </ul>
 
             <!-- Поиск и фильтры -->
             <div class="header">
@@ -110,64 +100,65 @@
                     <span class="filterbig">РЕЖИССЕРЫ</span>
                 </div>
 
-        </div>
+            </div>
 
-        <!-- Поп-ап -->
-        <div class="menu_open">
-            <div class="window">
-                <div class="headertwo">
-                    <img src="../static/img/film.png">
-                    <div class="krestik">
+            <!-- Поп-ап -->
+            <div class="menu_open">
+                <div class="window">
+                    <div class="headertwo">
+                        <img src="../static/img/film.png">
+                        <div class="krestik">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Открытое меню -->
-        <div class="grid-main-wrapper" v-if="menu">
-            <div class="message">
-                <a href="/feedback"></a>
-            </div>
-            <div class="city">
-                <a href="/cities">ГОРОДА</a>
-            </div>
-            <div @click="changeMenuState" class="krest">
-                <div></div>
-            </div>
-            <div class="new square">
-                <a href="/new_movies">НОВИНКИ</a>
-            </div>
-            <div class="top square">
-                <a href="/stories">ЛУЧШИЕ КИНО-РАССКАЗЫ</a>
-            </div>
-            <div class="film square">
-                <a href="/movies">ФИЛЬМЫ</a>
-            </div>
-            <div class="year square">
-                <a href="/decades">ГОДЫ</a>
-            </div>
-            <div class="genres square">
-                <a href="/genres">ЖАНРЫ</a>
-            </div>
-            <div class="personage square">
-                <a href="/heroes">ПЕРСОНАЖИ</a>
-            </div>
-            <div class="producer square">
-                <a href="/producers">РЕЖИССЕРЫ</a>
-            </div>
-            <div class="actors square">
-                <a href="/actors">АКТЕРЫ</a>
-            </div>
-            <div class="popular square">
-                <a href="/popular_places">ПОПУЛЯРНЫЕ МЕСТА</a>
-            </div>
-            <div class="places square">
-                <a href="/undefined_places">НЕОПОЗНАННЫЕ МЕСТА</a>
+            <!-- Открытое меню -->
+            <div class="grid-main-wrapper" v-if="menu">
+                <div class="message">
+                    <a href="/feedback"></a>
+                </div>
+                <div class="city">
+                    <a href="/cities">ГОРОДА</a>
+                </div>
+                <div @click="changeMenuState" class="krest">
+                    <div></div>
+                </div>
+                <div class="new square">
+                    <a href="/new_movies">НОВИНКИ</a>
+                </div>
+                <div class="top square">
+                    <a href="/stories">ЛУЧШИЕ КИНО-РАССКАЗЫ</a>
+                </div>
+                <div class="film square">
+                    <a href="/movies">ФИЛЬМЫ</a>
+                </div>
+                <div class="year square">
+                    <a href="/decades">ГОДЫ</a>
+                </div>
+                <div class="genres square">
+                    <a href="/genres">ЖАНРЫ</a>
+                </div>
+                <div class="personage square">
+                    <a href="/heroes">ПЕРСОНАЖИ</a>
+                </div>
+                <div class="producer square">
+                    <a href="/producers">РЕЖИССЕРЫ</a>
+                </div>
+                <div class="actors square">
+                    <a href="/actors">АКТЕРЫ</a>
+                </div>
+                <div class="popular square">
+                    <a href="/popular_places">ПОПУЛЯРНЫЕ МЕСТА</a>
+                </div>
+                <div class="places square">
+                    <a href="/undefined_places">НЕОПОЗНАННЫЕ МЕСТА</a>
+                </div>
             </div>
         </div>
     </div>
 
-<script src="../static/js/main.js"></script>
+    <script src="../static/js/main.js"></script>
 
 </body>
 
