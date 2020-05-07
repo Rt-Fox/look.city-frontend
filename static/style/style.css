@@ -597,170 +597,170 @@ button {
         border: 0;
         box-shadow: -5px -5px 5px rgba(0, 0, 0, 0.2);
     }
-}
 
-.brand img {
-    width: 100%;
-    height: auto;
-    border-radius: var(--search-border-radius);
-}
+    .brand img {
+        width: 100%;
+        height: auto;
+        border-radius: var(--search-border-radius);
+    }
 
-.container input:focus {
-    transform: translateX(-400px);
-    width: 350px;
-}
+    .container input:focus {
+        transform: translateX(-400px);
+        width: 350px;
+    }
 
-.container input:focus ~ .search {
-    left: 0px;
-}
+    .container input:focus ~ .search {
+        left: 0px;
+    }
 
-.filters {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    width: 100%;
-    height: auto;
-    min-height: 35px;
-    margin: 2% 0 2% 0;
-}
+    .filters {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 100%;
+        height: auto;
+        min-height: 35px;
+        margin: 2% 0 2% 0;
+    }
 
-.filter {
-    width: 28%;
-    height: 4vh;
-    margin: 2% 1%;
-    box-shadow: var(--filter-shadow);
-    font-size: var(--filter-text-size);
-}
+    .filter {
+        width: 28%;
+        height: 4vh;
+        margin: 2% 1%;
+        box-shadow: var(--filter-shadow);
+        font-size: var(--filter-text-size);
+    }
 
-.filterbig {
-    width: 32%;
-    height: 4vh;
-    margin: 3% 1%;
-    font-size: var(--filter-text-size);
-    box-shadow: var(--filter-shadow);
-}
+    .filterbig {
+        width: 32%;
+        height: 4vh;
+        margin: 3% 1%;
+        font-size: var(--filter-text-size);
+        box-shadow: var(--filter-shadow);
+    }
 
-.contents {
-    width: 100%;
-    height: 50vh;
-    overflow: auto;
-    margin: 0;
-}
+    .contents {
+        width: 100%;
+        height: 50vh;
+        overflow: auto;
+        margin: 0;
+    }
 
-.cont {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    color: #958682;
-    font-family: var(--font1);
-    font-weight: 700;
-    font-size: large;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 20px 0;
-}
+    .cont {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        color: #958682;
+        font-family: var(--font1);
+        font-weight: 700;
+        font-size: large;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 20px 0;
+    }
 
-.neww {
-    background-image: url("../img/new.png");
-    background-position-x: -0.5%;
-    background-position-y: 50%;
-    background-size: 13%;
-    background-repeat: no-repeat;
-}
+    .neww {
+        background-image: url("../img/new.png");
+        background-position-x: -0.5%;
+        background-position-y: 50%;
+        background-size: 13%;
+        background-repeat: no-repeat;
+    }
 
-.checkbox {
-    position: absolute;
-    z-index: -1;
-    opacity: 0;
-}
+    .checkbox {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
 
-.checkbox + label {
-    position: relative;
-    padding: 0 0 0 100px;
-    cursor: pointer;
-}
+    .checkbox + label {
+        position: relative;
+        padding: 0 0 0 100px;
+        cursor: pointer;
+    }
 
-.checkbox + label:before {
-    content: "";
-    position: absolute;
-    top: 5px;
-    left: 60px;
-    width: 30px;
-    height: 30px;
-    border-radius: 10%;
-    background: #faf8f6;
-    box-shadow: inset 1vh 1vh 1vh rgba(0, 0, 0, 0.2);
-}
+    .checkbox + label:before {
+        content: "";
+        position: absolute;
+        top: 5px;
+        left: 60px;
+        width: 30px;
+        height: 30px;
+        border-radius: 10%;
+        background: #faf8f6;
+        box-shadow: inset 1vh 1vh 1vh rgba(0, 0, 0, 0.2);
+    }
 
-.checkbox:checked + label:before {
-    background: #44250b;
-    box-shadow: inset 1vh 1vh 1vh rgba(0, 0, 0, 0.2);
-}
+    .checkbox:checked + label:before {
+        background: #44250b;
+        box-shadow: inset 1vh 1vh 1vh rgba(0, 0, 0, 0.2);
+    }
 
-::-webkit-scrollbar {
-    width: 9px;
-}
+    ::-webkit-scrollbar {
+        width: 9px;
+    }
 
-::-webkit-scrollbar-thumb {
-    background: #958682;
-    border-radius: 15px;
-}
+    ::-webkit-scrollbar-thumb {
+        background: #958682;
+        border-radius: 15px;
+    }
 
-.container1 {
-    width: 450px;
-    height: 60px;
-    cursor: pointer;
-    perspective: 1000px;
-    -webkit-perspective: 1000px;
-}
+    .container1 {
+        width: 450px;
+        height: 60px;
+        cursor: pointer;
+        perspective: 1000px;
+        -webkit-perspective: 1000px;
+    }
 
-.container1:hover .flipper {
-    transform: rotateX(-90deg);
-}
+    .container1:hover .flipper {
+        transform: rotateX(-90deg);
+    }
 
-.container1:hover .back {
-    display: flex;
-    align-items: flex-end;
-}
+    .container1:hover .back {
+        display: flex;
+        align-items: flex-end;
+    }
 
-.container1 .flipper {
-    height: 70px;
-    width: 450px;
-    transition: all 0.5s ease;
-    transform-style: preserve-3d;
-    position: relative;
-}
+    .container1 .flipper {
+        height: 70px;
+        width: 450px;
+        transition: all 0.5s ease;
+        transform-style: preserve-3d;
+        position: relative;
+    }
 
-.container1 .button {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    border-radius: 5px;
-    backface-visibility: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    font-family: "Gochi Hand", cursive;
-    color: white;
-    letter-spacing: 2px;
-}
+    .container1 .button {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        border-radius: 5px;
+        backface-visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        font-family: "Gochi Hand", cursive;
+        color: white;
+        letter-spacing: 2px;
+    }
 
-.button .fa {
-    font-size: 24px;
-}
+    .button .fa {
+        font-size: 24px;
+    }
 
-.front {
-    transform: translateZ(22px);
-}
+    .front {
+        transform: translateZ(22px);
+    }
 
-.back {
-    text-shadow: 1px 0 2px #000000;
-    transform: rotateX(90deg) translateZ(22px);
+    .back {
+        text-shadow: 1px 0 2px #000000;
+        transform: rotateX(90deg) translateZ(22px);
+    }
 }
 
 /* Точки на карте */
