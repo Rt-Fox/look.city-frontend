@@ -68,9 +68,11 @@ function init() {
             "</div>"
     );
 
+    let geoObjects = [];
+
     // Создание точек
     vm.info.points.forEach((point) => {
-        myMap.geoObjects.add(
+        geoObjects.push(
             new ymaps.Placemark(
                 // Координаты
                 [+point.lat, +point.lon],
@@ -84,4 +86,18 @@ function init() {
             )
         );
     });
+
+    let clusterer = new ymaps.Clusterer({
+        preset: "islands#invertedVioletClusterIcons",
+
+        // Группировать только по одиаковым координатам
+        groupByCoordinates: false,
+
+        clusterDisableClickZoom: true,
+        clusterHideIconOnBalloonOpen: false,
+        geoObjectHideIconOnBalloonOpen: false,
+    });
+
+    clusterer.add(geoObjects);
+    myMap.geoObjects.add(clusterer);
 }

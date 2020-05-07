@@ -766,6 +766,7 @@ button {
 /* Точки на карте */
 .point {
     width: 20px;
+    height: 20px;
 }
 
 .p1900 {
