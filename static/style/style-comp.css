@@ -342,7 +342,6 @@ html, body {
     width: 28%;
     height: 4vh;
     margin: 2% 1%;
-
 }
 
 /*more*/
@@ -593,37 +592,38 @@ button {
     cursor: pointer;
 }
 
-/* Точки на карте */
+/* 
 .point {
-    width: 20px;
+    width: 40px;
+    height: 40px;
 }
 
 .p1900 {
-    fill: #1F1E1C;
+    fill: #1f1e1c;
 }
 
 .p1910 {
-    fill: #1F1E1C;
+    fill: #1f1e1c;
 }
 
 .p1920 {
-    fill: #1F1E1C;
+    fill: #1f1e1c;
 }
 
 .p1930 {
-    fill: #77563D;
+    fill: #77563d;
 }
 
 .p1940 {
-    fill: #D9AE6E;
+    fill: #d9ae6e;
 }
 
 .p1950 {
-    fill: #F8DA84;
+    fill: #f8da84;
 }
 
 .p1960 {
-    fill: #ABC573;
+    fill: #abc573;
 }
 
 .p1970 {
@@ -631,21 +631,21 @@ button {
 }
 
 .p1980 {
-    fill: #39523D;
+    fill: #39523d;
 }
 
 .p1990 {
-    fill: #1E2E52;
+    fill: #1e2e52;
 }
 
 .p2000 {
-    fill: #693E69;
+    fill: #693e69;
 }
 
 .p2010 {
-    fill: #E39FAB;
+    fill: #e39fab;
 }
 
 .p2020 {
-    fill: #B00121;
-}
+    fill: #b00121;
+} */
