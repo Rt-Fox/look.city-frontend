@@ -59,6 +59,10 @@ html, body {
     --position: 0%;
 }
 
+span:first-letter {
+    text-transform: uppercase;
+}
+
 .mid {
     display: flex;
     align-items: center;
@@ -319,6 +323,26 @@ html, body {
     font-weight: bolder;
 }
 
+.bg .fa-search {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4vh;
+    color: white;
+}
+
+.headline .bg {
+    background-color: #44250b;
+    min-height: 30px;
+    min-width: 40px;
+    max-width: 50px;
+    max-height: 50px;
+    width: 10%;
+    border-radius: 15%;
+}
+
 .filters {
     display: flex;
     flex-direction: row;
@@ -501,6 +525,8 @@ html, body {
 }
 
 .krestik {
+    min-height: 30px;
+    min-width: 40px;
     max-width: 50px;
     max-height: 50px;
     background: url("../img/krest.png") center no-repeat;
@@ -508,6 +534,8 @@ html, body {
     background-size: 65%;
     border-color: rgba(0, 0, 0, 0);
     border-radius: var(--img-radius);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+
 }
 
 .nd .krestik {
@@ -760,7 +788,7 @@ button {
 }
 
 .film a {
-    background-image: url("../img/film.png");
+    background-image: url("../img/muvies.png");
     background-position-y: calc(-10% + var(--position));
     background-position-x: -100%;
     background-size: 80%;
@@ -870,12 +898,18 @@ button {
     background-color: transparent;
 }
 
+.wrap-years .headline {
+    width: 80%;
+    justify-content: space-between;
+}
+
 .headline .krestik {
     position: sticky;
     top: 0;
     left: 82%;
     width: 10%;
     max-width: 50px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
 }
 
 .one {
@@ -985,37 +1019,132 @@ button {
 
 /*filter*/
 .title {
-    margin-left: 5%;
+    margin: 0 5%;
     width: 80%;
     height: 100%;
 
     display: flex;
     align-items: center;
     justify-content: center;
-
-    color: #EFE7DB;
+    text-transform: uppercase;
+    color: white;
     background-color: #44250b;
     border-radius: 30px;
     font-family: var(--font1);
     font-weight: 700;
     font-size: 3vh;
     text-align: center;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+}
+
+.hg {
+    height: 30vh;
+    width: 99vw;
+}
+
+.gr {
+    height: 70px;
+    width: 90vw;
+}
+
+.wrap-years .yr {
+    height: 50px;
+    width: 80vw;
+    margin: 20px auto;
+}
+
+.wrap-years .title {
+    margin: 0;
+    background-color: #ECEBEA;
+    color: #44250b;
+    box-shadow: -3px -3px 3px rgba(0, 0, 0, 0.4);
+}
+
+.gr .el span {
+    font-size: 20px;
+}
+
+.yr .el span {
+    font-size: 15px;
+}
+
+.wrap-years .el:nth-child(1) {
+    background-color: #1F1E1C;
+    color: white;
+}
+
+.wrap-years .el:nth-child(2) {
+    background-color: #77563D;
+    color: white;
+}
+
+.wrap-years .el:nth-child(3) {
+    background-color: #D9AE6E;
+}
+
+.wrap-years .el:nth-child(4) {
+    background-color: #F8DA84;
+}
+
+.wrap-years .el:nth-child(5) {
+    background-color: #ABC573;
+}
+
+.wrap-years .el:nth-child(6) {
+    background-color: #418353;
+    color: white;
+}
+
+.wrap-years .el:nth-child(7) {
+    background-color: #39523D;
+    color: white;
+}
+
+.wrap-years .el:nth-child(8) {
+    background-color: #1E2E52;
+    color: white;
+}
+
+.wrap-years .el:nth-child(9) {
+    background-color: #693E69;
+    color: white;
+}
+
+.wrap-years .el:nth-child(10) {
+    background-color: #E39FAB;
+    color: white;
+}
+
+.wrap-years .el:nth-child(10) {
+    background-color: #E39FAB;
+}
+
+.wrap-years .el:nth-child(11) {
+    background-color: #B00121;
+    color: white;
 }
 
 .el {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     height: 90%;
-    width: 70%;
+    width: 80%;
     border-radius: 3vw;
     background-color: #FEF6E9;
-    box-shadow: -3px -3px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: -3px -3px 5px rgba(0, 0, 0, 0.4);
 }
 
 a {
     text-decoration: none;
+}
+
+.el video {
+    margin: 2vw;
+    border-radius: 2vw;
+    height: 80%;
+    width: 50%;
 }
 
 .el img {
@@ -1036,10 +1165,14 @@ a {
 }
 
 .contents {
-    width: 75%;
+    width: 95vw;
     height: 90%;
     overflow: auto;
     margin: 0;
+}
+
+.contents_filt {
+    width: 80vw;
 }
 
 .cont:first-child {
@@ -1095,20 +1228,143 @@ a {
 }
 
 /*фоновое изображение*/
-.wrap-film {
-    background-image: url("../img/film.png");
+.wrap-filt {
+    background-image: url("../img/muvies.png");
     background-position-y: 100%;
     background-position-x: 100%;
     background-size: calc(25vh + 25vw);
     background-repeat: no-repeat;
 }
 
+.wrap-actors:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: -50%;
+    z-index: -1;
+    transform: scale(-1, 1);
+    background-image: url("../img/actors.png");
+    background-size: calc(35vh + 25vw);
+    background-repeat: no-repeat;
+}
+
+.wrap-producer:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: -50%;
+    z-index: -1;
+    background-image: url("../img/producer.png");
+    background-size: calc(35vh + 25vw);
+    background-repeat: no-repeat;
+}
+
+.wrap-personage:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 60%;
+    left: -50%;
+    z-index: -1;
+    background-image: url("../img/personage.png");
+    background-size: calc(35vh + 25vw);
+    background-repeat: no-repeat;
+}
+
+.wrap-muvies:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: -50%;
+    z-index: -1;
+    background-image: url("../img/muvies.png");
+    background-size: calc(35vh + 25vw);
+    background-repeat: no-repeat;
+}
+
+.wrap-top:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: -30%;
+    z-index: -1;
+    background-image: url("../img/top.png");
+    background-size: calc(35vh + 25vw);
+    background-repeat: no-repeat;
+}
+
+.wrap-new:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: -50%;
+    z-index: -1;
+    background-image: url("../img/new.png");
+    background-size: calc(35vh + 25vw);
+    background-repeat: no-repeat;
+}
+
+.wrap-genres:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: -50%;
+    z-index: -1;
+    background-image: url("../img/genres.png");
+    background-size: calc(35vh + 25vw);
+    background-repeat: no-repeat;
+}
+
+.wrap-years:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: -30%;
+    z-index: -1;
+    background-image: url("../img/year.png");
+    background-size: calc(35vh + 25vw);
+    background-repeat: no-repeat;
+}
+
 .wrap-popular_places {
     background-image: url("../img/popular.png");
     background-position-y: 100%;
-    background-position-x: 100%;
+    background-position-x: -50%;
     background-size: calc(25vh + 25vw);
     background-repeat: no-repeat;
+}
+
+.poisk input {
+    padding-left: 7px;
+    text-decoration: none;
+    margin-top: 20px;
+    width: 80vw;
+    height: 30px;
+
+    color: var(--new-color);
+    border-color: rgba(0, 0, 0, 0);
+    background-color: #F5F5F5;
+    border-radius: 10px;
+    box-shadow: inset 4px 4px 5px rgba(0, 0, 0, 0.2);
+
+    font-family: var(--font);
+    font-weight: 700;
+    font-size: var(--new-text-size);
 }
 
 /*card_actor.html*/
@@ -1145,6 +1401,7 @@ a {
     width: 10vw;
     height: 10vw;
     text-align: center;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
 }
 
 .bio {
@@ -1238,6 +1495,19 @@ a {
     height: 40px;
     width: 40px;
     border-radius: 10px;
+}
+
+.wrap-years .fa {
+    color: #422B1F;
+    background-color: #ECEBEA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+    box-shadow: 3px -1px 5px rgba(0, 0, 0, 0.4);
 }
 
 .cont .title {
@@ -1460,11 +1730,11 @@ a {
     }
 
     .title {
-        font-size: large;
+        font-size: small;
     }
 
     .el {
-        width: 80%;
+        width: 89vw;
     }
 
     .el span {
