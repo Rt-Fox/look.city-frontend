@@ -20,7 +20,7 @@ let vm = new Vue({
 
     mounted() {
         // Получение дату
-        axios.get("/points.json").then(function (response) {
+        axios.get("../points.json").then(function (response) {
             vm.info = response.data;
             ymaps.ready(init);
         });
