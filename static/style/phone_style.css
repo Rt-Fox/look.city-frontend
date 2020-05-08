@@ -14,7 +14,7 @@ html, body {
     margin: 0;
     overflow: hidden;
     font-size: 100%;
-
+    min-height: 100vh;
     --font: "Acrom-Regular";
     --font1: "Acrom-Regular";
     --font2: "Montserrat-Medium_0";
@@ -74,6 +74,14 @@ html, body {
     position: fixed;
     width: 100vw;
     height: 100vh;
+}
+
+.map_min {
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 70vw;
+    height: 30vh;
+    margin: 10px;
 }
 
 .zoom {
@@ -493,6 +501,8 @@ html, body {
 }
 
 .krestik {
+    max-width: 50px;
+    max-height: 50px;
     background: url("../img/krest.png") center no-repeat;
     background-color: #44250b;
     background-size: 65%;
@@ -682,8 +692,6 @@ button {
     border-radius: var(--img-radius);
     box-shadow: 5px -5px 20px rgba(0, 0, 0, 0.4);
 }
-
-/*body*/
 
 /*Общий стиль блоков body*/
 .square {
@@ -1103,6 +1111,227 @@ a {
     background-repeat: no-repeat;
 }
 
+/*card_actor.html*/
+.scrol {
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+}
+
+.headerthree {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+    width: 100vw;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.headerthree_title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 80%;
+    height: 100%;
+    font-family: var(--font);
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.headerthree .krestik {
+    width: 10vw;
+    height: 10vw;
+    text-align: center;
+}
+
+.bio {
+    margin: 4vh 2vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 90vw;
+}
+
+.bio img {
+    width: 50%;
+}
+
+.bio_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    margin-left: 2vw;
+    font-family: var(--font);
+}
+
+.muvie .muvie_title {
+    font-size: 20px;
+    letter-spacing: 3px;
+    font-family: var(--font);
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+}
+
+.muvie .contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.muvie .cont {
+    margin: 3vh 0;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+}
+
+.muvie .cont img {
+    width: 100%;
+    height: 30vh;
+    border-radius: 20px;
+    box-shadow: -5px -5px 4px rgba(0, 0, 0, 0.3);
+}
+
+.cont_coment {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 5vh;
+}
+
+.cont_text {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-left: 2vw;
+    font-family: var(--font);
+    font-size: 15px;
+    font-weight: 400;
+    text-align: left;
+}
+
+.cont_coment .fa {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.cont_coment .fa i {
+    color: white;
+    background-color: #422B1F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+}
+
+.cont .title {
+    margin: 5% 0;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #44250b;
+    background-color: white;
+    border-radius: 30px;
+    font-family: var(--font1);
+    font-weight: 700;
+    font-size: 3vh;
+    text-align: left;
+}
+
+.cont_coment .inline {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: space-between;
+    align-items: flex-start;
+    width: 60vw;
+}
+
+.cont_coment .inline i {
+    font-size: 6vw;
+    width: 9vw;
+    height: 9vw;
+}
+
+.cont span {
+    font-size: 15px;
+}
+
+.comment {
+    display: flex;
+    flex-direction: column;
+    margin: 3vh 0;
+    padding: 3vw;
+    width: 100%;
+    border-radius: 10px;
+    background-color: #ECEBEA;
+    border: none;
+
+}
+
+.button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 75vw;
+    border-radius: 5px;
+    background-color: #ECEBEA;
+}
+
+/*скрыть коменты можно поставив display: none*/
+.comment_v {
+    display: none;
+    flex-direction: column;
+}
+
+.comment .comment_v div {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    width: 75vw;
+    margin-top: 2vh;
+}
+
+.comment:hover .comment_v {
+    display: flex;
+}
+
+.footer {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer .filterbig {
+    margin: 2vh;
+    width: 70vw;
+    height: 5vh;
+    min-height: 30px;
+}
+
 @media (max-device-height: 650px),(max-device-width: 600px) {
     .headline .krestik {
         position: sticky;
@@ -1259,6 +1488,15 @@ a {
 
     .fr_text button {
         font-size: 13px;
+    }
+
+    .headerthree {
+        min-height: 50px;
+
+    }
+
+    .headerthree_title {
+        font-size: 15px;
     }
 }
 
