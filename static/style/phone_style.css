@@ -154,7 +154,7 @@ span:first-letter {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     height: 5vh;
     min-height: 62px;
 }
@@ -180,7 +180,7 @@ span:first-letter {
     display: flex;
     align-items: center;
     justify-content: center;
-
+    margin: auto;
     width: 70%;
     height: 100%;
     text-align: center;
@@ -271,7 +271,7 @@ span:first-letter {
     background: white;
     color: black;
     text-shadow: 0 0 10px white;
-    padding: 0 55px 0 20px;
+    padding: 0 50px 0 20px;
     border-radius: 10px;
     box-shadow: -5px -5px 5px 0 rgba(0, 0, 0, 0.2);
     transition: all 1s;
@@ -287,7 +287,7 @@ span:first-letter {
 }
 
 .container input:focus {
-    transform: translateX(calc(-75vw - 25px));
+    transform: translateX(calc(-75vw - 10px));
     transition: all 0.5s ease-out;
     opacity: 1;
     width: 75vw;
@@ -487,7 +487,7 @@ span:first-letter {
     justify-content: center;
     align-items: center;
 
-    background-image: url(../img/konvert.png);
+    background-image: url(../img/message.png);
     background-position-y: 50%;
     background-position-x: -70%;
     background-size: 40vh;
@@ -671,7 +671,7 @@ button {
     height: 0;
     width: 100%;
     padding-bottom: 100%;
-    background: url("../img/konvert.png") center no-repeat;
+    background: url("../img/message.png") center no-repeat;
     background-color: #44250b;
     background-size: 70%;
     border-color: rgba(0, 0, 0, 0);
@@ -1228,14 +1228,21 @@ a {
 }
 
 /*фоновое изображение*/
-.wrap-filt {
-    background-image: url("../img/muvies.png");
-    background-position-y: 100%;
+.wrap-filt:before {
+    background-color: #efefef;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    background-image: url("../img/filt.png");
     background-position-x: 100%;
-    background-size: calc(25vh + 25vw);
+    background-position-y: 100%;
+    background-size: calc(50vh);
     background-repeat: no-repeat;
 }
-
 .wrap-actors:before {
     content: "";
     position: absolute;

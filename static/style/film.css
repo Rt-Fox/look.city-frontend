@@ -1,6 +1,6 @@
 /*film*/
 .wrap-film {
-    background-image: url("../img/actors.png");
+    background-image: url("../img/muvies.png");
     background-position-y: 100%;
     background-position-x: 100%;
     background-size: calc(25vh + 25vw);
@@ -42,33 +42,6 @@
     font-size: 3vh;
     text-align: center;
 }
-
-.contents {
-    width: 90%;
-    height: 90%;
-    overflow: auto;
-    margin: 0;
-}
-
-.cont:first-child {
-    margin-top: 3vh;
-}
-
-.cont {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-
-    margin: 0 0 30px 0;
-    color: #958682;
-
-    font-family: var(--font1);
-    font-weight: 700;
-    font-size: xx-large;
-}
-
 .el {
     display: flex;
     flex-direction: row;
@@ -102,6 +75,30 @@ a {
     margin: 2vw;
 }
 
+.contents {
+    width: 75%;
+    height: 90%;
+    overflow: auto;
+    margin: 0;
+}
+
+.cont:first-child {
+    margin-top: 3vh;
+}
+
+.cont {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 6vh;
+    margin: 0 0 30px 0;
+    color: #958682;
+
+    font-family: var(--font1);
+    font-weight: 700;
+}
 .checkbox {
     position: absolute;
     z-index: -1;
@@ -109,18 +106,23 @@ a {
 }
 
 .checkbox + label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     padding: 0 0 0 7vh;
     cursor: pointer;
+    font-size: 3vh;
 }
 
 .checkbox + label:before {
     content: '';
     position: absolute;
-    top: -10px;
+    top: 50%;
+    transform: translateY(-50%);
     left: 0;
     width: 5vh;
-    height: 5vh;
+    padding-bottom: 5vh;
     border-radius: 10%;
     background: #faf8f6;
     box-shadow: inset 1vh 1vh 1vh rgba(0, 0, 0, .2);
