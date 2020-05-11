@@ -6,6 +6,8 @@ let vm = new Vue({
         map: true,
         addButtons: false,
         info: null,
+        search: false,
+        feedback: false,
     },
 
     methods: {
@@ -15,6 +17,12 @@ let vm = new Vue({
         },
         changeButtons() {
             this.addButtons = !this.addButtons;
+        },
+        searchAnim() {
+            this.search = !this.search;
+        },
+        feedbackPopUp() {
+            this.feedback = !this.feedback;
         },
     },
 
