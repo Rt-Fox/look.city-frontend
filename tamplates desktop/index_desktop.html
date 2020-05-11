@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>Кинопутеводитель</title>
-    <meta content="width=device-width, initial-scale=1" name="viewport">
     <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
     <link href="/favicon.ico" rel="icon" type="image/x-icon">
     <meta content="#FF422B1F" name="theme-color">
@@ -14,10 +12,8 @@
             type="text/javascript"></script>
     <script src="https://yandex.st/jquery/2.2.3/jquery.min.js" type="text/javascript"></script>
     <script src="../static/js/map.js" type="text/javascript"></script>
-    <link href="../static/style/style-comp.css" rel="stylesheet">
-    <link href="../static/style/menu.css" rel="stylesheet">
+    <link href="../static/style/style_desktop.css" rel="stylesheet">
 </head>
-
 <body>
     <div class="mid" id="root">
         <div class="main-wrapper" v-show="map">
@@ -28,29 +24,18 @@
             <!-- Поиск и фильтры -->
             <div class="header">
                 <!-- Кнопка меню -->
-                <div class="container1">
-                    <div class="flipper">
-                        <div class="button front">
-                            <div class="headerone">
-                                <button class="brand">
-                                    <img alt="Кинопутеводитель" src="../static/img/kino.png">
-                                </button>
-                                <span @click="changeMenuState" class="menu">МЕНЮ</span>
-                                <form class="container">
-                                    <div class="search"></div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="button back">
-                            <form class="container">
-                                <input placeholder="Search..." type="text">
-                                <div class="search"></div>
-                            </form>
-                        </div>
-                    </div>
+                <div class="headerone">
+                    <button class="brand">
+                        <img alt="Кинопутеводитель" src="../static/img/kino.png">
+                    </button>
+                    <span @click="changeMenuState" class="menu">МЕНЮ</span>
+                    <form class="container">
+                        <input placeholder="Search..." type="text">
+                        <div class="search"></div>
+                    </form>
                 </div>
-                <!--Кнопки фильтра и чекбоксы-->
                 <div>
+                    <!--Кнопки фильтра-->
                     <div class="filters" v-if="!addButtons">
                         <span class="filter">ФИЛЬМЫ</span>
                         <span class="filter active">ЖАНРЫ</span>
@@ -59,7 +44,7 @@
                         <span class="filter">АКТЕРЫ</span>
                         <span class="filterbig">РЕЖИССЕРЫ</span>
                     </div>
-
+                    <!--Список под меню-->
                     <div class="contents">
                         <div class="cont neww">
                             <input class="checkbox" id="checkbox" type="checkbox"/>
@@ -93,56 +78,35 @@
                 </div>
             </div>
             <!-- Поп-ап -->
-            <div class="menu_open">
+            <div class="pop_up">
                 <div class="window">
                     <div class="headertwo">
-                        <img src="../static/img/film.png">
-                        <div class="krestik">
-                        </div>
+                        <img src="../static/img/brend.png">
+                    </div>
+                    <div class="contenttwo"></div>
+                    <div class="footertwo">
+                        <button class="filterbig">закрыть</button>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- Открытое меню -->
-        <div class="grid-main-wrapper" v-if="menu">
-            <div class="message">
-                <a href="/feedback"></a>
-            </div>
-            <div class="city">
-                <a href="/cities">ГОРОДА</a>
-            </div>
-            <div @click="changeMenuState" class="krest">
-                <div></div>
-            </div>
-            <div class="new square">
-                <a href="/new_movies">НОВИНКИ</a>
-            </div>
-            <div class="top square">
-                <a href="/stories">ЛУЧШИЕ КИНО-РАССКАЗЫ</a>
-            </div>
-            <div class="film square">
-                <a href="/movies">ФИЛЬМЫ</a>
-            </div>
-            <div class="year square">
-                <a href="/decades">ГОДЫ</a>
-            </div>
-            <div class="genres square">
-                <a href="/genres">ЖАНРЫ</a>
-            </div>
-            <div class="personage square">
-                <a href="/heroes">ПЕРСОНАЖИ</a>
-            </div>
-            <div class="producer square">
-                <a href="/producers">РЕЖИССЕРЫ</a>
-            </div>
-            <div class="actors square">
-                <a href="/actors">АКТЕРЫ</a>
-            </div>
-            <div class="popular square">
-                <a href="/popular_places">ПОПУЛЯРНЫЕ МЕСТА</a>
-            </div>
-            <div class="places square">
-                <a href="/undefined_places">НЕОПОЗНАННЫЕ МЕСТА</a>
+            <!--фрагмент при нажжатии-->
+            <div class="fragment_karta">
+                <div class="fragment">
+                    <div class="headertwo">
+                        <span>Название фрагмента</span>
+                        <div class="krestik">
+                        </div>
+                    </div>
+                    <div class="fragment_content">
+                        <!--Заменить тег на видео, в стилях .fr_content img -> .fr_content video -->
+                        <img src="../static/img/kino.png">
+                        <div class="fragment_text">
+                            <span>Краткое пояснение/описание места или происходящего в кадре. Выдержки из истории.</span>
+                            <button class="filterbig">Другие фрагменты</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="triangle">▲</div>
             </div>
         </div>
     </div>
