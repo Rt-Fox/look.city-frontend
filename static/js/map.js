@@ -93,10 +93,10 @@ function init() {
         // Группировать только по одиаковым координатам
         groupByCoordinates: false,
         // Размер ячейки кластеризатора
-        gridSize: 100,
-        clusterDisableClickZoom: true,
-        clusterHideIconOnBalloonOpen: false,
-        geoObjectHideIconOnBalloonOpen: false,
+        gridSize: 50,
+        clusterDisableClickZoom: false,
+        // clusterHideIconOnBalloonOpen: false,
+        // geoObjectHideIconOnBalloonOpen: false,
     });
 
     // Добавление точек в кластеризатор

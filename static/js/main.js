@@ -4,6 +4,7 @@ let vm = new Vue({
 
     data: {
         colors: {
+            "Multiple": "blue",
             "1900e": "black",
             "1910e": "black",
             "1920e": "black",
