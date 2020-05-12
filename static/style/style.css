@@ -65,8 +65,8 @@ html, body {
 
 .zoom {
     position: fixed;
-    top: 70vh;
-    right: 5vw;
+    bottom: 10vh;
+    right: 4vw;
     width: 5vw;
     min-width: 40px;
     height: 10vh;
@@ -102,6 +102,9 @@ html, body {
     background-color: rgba(0, 0, 0, 0);
     height: 100%;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .main-wrapper {
@@ -140,11 +143,6 @@ html, body {
     border: 0;
     box-shadow: -5px -5px 5px rgba(0, 0, 0, 0.2);
 }
-
-.back {
-    display: none;
-}
-
 .brand img {
     width: 100%;
     height: 100%;
@@ -212,7 +210,7 @@ html, body {
     width: 12px;
     height: 2px;
     transform: rotate(45deg);
-    transition: all .5s;
+    transition: all 0.5s;
     background: #44250b;
 }
 
@@ -228,7 +226,7 @@ html, body {
     height: 25px;
     border-radius: 50%;
     border: 2px solid #44250b;
-    transition: all .5s;
+    transition: all 0.5s;
 }
 
 .container input {
@@ -274,7 +272,7 @@ html, body {
     width: 70px;
     height: 70px;
     border-radius: 50%;
-    background: #EFE7DB;
+    background: #efe7db;
     z-index: 102;
 }
 
@@ -454,7 +452,7 @@ html, body {
     font-weight: 700;
     font-size: x-large;
     background-color: #f4f4f4;
-    background-image: url(../img/konvert.png);
+    background-image: url(../img/message.png);
     background-position-y: 50%;
     background-position-x: -70%;
     background-size: 40vh;
@@ -525,7 +523,7 @@ button {
     cursor: pointer;
 }
 
-@media (max-device-width: 540px),(max-device-height: 600px) {
+@media (max-device-width: 540px), (max-device-height: 600px) {
     html, body {
         --filter-text-size: 0.8em;
         --menu-text-size: x-large;
@@ -557,7 +555,7 @@ button {
     }
 }
 
-@media (max-device-width: 370px),(max-device-height: 420px) {
+@media (max-device-width: 370px), (max-device-height: 420px) {
     html, body {
         --filter-text-size: 0.65em;
         --menu-text-size: large;
@@ -568,198 +566,60 @@ button {
     }
 }
 
-@media (min-width: 1200px) {
-    html, body {
-        --filter-text-size: 0.65em;
-        --menu-text-size: x-large;
-        --filter-shadow: 0 4px 3px 2px rgba(0, 0, 0, 0.2);
-    }
-
-    .header {
-        position: absolute;
-        top: 3vh;
-        left: 3vw;
-        width: 450px;
-        height: 70vh;
-        background-color: #fef6e9;
-        padding: 20px;
-        border-radius: 20px;
-        box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
-    }
-
-    .brand {
-        background-color: rgba(0, 0, 0, 0);
-        padding: 0;
-        height: 100%;
-        width: 30%;
-        margin-right: 10px;
-        border-radius: var(--search-border-radius);
-        border: 0;
-        box-shadow: -5px -5px 5px rgba(0, 0, 0, 0.2);
-    }
+/* Точки на карте */
+.point {
+    width: 20px;
+    height: 20px;
 }
 
-    .brand img {
-        width: 100%;
-        height: auto;
-        border-radius: var(--search-border-radius);
-    }
+.p1900 {
+    fill: #1F1E1C;
+}
 
-    .container input:focus {
-        transform: translateX(-400px);
-        width: 350px;
-    }
+.p1910 {
+    fill: #1F1E1C;
+}
 
-    .container input:focus ~ .search {
-        left: 0px;
-    }
+.p1920 {
+    fill: #1F1E1C;
+}
 
-    .filters {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        width: 100%;
-        height: auto;
-        min-height: 35px;
-        margin: 2% 0 2% 0;
-    }
+.p1930 {
+    fill: #77563D;
+}
 
-    .filter {
-        width: 28%;
-        height: 4vh;
-        margin: 2% 1%;
-        box-shadow: var(--filter-shadow);
-        font-size: var(--filter-text-size);
-    }
+.p1940 {
+    fill: #D9AE6E;
+}
 
-    .filterbig {
-        width: 32%;
-        height: 4vh;
-        margin: 3% 1%;
-        font-size: var(--filter-text-size);
-        box-shadow: var(--filter-shadow);
-    }
+.p1950 {
+    fill: #F8DA84;
+}
 
-    .contents {
-        width: 100%;
-        height: 50vh;
-        overflow: auto;
-        margin: 0;
-    }
+.p1960 {
+    fill: #ABC573;
+}
 
-    .cont {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        color: #958682;
-        font-family: var(--font1);
-        font-weight: 700;
-        font-size: large;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        padding: 20px 0;
-    }
+.p1970 {
+    fill: #418353;
+}
 
-    .neww {
-        background-image: url("../img/new.png");
-        background-position-x: -0.5%;
-        background-position-y: 50%;
-        background-size: 13%;
-        background-repeat: no-repeat;
-    }
+.p1980 {
+    fill: #39523D;
+}
 
-    .checkbox {
-        position: absolute;
-        z-index: -1;
-        opacity: 0;
-    }
+.p1990 {
+    fill: #1E2E52;
+}
 
-    .checkbox + label {
-        position: relative;
-        padding: 0 0 0 100px;
-        cursor: pointer;
-    }
+.p2000 {
+    fill: #693E69;
+}
 
-    .checkbox + label:before {
-        content: '';
-        position: absolute;
-        top: 5px;
-        left: 60px;
-        width: 30px;
-        height: 30px;
-        border-radius: 10%;
-        background: #faf8f6;
-        box-shadow: inset 1vh 1vh 1vh rgba(0, 0, 0, .2);
-    }
+.p2010 {
+    fill: #E39FAB;
+}
 
-    .checkbox:checked + label:before {
-        background: #44250b;
-        box-shadow: inset 1vh 1vh 1vh rgba(0, 0, 0, .2);
-    }
-
-    ::-webkit-scrollbar {
-        width: 9px;
-    }
-
-    ::-webkit-scrollbar-thumb {
-        background: #958682;
-        border-radius: 15px;
-    }
-
-    .container1 {
-        width: 450px;
-        height: 60px;
-        cursor: pointer;
-        perspective: 1000px;
-        -webkit-perspective: 1000px;
-    }
-
-    .container1:hover .flipper {
-        transform: rotateX(-90deg);
-    }
-
-    .container1:hover .back {
-        display: flex;
-        align-items: flex-end;
-    }
-
-    .container1 .flipper {
-        height: 70px;
-        width: 450px;
-        transition: all 0.5s ease;
-        transform-style: preserve-3d;
-        position: relative;
-    }
-
-    .container1 .button {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        border-radius: 5px;
-        backface-visibility: hidden;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        font-family: 'Gochi Hand', cursive;
-        color: white;
-        letter-spacing: 2px;
-    }
-
-    .button .fa {
-        font-size: 24px;
-    }
-
-    .front {
-        transform: translateZ(22px);
-    }
-
-    .back {
-        text-shadow: 1px 0 2px #000000;
-        transform: rotateX(90deg) translateZ(22px);
-    }
+.p2020 {
+    fill: #B00121;
 }
