@@ -323,27 +323,6 @@ span:first-letter {
     opacity: 0.5;
     font-weight: bolder;
 }
-
-.bg .fa-search {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 4vh;
-    color: white;
-}
-
-.headline .bg {
-    background-color: #44250b;
-    min-height: 30px;
-    min-width: 40px;
-    max-width: 50px;
-    max-height: 50px;
-    width: 10%;
-    border-radius: 15%;
-}
-
 .filters {
     display: flex;
     flex-direction: row;
@@ -526,7 +505,7 @@ span:first-letter {
     font-size: 6vw;
 }
 
-.krestik {
+.krestik, .bell, .back, .loupe {
     min-height: 30px;
     min-width: 30px;
     max-width: 40px;
@@ -536,8 +515,23 @@ span:first-letter {
     background-size: 65%;
     border-color: rgba(0, 0, 0, 0);
     border-radius: var(--krest-radius);
-    box-shadow: 0px 5px 13px rgba(0, 0, 0, 0.25);}
-
+    box-shadow: 0px 5px 13px rgba(0, 0, 0, 0.25);
+}
+.loupe {
+    background: url("../img/white_loupe.svg") center no-repeat;
+    background-color: #44250b;
+    background-size: 60%;
+}
+.bell {
+    background: url("../img/white_bell.svg") center no-repeat;
+    background-color: #44250b;
+    background-size: 50%;
+}
+.back {
+    background: url("../img/white_back.svg") center no-repeat;
+    background-color: #44250b;
+    background-size: 40%;
+}
 .nd .krestik {
     grid-area: krestik;
     box-shadow: 0px 5px 13px rgba(0, 0, 0, 0.25);
@@ -900,7 +894,7 @@ button {
     width: 90%;
     margin: 0 10%;
     margin-top: 15px;
-    height: calc(15px + 5%);
+    height: 40px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -917,13 +911,31 @@ button {
     position: sticky;
     top: 0;
     left: 82%;
-    width: 10.4vw;
-    height: 100%;
+    width: 40px;
+    height: 40px;
     max-width: 50px;
     max-height: 45px;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
 }
-
+.headline .back {
+    width: 40px;
+    height: 40px;
+    max-width: 50px;
+    max-height: 45px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+}
+.headline .bell {
+    width: 40px;
+    height:40px;
+    max-width: 50px;
+    max-height: 45px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+}
+.headline .loupe {
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+}
 .one {
     display: flex;
     flex-direction: row;
@@ -1053,7 +1065,9 @@ button {
     font-size: 2.5vh;;
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
 }
-
+.headline .title {
+    width: 60%;
+}
 .hg {
     height: 17vh;
     width: 99vw;
