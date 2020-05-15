@@ -6,7 +6,7 @@
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
           integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" rel="stylesheet">
-    <link href="/static/style/phone_style.css" rel="stylesheet">
+    <link href="../../static/style/phone_style.css" rel="stylesheet">
 </head>
 <body>
 <div class="mid">
@@ -22,7 +22,7 @@
             {% for person in data %}
             <a href="{{ person.href }}" class="cont hg">
                 <div class="el">
-                    <img src="{{ person.photo }}">
+                    <img class="el_person" src="{{ person.photo }}">
                     <div>
                         <span>{{ person.name }}</span>
                     </div>

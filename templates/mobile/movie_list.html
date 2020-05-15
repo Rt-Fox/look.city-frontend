@@ -18,12 +18,12 @@
             <div class="title">{{ title|upper }}</div>
             <div class="krestik"></div>
         </div>
-        <div class="contents">
+        <div>
             {% for movie in data %}
             <a href="{{ movie.href }}" class="cont hg">
                 <div class="el">
-                    <img src="/{{ movie.photo }}">
-                    <div>
+                    <img class="el_movie" src="/{{ movie.photo }}">
+                    <div class="el_text">
                         <span>{{ movie.producer }}</span>
                         <span>{{ movie.name }}</span>
                         <span>{{ movie.year }}</span>

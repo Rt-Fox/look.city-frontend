@@ -55,6 +55,7 @@ html, body {
     --square-bg-color: #fef6e9;
     --square-text-size: 2.5vh;
     --img-radius: 15%;
+    --krest-radius: 12px;
 
     --position: 0%;
 }
@@ -534,9 +535,8 @@ span:first-letter {
     background-color: #44250b;
     background-size: 65%;
     border-color: rgba(0, 0, 0, 0);
-    border-radius: var(--img-radius);
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
-}
+    border-radius: var(--krest-radius);
+    box-shadow: 0px 5px 13px rgba(0, 0, 0, 0.25);}
 
 .nd .krestik {
     grid-area: krestik;
@@ -726,7 +726,7 @@ button {
     background-color: #44250b;
     background-size: 70%;
     border-color: rgba(0, 0, 0, 0);
-    border-radius: var(--img-radius);
+    border-radius: var(--krest-radius);
     box-shadow: 5px -5px 20px rgba(0, 0, 0, 0.4);
 }
 
@@ -903,6 +903,7 @@ button {
     height: calc(15px + 5%);
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-around;
     background-color: transparent;
 }
@@ -916,8 +917,10 @@ button {
     position: sticky;
     top: 0;
     left: 82%;
-    width: 10%;
+    width: 10.4vw;
+    height: 100%;
     max-width: 50px;
+    max-height: 45px;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
 }
 
@@ -1031,6 +1034,7 @@ button {
     margin: 0 5%;
     width: 80%;
     height: 100%;
+    max-height: 45px;
 
 
     display: flex;
@@ -1051,10 +1055,9 @@ button {
 }
 
 .hg {
-    height: 30vh;
+    height: 17vh;
     width: 99vw;
 }
-
 .gr {
     height: 70px;
     width: 90vw;
@@ -1143,11 +1146,11 @@ button {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    height: 90%;
-    width: 80%;
+    height: 17vh;
+    width: 78vw;
     border-radius: 3vw;
-    background-color: #fef6e9;
-    box-shadow: -3px -3px 5px rgba(0, 0, 0, 0.4);
+    background-color: #ECEBEA;
+    box-shadow: -5px -5px 25px rgba(212, 212, 211, 0.9), 5px 5px 20px rgba(255, 255, 255, 0.9), -5px 5px 20px rgba(212, 212, 211, 0.2), 5px -5px 20px rgba(212, 212, 211, 0.2), inset 1px 1px 2px rgba(212, 212, 211, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
 }
 
 a {
@@ -1157,19 +1160,26 @@ a {
 .el video {
     margin: 2vw;
     border-radius: 2vw;
-    height: 80%;
-    width: 50%;
+    height: 10vh;
+    width: 28vw;
 }
 
-.el img {
+.el .el_movie {
     margin: 2vw;
     margin-left: 10vw;
     border-radius: 2vw;
-    height: 80%;
-    width: 40%;
+    height: 10vh;
+    width: 28vw;
+}
+.el .el_person {
+    margin: 2vw;
+    margin-left: 20vw;
+    border-radius: 2vw;
+    height: 12vh;
+    width: 17.5vw;
 }
 
-.el div {
+.el .el_text {
     display: flex;
     flex-direction: column;
     -moz-hyphens: auto;
@@ -1178,9 +1188,16 @@ a {
     word-wrap: normal;
     margin: 2vw;
 }
-
+.el .el_text span {
+    font-family: var(--font2);
+    font-style: normal;
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    color: #422B1F;
+}
 .contents {
-    width: 95vw;
+    width: 100vw;
     height: 90%;
     overflow: auto;
     margin: 0;
@@ -1201,7 +1218,7 @@ a {
     justify-content: center;
     width: 100%;
     min-height: 6vh;
-    margin: 0 0 30px 0;
+    margin: 0 0 2vh 0;
     color: #958682;
 
     font-family: var(--font1);
@@ -1423,9 +1440,11 @@ a {
 .headerthree .krestik {
     width: 10vw;
     height: 10vw;
+    max-width: 30px;
+    max-height: 30px;
     text-align: center;
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
+    border-radius: 8px;
 }
 
 .bio {
@@ -1475,10 +1494,25 @@ a {
     width: 80%;
 }
 
-.movie .cont video {
+.movie .cont video, .movie .cont img {
     width: 100%;
     height: 30vh;
     border-radius: 20px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+}
+.movie .cont .main {
+    border-radius: 0;
+    box-shadow: none;
+    height: 30vh;
+    width: 100%;
+}
+.cont a {
+    width: 100%;
+    height: 30vh;
+}
+.cont a img{
+    width: 100%;
+    height: 30vh;
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
 }
 
@@ -1498,10 +1532,11 @@ a {
     justify-content: space-between;
     align-items: flex-start;
     margin-left: 2vw;
-    font-family: var(--font);
+    font-family: var(--font2);
     font-size: 15px;
     font-weight: 400;
-    text-align: left;
+    text-align: left;;
+    color: #422B1F;
 }
 
 .cont_coment .fa {
@@ -1574,8 +1609,15 @@ a {
     height: 12vw;
 }
 
-.cont span {
+.description {
     font-size: 15px;
+    font-family: var(--font2);
+    font-style: normal;
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    line-height: 100%;
+    color: #422B1F;
 }
 
 .comment {
@@ -1598,7 +1640,15 @@ a {
     border-radius: 5px;
     background-color: #ecebea;
 }
-
+.button span, .button div{
+    font-family: var(--font);
+    font-style: normal;
+    font-weight: 500;
+    /* or 50px */
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+}
 /*скрыть коменты можно поставив display: none*/
 .comment_v {
     display: none;
@@ -1637,8 +1687,8 @@ a {
         position: sticky;
         top: 0;
         left: 85%;
-        width: 10%;
         max-width: 50px;
+        max-height: 40px;
     }
 
     .one input {
@@ -1768,7 +1818,7 @@ a {
     }
 
     .el {
-        width: 89vw;
+        width: 80vw;
     }
 
     .el span {
