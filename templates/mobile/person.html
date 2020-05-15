@@ -28,7 +28,7 @@
         <div class="contents">
             {% for movie in data %}
             <a href="{{ movie.href }}" class="cont">
-                <img src="/{{movie.photo}}">
+                <img class="film_person" src="/{{movie.photo}}">
                 <div>{{ movie.name }}</div>
             </a>
             {% endfor %}

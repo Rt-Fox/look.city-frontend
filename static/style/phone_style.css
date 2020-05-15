@@ -1448,33 +1448,46 @@ a {
 }
 
 .bio {
-    margin: 4vh 2vh;
+    margin: 4vh auto 2vh;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    width: 90vw;
+    width: 80vw;
 }
 
 .bio img {
-    width: 50%;
+    height: 35vh;
+    width: 43vw;
 }
 
 .bio_text {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: flex-start;
     margin-left: 2vw;
-    font-family: var(--font);
-}
 
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.bio_text div {
+    color: #422B1F;
+    font-family: var(--font2);
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 150%;
+}
 .movie .movie_title {
-    font-size: 20px;
-    letter-spacing: 3px;
+    font-size: 25px;
     font-family: var(--font);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: 900;
     text-align: center;
+    font-style: normal;
+
+    color: #422B1F;
 }
 
 .movie .contents {
@@ -1496,7 +1509,7 @@ a {
 
 .movie .cont video, .movie .cont img {
     width: 100%;
-    height: 30vh;
+    height: 29vh;
     border-radius: 20px;
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
 }
@@ -1506,14 +1519,28 @@ a {
     height: 30vh;
     width: 100%;
 }
-.cont a {
+.cont {
     width: 100%;
     height: 30vh;
+    border-radius: 20px;
 }
-.cont a img{
+.cont div{
+    margin: 1vh;
     width: 100%;
-    height: 30vh;
-    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+    font-family: var(--font2);
+    text-align: left;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 100%;
+
+    display: flex;
+    align-items: center;
+
+    color: #422B1F;
+}
+.movie .cont .film_person{
+    box-shadow: -5px -5px 15px rgba(183, 183, 183, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9), -5px 5px 15px rgba(183, 183, 183, 0.2), 5px -5px 10px rgba(183, 183, 183, 0.2), inset 1px 1px 2px rgba(183, 183, 183, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .cont_coment {
