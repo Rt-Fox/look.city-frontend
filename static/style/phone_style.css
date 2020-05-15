@@ -25,21 +25,21 @@ html, body {
     --search-color: #422b1f;
     --search-bg-color: #f6f6f6;
     --search-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
-    --search-border-radius: 20px;
+    --brend-border-radius: 18px;
     --search-text-size: x-large;
 
     --filter-color: #f6f6f6;
     --filter-border-radius: 30px;
     --filter-bg-color: #422b1f;
 
-    --filter-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    --filter-shadow:  0px 5px 13px rgba(0, 0, 0, 0.25);
     --filter-text-size: 1fr;
 
     --menu-color: #422b1f;
     --menu-bg-color: #f6f6f6;
-    --menu-border-radius: 30px;
+    --menu-border-radius: 18px;
     --menu-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
-    --menu-text-size: xx-large;
+    --menu-text-size: x-large;
     --zoom-bg-color: #f6f6f6;
     --color-active: #422b1f;
     --bg-color-active: #f6f6f6;
@@ -162,17 +162,17 @@ span:first-letter {
     background-color: rgba(0, 0, 0, 0);
     padding: 0;
     height: 100%;
-    width: 130px;
+    width: 100px;
     margin-right: 10px;
-    border-radius: var(--search-border-radius);
+    border-radius: var(--brend-border-radius);
     border: 0;
-    box-shadow: -5px -5px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: -5px -5px 13px rgba(197, 197, 197, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9), -5px 5px 10px rgba(197, 197, 197, 0.2), 5px -5px 10px rgba(197, 197, 197, 0.2), inset 1px 1px 2px rgba(197, 197, 197, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .brand img {
     width: 100%;
     height: 100%;
-    border-radius: var(--search-border-radius);
+    border-radius: var(--brend-border-radius);
 }
 
 .menu {
@@ -180,10 +180,11 @@ span:first-letter {
     align-items: center;
     justify-content: center;
     margin: auto;
-    width: 70%;
+    width: 55%;
     height: 100%;
     text-align: center;
     color: var(--menu-color);
+    text-transform: uppercase;
     background-color: var(--menu-bg-color);
     border-radius: var(--menu-border-radius);
     border-color: rgba(0, 0, 0, 0);
@@ -192,8 +193,8 @@ span:first-letter {
     font-weight: 900;
     font-size: var(--menu-text-size);
     letter-spacing: 5px;
-    box-shadow: -5px -5px 5px rgba(0, 0, 0, 0.2);
     z-index: 100;
+    box-shadow: -5px -5px 13px rgba(197, 197, 197, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9), -5px 5px 10px rgba(197, 197, 197, 0.2), 5px -5px 10px rgba(197, 197, 197, 0.2), inset 1px 1px 2px rgba(197, 197, 197, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .container {
@@ -214,8 +215,7 @@ span:first-letter {
     left: 0;
     width: 100%;
     height: 100%;
-    box-shadow: -5px -5px 5px rgba(0, 0, 0, 0.2);
-    background: white;
+    box-shadow: -5px -5px 13px rgba(197, 197, 197, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9), -5px 5px 10px rgba(197, 197, 197, 0.2), 5px -5px 10px rgba(197, 197, 197, 0.2), inset 1px 1px 2px rgba(197, 197, 197, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);    background: white;
     border-radius: 25%;
     transition: all 1s;
     z-index: 100;
@@ -476,7 +476,7 @@ span:first-letter {
     position: fixed;
     bottom: 0;
     width: 100vw;
-    height: auto;
+    height: 40vh;
 }
 
 .mn .window {
@@ -503,15 +503,16 @@ span:first-letter {
 .nd .headertwo,
 .fr .headertwo {
     display: grid;
-    height: 5vh;
+    height: 6vh;
     width: 100%;
+    margin-top: 1vh;
     grid-template-rows: 5vh;
-    grid-template-columns: 4vw 1fr 1fr 1fr 1fr 5vh;
+    grid-template-columns: 4vw 1fr 1fr 1fr 1fr 13vw;
     grid-template-areas: "zero img img img img krestik";
 }
 
 .nd img,
-.fr span {
+.fr .headertwo span {
     grid-area: img;
     width: 90%;
     height: 100%;
@@ -525,10 +526,10 @@ span:first-letter {
 
 .krestik {
     min-height: 30px;
-    min-width: 40px;
-    max-width: 50px;
-    max-height: 50px;
-    background: url("/static/img/krest.png") center no-repeat;
+    min-width: 30px;
+    max-width: 40px;
+    max-height: 40px;
+    background: url("../img/krest.png") center no-repeat;
     background-color: #44250b;
     background-size: 65%;
     border-color: rgba(0, 0, 0, 0);
@@ -538,14 +539,12 @@ span:first-letter {
 
 .nd .krestik {
     grid-area: krestik;
-    width: 4vh;
-    height: 4vh;
-    box-shadow: 5px -5px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 5px 13px rgba(0, 0, 0, 0.25);
 }
 
 .fr .krestik {
     grid-area: krestik;
-    box-shadow: 5px -5px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 5px 13px rgba(0, 0, 0, 0.25);
     transform: translateX(-50%);
     width: 80%;
     height: 80%;
@@ -558,15 +557,17 @@ span:first-letter {
     left: 90%;
     width: calc(3.5vh + 2vw);
     padding-bottom: calc(3.5vh + 2vw);
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 5px 13px rgba(0, 0, 0, 0.25);
 }
 
 .fr_content {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
     width: 90%;
-    height: 90%;
-    margin: 3vh 0;
+    height: 50%;
+    margin: 5vh 0;
 }
 
 .fr_content img,
@@ -575,29 +576,31 @@ span:first-letter {
     flex-direction: column;
     justify-content: space-around;
     width: 48%;
-    height: 60%;
+    height: 100%;
     margin-left: 2vh;
 }
 
 .fr_content img {
-    box-shadow: -5px -5px 5px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
+    box-shadow: -2px -2px 20px rgba(183, 183, 183, 0.9), 5px 5px 15px rgba(255, 255, 255, 0.9), -10px 10px 20px rgba(183, 183, 183, 0.2), 5px -5px 20px rgba(183, 183, 183, 0.2), inset 1px 1px 2px rgba(183, 183, 183, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);    border-radius:17px;
 }
 
-.fr_text span,
-.fr_text button {
+.fr_text span {
+    overflow-y: auto;
     text-align: left;
+    height: 15vh;
     width: 100%;
     font-size: 13px;
 }
 
 .fr_text button {
+    padding: 0;
+    width: 94%;
     display: flex;
     justify-self: flex-end;
     align-self: flex-end;
-    height: 38px;
+    height: 5vh;
     text-align: center;
-    font-size: 15px;
+    font-size: 2vh;
 }
 
 .without {
@@ -1064,7 +1067,6 @@ button {
     color: #44250b;
     box-shadow: -3px -3px 3px rgba(0, 0, 0, 0.4);
 }
-
 .gr .el span {
     font-size: 20px;
 }
@@ -1073,6 +1075,61 @@ button {
     font-size: 15px;
 }
 
+/*.wrap-years .el:nth-child(1) {*/
+/*    background-color: #1f1e1c;*/
+/*    color: white;*/
+/*}*/
+
+/*.wrap-years .el:nth-child(2) {*/
+/*    background-color: #77563d;*/
+/*    color: white;*/
+/*}*/
+
+/*.wrap-years .el:nth-child(3) {*/
+/*    background-color: #d9ae6e;*/
+/*}*/
+
+/*.wrap-years .el:nth-child(4) {*/
+/*    background-color: #f8da84;*/
+/*}*/
+
+/*.wrap-years .el:nth-child(5) {*/
+/*    background-color: #abc573;*/
+/*}*/
+
+/*.wrap-years .el:nth-child(6) {*/
+/*    background-color: #418353;*/
+/*    color: white;*/
+/*}*/
+
+/*.wrap-years .el:nth-child(7) {*/
+/*    background-color: #39523d;*/
+/*    color: white;*/
+/*}*/
+
+/*.wrap-years .el:nth-child(8) {*/
+/*    background-color: #1e2e52;*/
+/*    color: white;*/
+/*}*/
+
+/*.wrap-years .el:nth-child(9) {*/
+/*    background-color: #693e69;*/
+/*    color: white;*/
+/*}*/
+
+/*.wrap-years .el:nth-child(10) {*/
+/*    background-color: #e39fab;*/
+/*    color: white;*/
+/*}*/
+
+/*.wrap-years .el:nth-child(10) {*/
+/*    background-color: #e39fab;*/
+/*}*/
+
+/*.wrap-years .el:nth-child(11) {*/
+/*    background-color: #b00121;*/
+/*    color: white;*/
+/*}*/
 .el {
     display: flex;
     flex-direction: row;
@@ -1098,8 +1155,8 @@ a {
 
 .el img {
     margin: 2vw;
-    border-radius: 2vw;
     margin-left: 10vw;
+    border-radius: 2vw;
     height: 80%;
     width: 40%;
 }
@@ -1421,6 +1478,7 @@ a {
     flex-direction: row;
     justify-content: space-between;
     margin-top: 5vh;
+    margin-bottom: 1vh;
 }
 
 .cont_text {
@@ -1443,6 +1501,7 @@ a {
 }
 
 .cont_coment .fa i {
+    box-shadow: 0px 10px 13px rgba(0, 0, 0, 0.25);
     color: white;
     background-color: #422b1f;
     display: flex;
@@ -1452,6 +1511,7 @@ a {
     height: 40px;
     width: 40px;
     border-radius: 10px;
+    margin: auto 0;
 }
 
 .wrap-years .fa {
@@ -1483,6 +1543,7 @@ a {
     font-weight: 700;
     font-size: 3vh;
     text-align: left;
+    box-shadow: none;
 }
 
 .cont_coment .inline {
@@ -1495,6 +1556,9 @@ a {
 }
 
 .cont_coment .inline i {
+    box-shadow: 0px 10px 13px rgba(0, 0, 0, 0.25);
+    color:#422b1f;
+    background-color: #ecebea;
     font-size: 6vw;
     width: 9vw;
     height: 9vw;
@@ -1660,7 +1724,7 @@ a {
     html,
     body {
         --filter-text-size: 0.8em;
-        --menu-text-size: x-large;
+        --menu-text-size: large;
     }
 
     .header {
