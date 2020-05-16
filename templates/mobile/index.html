@@ -56,7 +56,7 @@
             <div class="menu_open nd">
                 <div class="window">
                     <div class="headertwo">
-                        <img src="../static/img/brend.png">
+                        <img src="/static/img/brend.png">
                         <div class="krestik">
                         </div>
                     </div>
@@ -66,17 +66,18 @@
             <div @click="closePopUp" v-if="pointPopUp" id="pointPop" class="menu_open fr">
                 <div class="window">
                     <div class="headertwo">
-                        <span>[[ pointsInfo ]]</span>
+                        <span>[[ currentFragment.name ]]</span>
                         <div id="x" class="krestik"></div>
                     </div>
                     <!--с текстом-->
-                    <div class="fr_content">
+                    <div class="fr_content" v-bind:class="{ without : !popUpText}">
+                        <button v-if="moreThanOne" @click="previousFragment">&lt</button>
                         <img src="/static/img/kino.png">
                         <div class="fr_text">
-                            <span>Краткое пояснение/описание места или происходящего в кадре. Выдержки из
-                                истории.</span>
+                            <span v-if="popUpText">[[ currentFragment.short_description ]]</span>
                             <button class="filterbig">Другие фрагменты</button>
                         </div>
+                        <button v-if="moreThanOne" @click="nextFragment">&gt</button>
                     </div>
                 </div>
             </div>
