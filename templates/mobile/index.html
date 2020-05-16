@@ -34,6 +34,7 @@
                         <img alt="Кинопутеводитель" src="/static/img/kino.png">
                     </button>
                     <span v-show="!search" @click="changeMenuState" class="menu">МЕНЮ</span>
+                    <a href="#" class="container bell whitebell"></a>
                     <form class="container">
                         <input @focus="searchAnim" @blur="searchAnim" placeholder="Search..." type="text">
                         <div class="search"></div>
@@ -129,16 +130,16 @@
                 <div class="window">
                     <div class="krestik"></div>
                     <div class="mn_content">
-                        <ul class="tar">
-                            <li>Оставить отзыв</li>
-                            <li>Предложить место</li>
+                        <ul>
+                            <li><a href="/feedback">Оставить отзыв</a></li>
+                            <li><a href="/add_point">Предложить место</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script src="../static/js/main.js"></script>
+    <script src="/static/js/main.js"></script>
 </body>
 
 </html>
