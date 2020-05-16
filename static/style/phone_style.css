@@ -10,7 +10,8 @@
     font-size: 5pt;
 }
 
-html, body {
+html,
+body {
     margin: 0;
     overflow: hidden;
     font-size: 100%;
@@ -168,7 +169,9 @@ span:first-letter {
     margin-right: 10px;
     border-radius: var(--brend-border-radius);
     border: 0;
-    box-shadow: -5px -5px 13px rgba(197, 197, 197, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9), -5px 5px 10px rgba(197, 197, 197, 0.2), 5px -5px 10px rgba(197, 197, 197, 0.2), inset 1px 1px 2px rgba(197, 197, 197, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
+    box-shadow: -5px -5px 13px rgba(197, 197, 197, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9),
+        -5px 5px 10px rgba(197, 197, 197, 0.2), 5px -5px 10px rgba(197, 197, 197, 0.2),
+        inset 1px 1px 2px rgba(197, 197, 197, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .brand img {
@@ -196,7 +199,9 @@ span:first-letter {
     font-size: var(--menu-text-size);
     letter-spacing: 5px;
     z-index: 100;
-    box-shadow: -5px -5px 13px rgba(197, 197, 197, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9), -5px 5px 10px rgba(197, 197, 197, 0.2), 5px -5px 10px rgba(197, 197, 197, 0.2), inset 1px 1px 2px rgba(197, 197, 197, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
+    box-shadow: -5px -5px 13px rgba(197, 197, 197, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9),
+        -5px 5px 10px rgba(197, 197, 197, 0.2), 5px -5px 10px rgba(197, 197, 197, 0.2),
+        inset 1px 1px 2px rgba(197, 197, 197, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .container {
@@ -217,7 +222,9 @@ span:first-letter {
     left: 0;
     width: 100%;
     height: 100%;
-    box-shadow: -5px -5px 13px rgba(197, 197, 197, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9), -5px 5px 10px rgba(197, 197, 197, 0.2), 5px -5px 10px rgba(197, 197, 197, 0.2), inset 1px 1px 2px rgba(197, 197, 197, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
+    box-shadow: -5px -5px 13px rgba(197, 197, 197, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9),
+        -5px 5px 10px rgba(197, 197, 197, 0.2), 5px -5px 10px rgba(197, 197, 197, 0.2),
+        inset 1px 1px 2px rgba(197, 197, 197, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
     background: white;
     border-radius: 25%;
     transition: all 1s;
@@ -507,7 +514,10 @@ span:first-letter {
     font-size: 6vw;
 }
 
-.krestik, .bell, .back, .loupe {
+.krestik,
+.bell,
+.back,
+.loupe {
     min-height: 30px;
     min-width: 30px;
     max-width: 40px;
@@ -582,7 +592,9 @@ span:first-letter {
 }
 
 .fr_content img {
-    box-shadow: -2px -2px 20px rgba(183, 183, 183, 0.9), 5px 5px 15px rgba(255, 255, 255, 0.9), -10px 10px 20px rgba(183, 183, 183, 0.2), 5px -5px 20px rgba(183, 183, 183, 0.2), inset 1px 1px 2px rgba(183, 183, 183, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
+    box-shadow: -2px -2px 20px rgba(183, 183, 183, 0.9), 5px 5px 15px rgba(255, 255, 255, 0.9),
+        -10px 10px 20px rgba(183, 183, 183, 0.2), 5px -5px 20px rgba(183, 183, 183, 0.2),
+        inset 1px 1px 2px rgba(183, 183, 183, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
     border-radius: 17px;
 }
 
@@ -1059,21 +1071,20 @@ button {
     height: 100%;
     max-height: 45px;
 
-
     display: flex;
     align-items: center;
     justify-content: center;
 
     text-align: center;
     text-transform: uppercase;
-    color: #F6F6F6;
+    color: #f6f6f6;
 
     background-color: #44250b;
     border-radius: 30px;
     font-family: var(--font1);
     font-style: normal;
     font-weight: bold;
-    font-size: 2.5vh;;
+    font-size: 2.5vh;
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
 }
 
@@ -1179,8 +1190,10 @@ button {
     height: 17vh;
     width: 78vw;
     border-radius: 3vw;
-    background-color: #ECEBEA;
-    box-shadow: -5px -5px 25px rgba(212, 212, 211, 0.9), 5px 5px 20px rgba(255, 255, 255, 0.9), -5px 5px 20px rgba(212, 212, 211, 0.2), 5px -5px 20px rgba(212, 212, 211, 0.2), inset 1px 1px 2px rgba(212, 212, 211, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
+    background-color: #ecebea;
+    box-shadow: -5px -5px 25px rgba(212, 212, 211, 0.9), 5px 5px 20px rgba(255, 255, 255, 0.9),
+        -5px 5px 20px rgba(212, 212, 211, 0.2), 5px -5px 20px rgba(212, 212, 211, 0.2),
+        inset 1px 1px 2px rgba(212, 212, 211, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
 }
 
 a {
@@ -1226,7 +1239,7 @@ a {
     font-weight: normal;
     display: flex;
     align-items: center;
-    color: #422B1F;
+    color: #422b1f;
 }
 
 .contents {
@@ -1502,7 +1515,7 @@ a {
 }
 
 .bio_text div {
-    color: #422B1F;
+    color: #422b1f;
     font-family: var(--font2);
     font-style: normal;
     font-weight: normal;
@@ -1522,7 +1535,7 @@ a {
     text-align: center;
     font-style: normal;
 
-    color: #422B1F;
+    color: #422b1f;
 }
 
 .movie .contents {
@@ -1542,7 +1555,8 @@ a {
     width: 80%;
 }
 
-.movie .cont video, .movie .cont img {
+.movie .cont video,
+.movie .cont img {
     width: 100%;
     height: 29vh;
     border-radius: 20px;
@@ -1575,11 +1589,13 @@ a {
     display: flex;
     align-items: center;
 
-    color: #422B1F;
+    color: #422b1f;
 }
 
 .movie .cont .film_person {
-    box-shadow: -5px -5px 15px rgba(183, 183, 183, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9), -5px 5px 15px rgba(183, 183, 183, 0.2), 5px -5px 10px rgba(183, 183, 183, 0.2), inset 1px 1px 2px rgba(183, 183, 183, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
+    box-shadow: -5px -5px 15px rgba(183, 183, 183, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9),
+        -5px 5px 15px rgba(183, 183, 183, 0.2), 5px -5px 10px rgba(183, 183, 183, 0.2),
+        inset 1px 1px 2px rgba(183, 183, 183, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .cont_coment {
@@ -1601,8 +1617,8 @@ a {
     font-family: var(--font2);
     font-size: 15px;
     font-weight: 400;
-    text-align: left;;
-    color: #422B1F;
+    text-align: left;
+    color: #422b1f;
 }
 
 .cont_coment .fa {
@@ -1683,7 +1699,7 @@ a {
     display: flex;
     align-items: center;
     line-height: 100%;
-    color: #422B1F;
+    color: #422b1f;
 }
 
 .comment {
@@ -1707,7 +1723,8 @@ a {
     background-color: #ecebea;
 }
 
-.button span, .button div {
+.button span,
+.button div {
     font-family: var(--font);
     font-style: normal;
     font-weight: 500;
@@ -1909,7 +1926,8 @@ a {
         font-size: 2.8vh;
     }
 
-    .fr_text span, .fr_text button {
+    .fr_text span,
+    .fr_text button {
         font-size: 11px;
     }
 
@@ -1920,62 +1938,4 @@ a {
     .headerthree_title {
         font-size: 15px;
     }
-}
-
-/* Точки на карте */
-.point {
-    width: 20px;
-    height: 20px;
-}
-
-.p1900 {
-    fill: #1f1e1c;
-}
-
-.p1910 {
-    fill: #1f1e1c;
-}
-
-.p1920 {
-    fill: #1f1e1c;
-}
-
-.p1930 {
-    fill: #77563d;
-}
-
-.p1940 {
-    fill: #d9ae6e;
-}
-
-.p1950 {
-    fill: #f8da84;
-}
-
-.p1960 {
-    fill: #abc573;
-}
-
-.p1970 {
-    fill: #418353;
-}
-
-.p1980 {
-    fill: #39523d;
-}
-
-.p1990 {
-    fill: #1e2e52;
-}
-
-.p2000 {
-    fill: #693e69;
-}
-
-.p2010 {
-    fill: #e39fab;
-}
-
-.p2020 {
-    fill: #b00121;
 }
