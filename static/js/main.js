@@ -1,10 +1,10 @@
-Vue.options.delimiters = ['[[', ']]'];
+Vue.options.delimiters = ["[[", "]]"];
 let vm = new Vue({
     el: "#root",
 
     data: {
         colors: {
-            "Multiple": "blue",
+            Multiple: "red",
             "1900e": "black",
             "1910e": "black",
             "1920e": "black",
@@ -14,10 +14,10 @@ let vm = new Vue({
             "1960e": "olive",
             "1970e": "green",
             "1980e": "darkGreen",
-            "1990e": "night",
-            "2000e": "violet",
-            "2010e": "pink",
-            "2020e": "red",
+            "1990e": "blue",
+            "2000e": "night",
+            "2010e": "violet",
+            "2020e": "pink",
         },
         menu: false,
         map: true,
@@ -26,7 +26,7 @@ let vm = new Vue({
         search: false,
         feedback: false,
         pointPopUp: false,
-        pointsInfo: null
+        pointsInfo: null,
     },
 
     methods: {
@@ -66,7 +66,7 @@ let vm = new Vue({
 
     mounted() {
         // Получение дату
-        axios.get("/api/points").then(function (response) {
+        axios.get("/points.json").then(function (response) {
             vm.info = response.data;
             ymaps.ready(init);
         });
