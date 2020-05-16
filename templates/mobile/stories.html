@@ -8,22 +8,21 @@
 </head>
 <body>
 <div class="mid">
-    <div class="main-wrapper wrap-new">
+    <div class="main-wrapper wrap-top">
         <div class="headline">
             <div class="title">{{ title|upper }}</div>
             <a href="https://beta.loook.city/" class="back"></a>
         </div>
         <div class="contents">
-            {% for movie in data %}
-            <a href="{{ movie.href }}" class="cont hg">
-                <div class="el">
-                    <img src="/{{ movie.photo }}"/>
-                    <div>
-                        <span>{{ movie.name }}</span>
-                        <span>{{ movie.year }}</span>
+            {% for fragment in data %}
+                <a href="{{ fragment.href }}" class="cont hg">
+                    <div class="el">
+                        <img src="/{{ fragment.photo }}"/>
+                        <div>
+                            <span>{{ fragment.name }}</span>
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
             {% endfor %}
         </div>
     </div>

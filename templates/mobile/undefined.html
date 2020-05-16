@@ -8,19 +8,18 @@
 </head>
 <body>
 <div class="mid">
-    <div class="main-wrapper wrap-new">
+    <div class="main-wrapper wrap-undefined">
         <div class="headline">
             <div class="title">{{ title|upper }}</div>
             <a href="https://beta.loook.city/" class="back"></a>
         </div>
         <div class="contents">
-            {% for movie in data %}
-            <a href="{{ movie.href }}" class="cont hg">
+            {% for fragment in data %}
+            <a href="{{ fragment.href }}" class="cont hg">
                 <div class="el">
-                    <img src="/{{ movie.photo }}"/>
+                    <img src="/{{ fragment.photo }}"/>
                     <div>
-                        <span>{{ movie.name }}</span>
-                        <span>{{ movie.year }}</span>
+                        <span>{{ fragment.name }}</span>
                     </div>
                 </div>
             </a>
