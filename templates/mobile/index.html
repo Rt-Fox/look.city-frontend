@@ -33,14 +33,14 @@
                         <img alt="Кинопутеводитель" src="/static/img/kino.png">
                     </button>
                     <span v-show="!search" @click="changeMenuState" class="menu">МЕНЮ</span>
-                    <a href="#" class="container bell whitebell"></a>
+                    <a v-show="!search" href="#" class="container bell whitebell"></a>
                     <form class="container">
                         <input @focus="searchAnim" @blur="searchAnim" placeholder="Search..." type="text">
                         <div class="search"></div>
                     </form>
                 </div>
                 <div class="filters" v-if="!addButtons">
-                    <span class="filter">ФИЛЬМЫ</span>
+                    <span @click="movieFilter" class="filter">ФИЛЬМЫ</span>
                     <span class="filter">ЖАНРЫ</span>
                     <span class="filter">ГОДЫ</span>
                     <span @click="changeButtons" class="filter">ДРУГОЕ</span>
@@ -143,45 +143,21 @@
             </div>
         </div>
         <!-- Фильтры -->
-        <div class="main-wrapper wrap-filt">
+        <div v-if="isFilter" class="main-wrapper wrap-filt">
             <div class="headline">
                 <div class="title">ФИЛЬМ</div>
-                <div class="krestik"></div>
+                <div @click="closeFilter" class="krestik"></div>
             </div>
             <div class="contents contents_filt">
-                <div class="filter_cont">
-                    <input class="checkbox" id="checkbox" type="checkbox" />
-                    <label for="checkbox">Режиссер, название фильма, год создания</label>
-                </div>
-                <div class="filter_cont">
-                    <input class="checkbox" id="checkbox2" type="checkbox" />
-                    <label for="checkbox2">Режиссер, название фильма, год создания</label>
-                </div>
-                <div class="filter_cont">
-                    <input class="checkbox" id="checkbox3" type="checkbox" />
-                    <label for="checkbox3">Режиссер, название фильма, год создания</label>
-                </div>
-                <div class="filter_cont">
-                    <input class="checkbox" id="checkbox4" type="checkbox" />
-                    <label for="checkbox4">Режиссер, название фильма, год создания</label>
-                </div>
-                <div class="filter_cont">
-                    <input class="checkbox" id="checkbox5" type="checkbox" />
-                    <label for="checkbox5">Режиссер, название фильма, год создания</label>
-                </div>
-                <div class="filter_cont">
-                    <input class="checkbox" id="checkbox6" type="checkbox" />
-                    <label for="checkbox6">Режиссер, название фильма, год создания</label>
-                </div>
-                <div class="filter_cont">
-                    <input class="checkbox" id="checkbox7" type="checkbox" />
-                    <label for="checkbox7">Режиссер, название фильма, год создания</label>
+                <div v-for="(value, index) in currentFilter" class=" filter_cont">
+                    <input class="checkbox" v-bind:id="index" type="checkbox" />
+                    <label v-bind:for="index">[[ value ]]</label>
                 </div>
             </div>
         </div>
     </div>
     <!-- Скрипт вью -->
-    <script src="/static/js/main.js"></script>->
+    <script src="/static/js/main.js"></script>
     <!-- Прелоадер -->
     <style type="text/css">
         #hellopreloader_preload {
