@@ -20,7 +20,7 @@ let vm = new Vue({
             "2020e": "pink",
         },
         menu: false,
-        map: true,
+        map: false,
         addButtons: false,
         info: null,
         search: false,
