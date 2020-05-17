@@ -34,6 +34,7 @@ let vm = new Vue({
         isFilter: false,
         filterType: null,
         currentFilter: null,
+        chosenFiter: null,
     },
 
     methods: {
@@ -112,6 +113,11 @@ let vm = new Vue({
             this.currentFilter = this.info.filters[this.filterType];
 
             this.isFilter = true;
+        },
+
+        filterChoosen(index) {
+            this.chosenFiter = index;
+            this.closeFilter();
         },
 
         closeFilter() {

@@ -149,9 +149,9 @@
                 <div @click="closeFilter" class="krestik"></div>
             </div>
             <div class="contents contents_filt">
-                <div v-for="(value, index) in currentFilter" class=" filter_cont">
+                <div v-for="(value, index) in currentFilter" class="filter_cont">
                     <input class="checkbox" v-bind:id="index" type="checkbox" />
-                    <label v-bind:for="index">[[ value ]]</label>
+                    <label @click="filterChoosen(index)" v-bind:for="index">[[ value ]]</label>
                 </div>
             </div>
         </div>
