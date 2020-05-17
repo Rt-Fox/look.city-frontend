@@ -55,7 +55,7 @@
             <div class="menu_open nd">
                 <div class="window">
                     <div class="headertwo">
-                        <img src="../static/img/brend.png">
+                        <img src="/static/img/brend.png">
                         <div class="krestik">
                         </div>
                     </div>
@@ -65,17 +65,18 @@
             <div @click="closePopUp" v-if="pointPopUp" id="pointPop" class="menu_open fr">
                 <div class="window">
                     <div class="headertwo">
-                        <span>[[ pointsInfo ]]</span>
+                        <span>[[ currentFragment.name ]]</span>
                         <div id="x" class="krestik"></div>
                     </div>
                     <!--с текстом-->
-                    <div class="fr_content">
+                    <div class="fr_content" v-bind:class="{ without : !popUpText}">
+                        <button v-if="moreThanOne" @click="previousFragment">&lt</button>
                         <img src="/static/img/kino.png">
                         <div class="fr_text">
-                            <span>Краткое пояснение/описание места или происходящего в кадре. Выдержки из
-                                истории.</span>
+                            <span v-if="popUpText">[[ currentFragment.short_description ]]</span>
                             <button class="filterbig">Другие фрагменты</button>
                         </div>
+                        <button v-if="moreThanOne" @click="nextFragment">&gt</button>
                     </div>
                 </div>
             </div>
@@ -141,7 +142,29 @@
             </div>
         </div>
     </div>
-    <script src="/static/js/main.js"></script>
+    <!-- Скрипт вью -->
+    <script src="/static/js/main.js"></script>->
+    <!-- Прелоадер -->
+    <style type="text/css">
+        #hellopreloader_preload {
+            display: block;
+            position: fixed;
+            z-index: 99999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            min-width: 1000px;
+            background: #22313F url(http://hello-site.ru//main/images/preloads/ball-triangle.svg) center center no-repeat;
+            background-size: 62px;
+        }
+    </style>
+    <div id="hellopreloader">
+        <div id="hellopreloader_preload"></div>
+    </div>
+    <script
+        type="text/javascript">var hellopreloader = document.getElementById("hellopreloader_preload"); function fadeOutnojquery(el) { el.style.opacity = 1; var interhellopreloader = setInterval(function () { el.style.opacity = el.style.opacity - 0.05; if (el.style.opacity <= 0.05) { clearInterval(interhellopreloader); hellopreloader.style.display = "none"; } }, 16); } window.onload = function () { setTimeout(function () { fadeOutnojquery(hellopreloader); }, 1000); };</script>
+
 </body>
 
 </html>

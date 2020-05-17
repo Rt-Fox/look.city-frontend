@@ -77,7 +77,7 @@ function init() {
             }
         );
         new_placemark.events.add("click", function () {
-            vm.showPopUp(point.fragments_id);
+            vm.showPopUp(point.fragments_id, 0);
         });
         geoObjects.push(new_placemark);
     });
