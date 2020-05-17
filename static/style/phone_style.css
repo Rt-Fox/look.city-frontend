@@ -1298,7 +1298,7 @@ a {
     width: 80vw;
 }
 
-.cont:first-child {
+.cont:first-child, .filter_cont:first-child {
     margin-top: 3vh;
 }
 
@@ -1308,7 +1308,6 @@ a {
     align-items: center;
     justify-content: center;
     width: 100%;
-    min-height: 6vh;
     margin: 0 0 4vh 0;
     color: #958682;
     height: 14vh;
@@ -1316,7 +1315,22 @@ a {
     font-family: var(--font1);
     font-weight: 700;
 }
-
+.filter_cont {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    min-height: 7vh;
+    margin: 0 0 3vh 0;
+    color: #958682;
+    font-family: var(--font1);
+    font-weight: 700;
+    border-bottom-color: rgba(149, 134, 130, 0.7);
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+}
 .checkbox {
     position: absolute;
     z-index: -1;
