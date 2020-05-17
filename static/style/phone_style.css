@@ -51,7 +51,7 @@ html, body {
     --new-text-size: 2.5vh;
 
     --square-color: #000000;
-    --square-border-radius: 20px;
+    --square-border-radius: 12px;
     --square-bg-color: #fef6e9;
     --square-text-size: 2.5vh;
     --img-radius: 15%;
@@ -526,8 +526,9 @@ span:first-letter {
     background-color: #44250b;
     background-size: 60%;
 }
+
 .container.bell {
-    position:static;
+    position: static;
     margin: 0 0 0 2vw;
     max-height: 50px;
     max-width: 50px;
@@ -535,26 +536,31 @@ span:first-letter {
     height: 50px;
     box-shadow: -5px -5px 13px rgba(197, 197, 197, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9), -5px 5px 10px rgba(197, 197, 197, 0.2), 5px -5px 10px rgba(197, 197, 197, 0.2), inset 1px 1px 2px rgba(197, 197, 197, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
 }
+
 .bell {
     background: url("../img/white_bell.svg") center no-repeat;
     background-color: #44250b;
     background-size: 50%;
 }
+
 .whitebell {
     background: url("../img/black_bell.svg") center no-repeat;
     background-color: #f5f5f5;
     background-size: 50%;
 }
+
 .back {
     background: url("../img/white_back.svg") center no-repeat;
     background-color: #44250b;
     background-size: 40%;
 }
+
 .whiteback {
     background: url("../img/black_back.svg") center no-repeat;
     background-color: #ECEBEA;
     background-size: 40%;
 }
+
 .nd .krestik {
     grid-area: krestik;
     box-shadow: 0px 5px 13px rgba(0, 0, 0, 0.25);
@@ -664,6 +670,7 @@ span:first-letter {
     width: 100%;
 
 }
+
 .mn_content li a {
     display: flex;
     align-items: center;
@@ -690,9 +697,9 @@ button {
     display: grid;
     width: 62vh;
     height: 96vh;
-    grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.4fr 0.45fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: "message city city city city city krest" "new new new zero1 top top top" "film film film zero1 year year year" "genres genres genres zero1 personage personage personage" "producer producer producer zero1 actors actors actors" "popular popular popular zero2 places places places";
+    grid-template-areas: "message city city city city city krest" "new new new new new new new" "town town town zero1 top top top" "film film film zero1 year year year" "genres genres genres zero1 personage personage personage" "producer producer producer zero1 actors actors actors" "popular popular popular zero2 places places places";
     grid-gap: 10px;
 }
 
@@ -764,7 +771,7 @@ button {
     justify-content: center;
     position: relative;
     width: 100%;
-    padding-bottom: 15vh;
+    padding-bottom: 13vh;
     height: 0;
     color: var(--square-color);
     border-color: rgba(0, 0, 0, 0);
@@ -794,11 +801,24 @@ button {
 /*индивидуальные стили*/
 .new {
     grid-area: new;
-    box-shadow: -10px -10px 30px rgba(0, 0, 0, 0.2);
+    padding-bottom: 5vh;
+    box-shadow: -5px -5px 15px rgba(201, 200, 199, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9), -5px 5px 10px rgba(201, 200, 199, 0.2), 5px -5px 10px rgba(201, 200, 199, 0.2), inset 1px 1px 2px rgba(201, 200, 199, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
 }
-
 .new a {
     background-image: url(/static/img/new.png);
+    background-position-y: center;
+    background-position-x: -10%;
+    background-size: 40%;
+    background-repeat: no-repeat;
+}
+
+.town {
+    grid-area: town;
+    box-shadow: -5px -5px 15px rgba(201, 200, 199, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9), -5px 5px 10px rgba(201, 200, 199, 0.2), 5px -5px 10px rgba(201, 200, 199, 0.2), inset 1px 1px 2px rgba(201, 200, 199, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
+}
+
+.town a {
+    background-image: url(/static/img/city.png);
     background-position-y: calc(20% + var(--position));
     background-position-x: -340%;
     background-size: 90%;
@@ -807,7 +827,7 @@ button {
 
 .top {
     grid-area: top;
-    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 5px -5px 15px rgba(207, 207, 207, 0.9), -5px 5px 10px rgba(255, 255, 255, 0.9), 5px 5px 10px rgba(207, 207, 207, 0.2), -5px -5px 10px rgba(207, 207, 207, 0.2), inset -1px 1px 2px rgba(207, 207, 207, 0.5), inset 1px -1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .top a {
@@ -820,7 +840,7 @@ button {
 
 .film {
     grid-area: film;
-    box-shadow: -10px -10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: -5px -5px 15px rgba(201, 200, 199, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9), -5px 5px 10px rgba(201, 200, 199, 0.2), 5px -5px 10px rgba(201, 200, 199, 0.2), inset 1px 1px 2px rgba(201, 200, 199, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .film a {
@@ -833,7 +853,7 @@ button {
 
 .year {
     grid-area: year;
-    box-shadow: 10px -10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 5px -5px 15px rgba(207, 207, 207, 0.9), -5px 5px 10px rgba(255, 255, 255, 0.9), 5px 5px 10px rgba(207, 207, 207, 0.2), -5px -5px 10px rgba(207, 207, 207, 0.2), inset -1px 1px 2px rgba(207, 207, 207, 0.5), inset 1px -1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .year a {
@@ -846,7 +866,7 @@ button {
 
 .genres {
     grid-area: genres;
-    box-shadow: -10px -10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: -5px -5px 15px rgba(201, 200, 199, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9), -5px 5px 10px rgba(201, 200, 199, 0.2), 5px -5px 10px rgba(201, 200, 199, 0.2), inset 1px 1px 2px rgba(201, 200, 199, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .genres a {
@@ -859,7 +879,7 @@ button {
 
 .personage {
     grid-area: personage;
-    box-shadow: 15px -15px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 5px -5px 15px rgba(207, 207, 207, 0.9), -5px 5px 10px rgba(255, 255, 255, 0.9), 5px 5px 10px rgba(207, 207, 207, 0.2), -5px -5px 10px rgba(207, 207, 207, 0.2), inset -1px 1px 2px rgba(207, 207, 207, 0.5), inset 1px -1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .personage a {
@@ -872,7 +892,7 @@ button {
 
 .producer {
     grid-area: producer;
-    box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: -5px 5px 15px rgba(207, 207, 207, 0.9), 5px -5px 10px rgba(255, 255, 255, 0.9), -5px -5px 10px rgba(207, 207, 207, 0.2), 5px 5px 10px rgba(207, 207, 207, 0.2), inset 1px -1px 2px rgba(207, 207, 207, 0.5), inset -1px 1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .producer a {
@@ -885,7 +905,7 @@ button {
 
 .actors {
     grid-area: actors;
-    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 5px 5px 15px rgba(207, 207, 207, 0.9), -5px -5px 10px rgba(255, 255, 255, 0.9), 5px -5px 10px rgba(207, 207, 207, 0.2), -5px 5px 10px rgba(207, 207, 207, 0.2), inset -1px -1px 2px rgba(207, 207, 207, 0.5), inset 1px 1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .actors a {
@@ -898,7 +918,7 @@ button {
 
 .popular {
     grid-area: popular;
-    box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: -5px 5px 15px rgba(207, 207, 207, 0.9), 5px -5px 10px rgba(255, 255, 255, 0.9), -5px -5px 10px rgba(207, 207, 207, 0.2), 5px 5px 10px rgba(207, 207, 207, 0.2), inset 1px -1px 2px rgba(207, 207, 207, 0.5), inset -1px 1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .popular a {
@@ -911,7 +931,7 @@ button {
 
 .places {
     grid-area: places;
-    box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 5px 5px 15px rgba(207, 207, 207, 0.9), -5px -5px 10px rgba(255, 255, 255, 0.9), 5px -5px 10px rgba(207, 207, 207, 0.2), -5px 5px 10px rgba(207, 207, 207, 0.2), inset -1px -1px 2px rgba(207, 207, 207, 0.5), inset 1px 1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .places a {
@@ -1106,6 +1126,7 @@ button {
 .headline .title {
     width: 60%;
 }
+
 .wrap-years .yr {
     display: flex;
     align-items: center;
@@ -1123,9 +1144,11 @@ button {
     color: #44250b;
     box-shadow: -3px -3px 3px rgba(0, 0, 0, 0.4);
 }
+
 .contents .gr {
     height: 80px;
 }
+
 .gr .el {
     justify-content: center;
     height: 70px;
@@ -1234,7 +1257,8 @@ a {
     height: 7vh;
     width: auto;
 }
-.el_person  img{
+
+.el_person img {
     margin: 2vw;
     margin-left: 5vw;
     border-radius: 2vw;
@@ -1343,6 +1367,7 @@ a {
     background-size: calc(50vh);
     background-repeat: no-repeat;
 }
+
 .wrap-undefined:before {
     content: "";
     position: absolute;
@@ -1355,6 +1380,7 @@ a {
     background-size: calc(35vh + 25vw);
     background-repeat: no-repeat;
 }
+
 .wrap-actors:before {
     content: "";
     position: absolute;
@@ -1581,7 +1607,8 @@ a {
     margin: auto;
     overflow: hidden;
 }
-.scrol  .contents {
+
+.scrol .contents {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1598,6 +1625,7 @@ a {
     width: 100%;
     height: auto;
 }
+
 .scrol .cont {
     margin: 3vh 0;
     flex-direction: column;
@@ -1605,6 +1633,7 @@ a {
     width: 90%;
     height: auto;
 }
+
 .movie .cont video, .movie .cont img {
     width: 100%;
     height: 29vh;
@@ -1647,6 +1676,7 @@ a {
     margin-top: 3vh;
     margin-bottom: 2vh;
 }
+
 .scrol .cont_text {
     width: 60vw;
     display: flex;
@@ -1680,6 +1710,7 @@ a {
     border-radius: 10px;
     margin: auto 0;
 }
+
 .cont .title {
     margin: 5% 0;
     width: 100%;
@@ -1837,9 +1868,7 @@ a {
     .grid-main-wrapper {
         display: grid;
         width: 93vw;
-        grid-template-rows: 15vw 15vh 15vh 15vh 15vh 15vh;
-        grid-template-columns: 1fr 1fr 1fr 0.5fr 1fr 1fr 1fr;
-        grid-template-areas: "message city city city city city krest" "new new new zero1 top top top" "film film film zero1 year year year" "genres genres genres zero1 personage personage personage" "producer producer producer zero1 actors actors actors" "popular popular popular zero2 places places places";
+        grid-template-areas: "message city city city city city krest" "new new new new new new new" "town town town zero1 top top top" "film film film zero1 year year year" "genres genres genres zero1 personage personage personage" "producer producer producer zero1 actors actors actors" "popular popular popular zero2 places places places";
         grid-gap: 10px;
     }
 
@@ -1869,9 +1898,7 @@ a {
     .grid-main-wrapper {
         display: grid;
         width: 93vw;
-        grid-template-rows: 15vw 15vh 15vh 15vh 15vh 15vh;
-        grid-template-columns: 1fr 1fr 1fr 0.5fr 1fr 1fr 1fr;
-        grid-template-areas: "message city city city city city krest" "new new new zero1 top top top" "film film film zero1 year year year" "genres genres genres zero1 personage personage personage" "producer producer producer zero1 actors actors actors" "popular popular popular zero2 places places places";
+        grid-template-areas: "message city city city city city krest" "new new new new new new new" "town town town zero1 top top top" "film film film zero1 year year year" "genres genres genres zero1 personage personage personage" "producer producer producer zero1 actors actors actors" "popular popular popular zero2 places places places";
         grid-gap: 10px;
     }
 
