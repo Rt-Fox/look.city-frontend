@@ -17,7 +17,7 @@
             {% for movie in data %}
             <a href="{{ movie.href }}" class="cont hg">
                 <div class="el">
-                    <img src="/{{ movie.photo }}"/>
+                    <img class="el_movie" src="/{{ movie.photo }}">
                     <div>
                         <span>{{ movie.name }}</span>
                         <span>{{ movie.year }}</span>

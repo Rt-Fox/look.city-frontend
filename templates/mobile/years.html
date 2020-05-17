@@ -14,11 +14,11 @@
     <div class="main-wrapper wrap-years">
         <div class="headline">
             <div class="title">Годы</div>
-            <i class="fa fa-times"></i>
+            <a href="https://beta.loook.city/" class="back whiteback"></a>
         </div>
         <div class="contents">
             {% for decade in data %}
-            <a href="{{ decade.href }}" class="el yr{{ decade.class }}">
+            <a href="{{ decade.href }}" class="el yr {{ decade.class }}">
                 <span>{{ decade.name }}</span>
             </a>
             {% endfor %}

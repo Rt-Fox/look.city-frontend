@@ -17,8 +17,15 @@
         <div class="contents">
             {% for person in data %}
             <a href="{{ person.href }}" class="cont hg">
-                <div class="el">
-                    <img class="el_person" src="{{ person.photo }}">
+                <div class="el el_person">
+                    <img src="{{ person.photo }}">
+                    <div>
+                        <span>{{ person.name }}</span>
+                    </div>
+                </div>
+            </a><a href="{{ person.href }}" class="cont hg">
+                <div class="el el_person">
+                    <img src="{{ person.photo }}">
                     <div>
                         <span>{{ person.name }}</span>
                     </div>
