@@ -10,7 +10,8 @@
     font-size: 5pt;
 }
 
-html, body {
+html,
+body {
     margin: 0;
     overflow: hidden;
     font-size: 100%;
@@ -36,13 +37,13 @@ html, body {
     --filter-text-size: 1fr;
 
     --menu-color: #422b1f;
-    --menu-bg-color: #F5F5F5;
+    --menu-bg-color: #f5f5f5;
     --menu-border-radius: 18px;
     --menu-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
     --menu-text-size: x-large;
-    --zoom-bg-color: #F5F5F5;
+    --zoom-bg-color: #f5f5f5;
     --color-active: #422b1f;
-    --bg-color-active: #F5F5F5;
+    --bg-color-active: #f5f5f5;
 
     --new-color: #000000;
     --new-border-radius: 2vw;
@@ -168,7 +169,9 @@ span:first-letter {
     margin-right: 10px;
     border-radius: var(--brend-border-radius);
     border: 0;
-    box-shadow: -5px -5px 13px rgba(197, 197, 197, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9), -5px 5px 10px rgba(197, 197, 197, 0.2), 5px -5px 10px rgba(197, 197, 197, 0.2), inset 1px 1px 2px rgba(197, 197, 197, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
+    box-shadow: -5px -5px 13px rgba(197, 197, 197, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9),
+        -5px 5px 10px rgba(197, 197, 197, 0.2), 5px -5px 10px rgba(197, 197, 197, 0.2),
+        inset 1px 1px 2px rgba(197, 197, 197, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .brand img {
@@ -196,7 +199,9 @@ span:first-letter {
     font-size: var(--menu-text-size);
     letter-spacing: 5px;
     z-index: 100;
-    box-shadow: -5px -5px 13px rgba(197, 197, 197, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9), -5px 5px 10px rgba(197, 197, 197, 0.2), 5px -5px 10px rgba(197, 197, 197, 0.2), inset 1px 1px 2px rgba(197, 197, 197, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
+    box-shadow: -5px -5px 13px rgba(197, 197, 197, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9),
+        -5px 5px 10px rgba(197, 197, 197, 0.2), 5px -5px 10px rgba(197, 197, 197, 0.2),
+        inset 1px 1px 2px rgba(197, 197, 197, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .container {
@@ -217,8 +222,10 @@ span:first-letter {
     left: 0;
     width: 100%;
     height: 100%;
-    box-shadow: -5px -5px 13px rgba(197, 197, 197, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9), -5px 5px 10px rgba(197, 197, 197, 0.2), 5px -5px 10px rgba(197, 197, 197, 0.2), inset 1px 1px 2px rgba(197, 197, 197, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
-    background: #F5F5F5;;
+    box-shadow: -5px -5px 13px rgba(197, 197, 197, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9),
+        -5px 5px 10px rgba(197, 197, 197, 0.2), 5px -5px 10px rgba(197, 197, 197, 0.2),
+        inset 1px 1px 2px rgba(197, 197, 197, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
+    background: #f5f5f5;
     border-radius: 25%;
     transition: all 1s;
     z-index: 100;
@@ -281,7 +288,7 @@ span:first-letter {
     font-size: small;
     font-weight: bolder;
     letter-spacing: 0.1em;
-    background: #F5F5F5;
+    background: #f5f5f5;
 }
 
 .container input:hover {
@@ -507,7 +514,10 @@ span:first-letter {
     font-size: 4vw;
 }
 
-.krestik, .bell, .back, .loupe {
+.krestik,
+.bell,
+.back,
+.loupe {
     padding: 0;
     min-height: 30px;
     min-width: 30px;
@@ -534,7 +544,9 @@ span:first-letter {
     max-width: 50px;
     width: 50px;
     height: 50px;
-    box-shadow: -5px -5px 13px rgba(197, 197, 197, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9), -5px 5px 10px rgba(197, 197, 197, 0.2), 5px -5px 10px rgba(197, 197, 197, 0.2), inset 1px 1px 2px rgba(197, 197, 197, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
+    box-shadow: -5px -5px 13px rgba(197, 197, 197, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9),
+        -5px 5px 10px rgba(197, 197, 197, 0.2), 5px -5px 10px rgba(197, 197, 197, 0.2),
+        inset 1px 1px 2px rgba(197, 197, 197, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .bell {
@@ -557,7 +569,7 @@ span:first-letter {
 
 .whiteback {
     background: url("../img/black_back.svg") center no-repeat;
-    background-color: #ECEBEA;
+    background-color: #ecebea;
     background-size: 40%;
 }
 
@@ -606,7 +618,9 @@ span:first-letter {
 }
 
 .fr_content img {
-    box-shadow: -2px -2px 20px rgba(183, 183, 183, 0.9), 5px 5px 15px rgba(255, 255, 255, 0.9), -10px 10px 20px rgba(183, 183, 183, 0.2), 5px -5px 20px rgba(183, 183, 183, 0.2), inset 1px 1px 2px rgba(183, 183, 183, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
+    box-shadow: -2px -2px 20px rgba(183, 183, 183, 0.9), 5px 5px 15px rgba(255, 255, 255, 0.9),
+        -10px 10px 20px rgba(183, 183, 183, 0.2), 5px -5px 20px rgba(183, 183, 183, 0.2),
+        inset 1px 1px 2px rgba(183, 183, 183, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
     border-radius: 17px;
 }
 
@@ -666,10 +680,9 @@ span:first-letter {
 .mn_content li {
     list-style-type: none;
     text-decoration: none;
-    color: #422B1F;
+    color: #422b1f;
     height: 50%;
     width: 100%;
-
 }
 
 .mn_content li a {
@@ -680,7 +693,7 @@ span:first-letter {
     font-size: var(--menu-text-size);
     height: 100%;
     width: 100%;
-    color: #422B1F;
+    color: #422b1f;
 }
 
 .mn_content li:first-child {
@@ -803,7 +816,9 @@ button {
 .new {
     grid-area: new;
     padding-bottom: 5vh;
-    box-shadow: -5px -5px 15px rgba(201, 200, 199, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9), -5px 5px 10px rgba(201, 200, 199, 0.2), 5px -5px 10px rgba(201, 200, 199, 0.2), inset 1px 1px 2px rgba(201, 200, 199, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
+    box-shadow: -5px -5px 15px rgba(201, 200, 199, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9),
+        -5px 5px 10px rgba(201, 200, 199, 0.2), 5px -5px 10px rgba(201, 200, 199, 0.2),
+        inset 1px 1px 2px rgba(201, 200, 199, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
 }
 .new a {
     background-image: url(/static/img/new.png);
@@ -815,7 +830,9 @@ button {
 
 .town {
     grid-area: town;
-    box-shadow: -5px -5px 15px rgba(201, 200, 199, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9), -5px 5px 10px rgba(201, 200, 199, 0.2), 5px -5px 10px rgba(201, 200, 199, 0.2), inset 1px 1px 2px rgba(201, 200, 199, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
+    box-shadow: -5px -5px 15px rgba(201, 200, 199, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9),
+        -5px 5px 10px rgba(201, 200, 199, 0.2), 5px -5px 10px rgba(201, 200, 199, 0.2),
+        inset 1px 1px 2px rgba(201, 200, 199, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .town a {
@@ -828,7 +845,9 @@ button {
 
 .top {
     grid-area: top;
-    box-shadow: 5px -5px 15px rgba(207, 207, 207, 0.9), -5px 5px 10px rgba(255, 255, 255, 0.9), 5px 5px 10px rgba(207, 207, 207, 0.2), -5px -5px 10px rgba(207, 207, 207, 0.2), inset -1px 1px 2px rgba(207, 207, 207, 0.5), inset 1px -1px 2px rgba(255, 255, 255, 0.3);
+    box-shadow: 5px -5px 15px rgba(207, 207, 207, 0.9), -5px 5px 10px rgba(255, 255, 255, 0.9),
+        5px 5px 10px rgba(207, 207, 207, 0.2), -5px -5px 10px rgba(207, 207, 207, 0.2),
+        inset -1px 1px 2px rgba(207, 207, 207, 0.5), inset 1px -1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .top a {
@@ -841,7 +860,9 @@ button {
 
 .film {
     grid-area: film;
-    box-shadow: -5px -5px 15px rgba(201, 200, 199, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9), -5px 5px 10px rgba(201, 200, 199, 0.2), 5px -5px 10px rgba(201, 200, 199, 0.2), inset 1px 1px 2px rgba(201, 200, 199, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
+    box-shadow: -5px -5px 15px rgba(201, 200, 199, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9),
+        -5px 5px 10px rgba(201, 200, 199, 0.2), 5px -5px 10px rgba(201, 200, 199, 0.2),
+        inset 1px 1px 2px rgba(201, 200, 199, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .film a {
@@ -854,7 +875,9 @@ button {
 
 .year {
     grid-area: year;
-    box-shadow: 5px -5px 15px rgba(207, 207, 207, 0.9), -5px 5px 10px rgba(255, 255, 255, 0.9), 5px 5px 10px rgba(207, 207, 207, 0.2), -5px -5px 10px rgba(207, 207, 207, 0.2), inset -1px 1px 2px rgba(207, 207, 207, 0.5), inset 1px -1px 2px rgba(255, 255, 255, 0.3);
+    box-shadow: 5px -5px 15px rgba(207, 207, 207, 0.9), -5px 5px 10px rgba(255, 255, 255, 0.9),
+        5px 5px 10px rgba(207, 207, 207, 0.2), -5px -5px 10px rgba(207, 207, 207, 0.2),
+        inset -1px 1px 2px rgba(207, 207, 207, 0.5), inset 1px -1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .year a {
@@ -867,7 +890,9 @@ button {
 
 .genres {
     grid-area: genres;
-    box-shadow: -5px -5px 15px rgba(201, 200, 199, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9), -5px 5px 10px rgba(201, 200, 199, 0.2), 5px -5px 10px rgba(201, 200, 199, 0.2), inset 1px 1px 2px rgba(201, 200, 199, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
+    box-shadow: -5px -5px 15px rgba(201, 200, 199, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9),
+        -5px 5px 10px rgba(201, 200, 199, 0.2), 5px -5px 10px rgba(201, 200, 199, 0.2),
+        inset 1px 1px 2px rgba(201, 200, 199, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .genres a {
@@ -880,7 +905,9 @@ button {
 
 .personage {
     grid-area: personage;
-    box-shadow: 5px -5px 15px rgba(207, 207, 207, 0.9), -5px 5px 10px rgba(255, 255, 255, 0.9), 5px 5px 10px rgba(207, 207, 207, 0.2), -5px -5px 10px rgba(207, 207, 207, 0.2), inset -1px 1px 2px rgba(207, 207, 207, 0.5), inset 1px -1px 2px rgba(255, 255, 255, 0.3);
+    box-shadow: 5px -5px 15px rgba(207, 207, 207, 0.9), -5px 5px 10px rgba(255, 255, 255, 0.9),
+        5px 5px 10px rgba(207, 207, 207, 0.2), -5px -5px 10px rgba(207, 207, 207, 0.2),
+        inset -1px 1px 2px rgba(207, 207, 207, 0.5), inset 1px -1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .personage a {
@@ -893,7 +920,9 @@ button {
 
 .producer {
     grid-area: producer;
-    box-shadow: -5px 5px 15px rgba(207, 207, 207, 0.9), 5px -5px 10px rgba(255, 255, 255, 0.9), -5px -5px 10px rgba(207, 207, 207, 0.2), 5px 5px 10px rgba(207, 207, 207, 0.2), inset 1px -1px 2px rgba(207, 207, 207, 0.5), inset -1px 1px 2px rgba(255, 255, 255, 0.3);
+    box-shadow: -5px 5px 15px rgba(207, 207, 207, 0.9), 5px -5px 10px rgba(255, 255, 255, 0.9),
+        -5px -5px 10px rgba(207, 207, 207, 0.2), 5px 5px 10px rgba(207, 207, 207, 0.2),
+        inset 1px -1px 2px rgba(207, 207, 207, 0.5), inset -1px 1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .producer a {
@@ -906,7 +935,9 @@ button {
 
 .actors {
     grid-area: actors;
-    box-shadow: 5px 5px 15px rgba(207, 207, 207, 0.9), -5px -5px 10px rgba(255, 255, 255, 0.9), 5px -5px 10px rgba(207, 207, 207, 0.2), -5px 5px 10px rgba(207, 207, 207, 0.2), inset -1px -1px 2px rgba(207, 207, 207, 0.5), inset 1px 1px 2px rgba(255, 255, 255, 0.3);
+    box-shadow: 5px 5px 15px rgba(207, 207, 207, 0.9), -5px -5px 10px rgba(255, 255, 255, 0.9),
+        5px -5px 10px rgba(207, 207, 207, 0.2), -5px 5px 10px rgba(207, 207, 207, 0.2),
+        inset -1px -1px 2px rgba(207, 207, 207, 0.5), inset 1px 1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .actors a {
@@ -919,7 +950,9 @@ button {
 
 .popular {
     grid-area: popular;
-    box-shadow: -5px 5px 15px rgba(207, 207, 207, 0.9), 5px -5px 10px rgba(255, 255, 255, 0.9), -5px -5px 10px rgba(207, 207, 207, 0.2), 5px 5px 10px rgba(207, 207, 207, 0.2), inset 1px -1px 2px rgba(207, 207, 207, 0.5), inset -1px 1px 2px rgba(255, 255, 255, 0.3);
+    box-shadow: -5px 5px 15px rgba(207, 207, 207, 0.9), 5px -5px 10px rgba(255, 255, 255, 0.9),
+        -5px -5px 10px rgba(207, 207, 207, 0.2), 5px 5px 10px rgba(207, 207, 207, 0.2),
+        inset 1px -1px 2px rgba(207, 207, 207, 0.5), inset -1px 1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .popular a {
@@ -932,7 +965,9 @@ button {
 
 .places {
     grid-area: places;
-    box-shadow: 5px 5px 15px rgba(207, 207, 207, 0.9), -5px -5px 10px rgba(255, 255, 255, 0.9), 5px -5px 10px rgba(207, 207, 207, 0.2), -5px 5px 10px rgba(207, 207, 207, 0.2), inset -1px -1px 2px rgba(207, 207, 207, 0.5), inset 1px 1px 2px rgba(255, 255, 255, 0.3);
+    box-shadow: 5px 5px 15px rgba(207, 207, 207, 0.9), -5px -5px 10px rgba(255, 255, 255, 0.9),
+        5px -5px 10px rgba(207, 207, 207, 0.2), -5px 5px 10px rgba(207, 207, 207, 0.2),
+        inset -1px -1px 2px rgba(207, 207, 207, 0.5), inset 1px 1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .places a {
@@ -1106,21 +1141,20 @@ button {
     height: 100%;
     max-height: 45px;
 
-
     display: flex;
     align-items: center;
     justify-content: center;
 
     text-align: center;
     text-transform: uppercase;
-    color: #F6F6F6;
+    color: #f6f6f6;
 
     background-color: #44250b;
     border-radius: 30px;
     font-family: var(--font1);
     font-style: normal;
     font-weight: bold;
-    font-size: 2.5vh;;
+    font-size: 2.5vh;
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
 }
 
@@ -1236,8 +1270,10 @@ button {
     height: 14vh;
     width: 78vw;
     border-radius: 3vw;
-    background-color: #ECEBEA;
-    box-shadow: -5px -5px 25px rgba(212, 212, 211, 0.9), 5px 5px 20px rgba(255, 255, 255, 0.9), -5px 5px 20px rgba(212, 212, 211, 0.2), 5px -5px 20px rgba(212, 212, 211, 0.2), inset 1px 1px 2px rgba(212, 212, 211, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
+    background-color: #ecebea;
+    box-shadow: -5px -5px 25px rgba(212, 212, 211, 0.9), 5px 5px 20px rgba(255, 255, 255, 0.9),
+        -5px 5px 20px rgba(212, 212, 211, 0.2), 5px -5px 20px rgba(212, 212, 211, 0.2),
+        inset 1px 1px 2px rgba(212, 212, 211, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
 }
 
 a {
@@ -1285,7 +1321,7 @@ a {
     font-weight: normal;
     display: flex;
     align-items: center;
-    color: #422B1F;
+    color: #422b1f;
 }
 
 .contents {
@@ -1296,10 +1332,11 @@ a {
 }
 
 .contents_filt {
-    width: 80vw;
+    width: 75vw;
 }
 
-.cont:first-child, .filter_cont:first-child {
+.cont:first-child,
+.filter_cont:first-child {
     margin-top: 3vh;
 }
 
@@ -1320,7 +1357,7 @@ a {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     width: 100%;
     height: auto;
     min-height: 7vh;
@@ -1361,7 +1398,7 @@ a {
     box-shadow: inset 1vh 1vh 1vh rgba(0, 0, 0, 0.2);
 }
 
-.checkbox:checked + label:before {
+.checkbox.active + label:before {
     background: #44250b;
     box-shadow: inset 1vh 1vh 1vh rgba(0, 0, 0, 0.2);
 }
@@ -1589,13 +1626,12 @@ a {
 }
 
 .bio_text div {
-    color: #422B1F;
+    color: #422b1f;
     font-family: var(--font2);
     font-style: normal;
     font-weight: normal;
     font-size: 13px;
     line-height: 150%;
-
 }
 
 .movie .movie_title {
@@ -1610,7 +1646,7 @@ a {
     text-align: center;
     font-style: normal;
 
-    color: #422B1F;
+    color: #422b1f;
 }
 
 .movie .contents {
@@ -1649,7 +1685,8 @@ a {
     height: auto;
 }
 
-.movie .cont video, .movie .cont img {
+.movie .cont video,
+.movie .cont img {
     width: 100%;
     height: 29vh;
     border-radius: 20px;
@@ -1675,11 +1712,13 @@ a {
     display: flex;
     align-items: center;
 
-    color: #422B1F;
+    color: #422b1f;
 }
 
 .movie .cont .film_person {
-    box-shadow: -5px -5px 15px rgba(183, 183, 183, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9), -5px 5px 15px rgba(183, 183, 183, 0.2), 5px -5px 10px rgba(183, 183, 183, 0.2), inset 1px 1px 2px rgba(183, 183, 183, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
+    box-shadow: -5px -5px 15px rgba(183, 183, 183, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9),
+        -5px 5px 15px rgba(183, 183, 183, 0.2), 5px -5px 10px rgba(183, 183, 183, 0.2),
+        inset 1px 1px 2px rgba(183, 183, 183, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .scrol .cont_coment {
@@ -1702,8 +1741,8 @@ a {
     font-family: var(--font2);
     font-size: 15px;
     font-weight: 400;
-    text-align: left;;
-    color: #422B1F;
+    text-align: left;
+    color: #422b1f;
 }
 
 .cont_coment .fa {
@@ -1772,7 +1811,7 @@ a {
     display: flex;
     align-items: center;
     line-height: 100%;
-    color: #422B1F;
+    color: #422b1f;
 }
 
 .comment {
@@ -1796,7 +1835,8 @@ a {
     background-color: #ecebea;
 }
 
-.button span, .button div {
+.button span,
+.button div {
     font-family: var(--font);
     font-style: normal;
     font-weight: 500;
@@ -1995,7 +2035,8 @@ a {
         font-size: 2.8vh;
     }
 
-    .fr_text span, .fr_text button {
+    .fr_text span,
+    .fr_text button {
         font-size: 11px;
     }
 

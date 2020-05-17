@@ -32,14 +32,14 @@
                         <img alt="Кинопутеводитель" src="/static/img/kino.png">
                     </button>
                     <span v-show="!search" @click="changeMenuState" class="menu">МЕНЮ</span>
-                    <a href="#" class="container bell whitebell"></a>
+                    <a v-show="!search" href="#" class="container bell whitebell"></a>
                     <form class="container">
                         <input @focus="searchAnim" @blur="searchAnim" placeholder="Search..." type="text">
                         <div class="search"></div>
                     </form>
                 </div>
                 <div class="filters" v-if="!addButtons">
-                    <span class="filter">ФИЛЬМЫ</span>
+                    <span @click="movieFilter" class="filter">ФИЛЬМЫ</span>
                     <span class="filter">ЖАНРЫ</span>
                     <span class="filter">ГОДЫ</span>
                     <span @click="changeButtons" class="filter">ДРУГОЕ</span>
@@ -138,6 +138,19 @@
                             <li><a href="/add_point">Предложить место</a></li>
                         </ul>
                     </div>
+                </div>
+            </div>
+        </div>
+        <!-- Фильтры -->
+        <div v-if="isFilter" class="main-wrapper wrap-filt">
+            <div class="headline">
+                <div class="title">ФИЛЬМ</div>
+                <div @click="closeFilter" class="krestik"></div>
+            </div>
+            <div class="contents contents_filt">
+                <div v-for="(value, index) in currentFilter" class="filter_cont">
+                    <input class="checkbox" v-bind:id="index" type="checkbox" />
+                    <label @click="filterChoosen(index)" v-bind:for="index">[[ value ]]</label>
                 </div>
             </div>
         </div>

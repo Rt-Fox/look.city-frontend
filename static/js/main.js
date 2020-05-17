@@ -20,7 +20,7 @@ let vm = new Vue({
             "2020e": "pink",
         },
         menu: false,
-        map: false,
+        map: true,
         addButtons: false,
         info: null,
         search: false,
@@ -31,6 +31,10 @@ let vm = new Vue({
         currentFragment: null,
         moreThanOne: false,
         popUpText: false,
+        isFilter: false,
+        filterType: null,
+        currentFilter: null,
+        chosenFiter: null,
     },
 
     methods: {
@@ -102,6 +106,23 @@ let vm = new Vue({
                 this.fragmentNumber -= 1;
             }
             this.showPopUp(this.pointFragments, this.fragmentNumber);
+        },
+
+        movieFilter() {
+            this.filterType = "movies";
+            this.currentFilter = this.info.filters[this.filterType];
+
+            this.isFilter = true;
+        },
+
+        filterChoosen(index) {
+            this.chosenFiter = index;
+            this.closeFilter();
+        },
+
+        closeFilter() {
+            this.isFilter = false;
+            this.map = true;
         },
     },
 
