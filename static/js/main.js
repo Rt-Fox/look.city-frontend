@@ -26,7 +26,11 @@ let vm = new Vue({
         search: false,
         feedback: false,
         pointPopUp: false,
-        pointsInfo: null,
+        pointFragments: null,
+        fragmentNumber: null,
+        currentFragment: null,
+        moreThanOne: false,
+        popUpText: false,
     },
 
     methods: {
@@ -49,9 +53,28 @@ let vm = new Vue({
                 this.feedback = !this.feedback;
             }
         },
-        showPopUp(ids) {
-            this.pointPopUp = !this.pointPopUp;
-            this.pointsInfo = ids;
+        showPopUp(ids, i) {
+            this.pointFragments = ids;
+            this.fragmentNumber = i;
+
+            this.info.fragments.forEach((fragment) => {
+                if (fragment.id == this.pointFragments[i]) {
+                    this.currentFragment = fragment;
+                }
+            });
+
+            if (this.pointFragments.length > 1) {
+                this.moreThanOne = true;
+            } else {
+                this.moreThanOne = false;
+            }
+
+            if (this.currentFragment.short_description == null) {
+                this.popUpText = false;
+            } else {
+                this.popUpText = true;
+            }
+            this.pointPopUp = true;
         },
 
         closePopUp(e) {
@@ -59,13 +82,31 @@ let vm = new Vue({
                 x = document.querySelector("#x");
 
             if (e.target == back || e.target == x) {
-                this.pointPopUp = !this.pointPopUp;
+                this.pointPopUp = false;
             }
+        },
+
+        nextFragment() {
+            if (this.fragmentNumber >= this.pointFragments.length - 1) {
+                this.fragmentNumber = 0;
+            } else {
+                this.fragmentNumber += 1;
+            }
+            this.showPopUp(this.pointFragments, this.fragmentNumber);
+        },
+
+        previousFragment() {
+            if (this.fragmentNumber <= 0) {
+                this.fragmentNumber = this.pointFragments.length - 1;
+            } else {
+                this.fragmentNumber -= 1;
+            }
+            this.showPopUp(this.pointFragments, this.fragmentNumber);
         },
     },
 
     mounted() {
-        // Получение дату
+        // Получение даты
         axios.get("/points.json").then(function (response) {
             vm.info = response.data;
             ymaps.ready(init);
