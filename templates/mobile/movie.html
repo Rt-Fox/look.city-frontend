@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Кинопутеводитель</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="/favicon.ico" rel="icon" type="image/x-icon">
+    <meta content="#FF422B1F" name="theme-color">
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" rel="stylesheet">
+    <link href="/static/style/phone_style.css" rel="stylesheet">
+</head>
+<body>
+<div class="scrol">
+    <div class="headerthree">
+        <div class="headerthree_title">
+            <div>{{ title|upper }}</div>
+        </div>
+        <div class="krestik"></div>
+    </div>
+    <div class="movie">
+        <div class="contents">
+            <div class="cont">
+                <div class="cont_coment">
+                    <img class="main" alt="" src="/{{ image }}">
+                    <div class="fa">
+                        <i class="fa fa-comment"></i>
+                        <i class="fa fa-map-marker"></i>
+                        <i class="fa fa-share"></i>
+                    </div>
+                </div>
+                <span class="divtext">{{ short_description }}</span>
+            </div>
+            {% for fragment in fragments %}
+                {% load comments %}
+                {% get_comment_count for parent as comment_count %}
+                <div class="cont">
+                    <div class="title">{{ fragment.name }}</div>
+                    <a href="{{ fragment.href }}?p">
+                        <img alt="" src="/{{ fragment.photo }}">
+                    </a>
+                    <div class="cont_coment">
+                        <div class="fa inline">
+                            <i class="fa fa-comment"></i>
+                            <i class="fa fa-map-marker"></i>
+                            <i class="fa fa-share"></i>
+                        </div>
+                    </div>
+                    <div class="description">
+                        {% if fragment.description %}
+                            <span>{{ fragment.description }}</span>
+                        {% endif %}
+                    </div>
+                    <button class="comment">
+                        <div class="button">
+                            <span>Коментарии</span>
+                            <div>{{ comment_count }}</div>
+                        </div>
+                    </button>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="footer">
+        <button class="filterbig">Оставить отзыв</button>
+        <button class="filterbig">Посмотреть фильм на карте</button>
+        <button class="filterbig">Поделиться фильмом</button>
+    </div>
+</div>
+</body>
+</html>

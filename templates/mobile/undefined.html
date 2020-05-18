@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Кинопутеводитель</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="/static/style/phone_style.css" rel="stylesheet">
+</head>
+<body>
+<div class="mid">
+    <div class="main-wrapper wrap-undefined">
+        <div class="headline">
+            <div class="title">{{ title|upper }}</div>
+            <a href="https://beta.loook.city/" class="back"></a>
+        </div>
+        <div class="contents">
+            {% for fragment in data %}
+                <a href="{{ fragment.href }}" class="cont hg">
+                    <div class="el">
+                        <img class="el_movie" src="/{{ fragment.photo }}"/>
+                        <div>
+                            <span>{{ fragment.name }}</span>
+                        </div>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+</body>
+</html>

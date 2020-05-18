@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Кинопутеводитель</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="/favicon.ico" rel="icon" type="image/x-icon">
+    <link href="/static/style/phone_style.css" rel="stylesheet">
+</head>
+<body>
+<div class="mid">
+    <form class="main-wrapper" action="/add_point" method="post">
+        <div class="headline">
+            <div class="title">ПРЕДЛОЖИТЬ МЕСТО</div>
+            <a href="https://beta.loook.city/" class="back"></a>
+        </div>
+        {% csrf_token %}
+
+        {{ form.non_field_errors }}
+        <div class="three">
+            {{ form.name.errors }}
+            <div>
+                <label for="{{ form.name.id_for_label }}">Имя:</label>
+            </div>
+            {{ form.name }}
+        </div>
+        <div class="three">
+            {{ form.email.errors }}
+            <div>
+                <label for="{{ form.email.id_for_label }}">Email:</label>
+            </div>
+            {{ form.email }}
+        </div>
+        <div class="three">
+            {{ form.address.errors }}
+            <div>
+                <label for="{{ form.address.id_for_label }}">Адрес:</label>
+            </div>
+            {{ form.address }}
+        </div>
+        <div class="three">
+            {{ form.movie.errors }}
+            <div>
+                <label for="{{ form.movie.id_for_label }}">Фильм:</label>
+            </div>
+            {{ form.movie }}
+        </div>
+        <div class="three">
+            {{ form.movie_link.errors }}
+            <div>
+                <label for="{{ form.movie_link.id_for_label }}">Ссылка на фильм:</label>
+            </div>
+            {{ form.movie_link }}
+        </div>
+        <div class="three">
+            {{ form.year.errors }}
+            <div>
+                <label for="{{ form.year.id_for_label }}">Год снятия фильма:</label>
+            </div>
+            {{ form.year }}
+        </div>
+        <div class="three">
+            {{ form.timestamp.errors }}
+            <div>
+                <label for="{{ form.timestamp.id_for_label }}">Время появления места в фильме:</label>
+            </div>
+            {{ form.timestamp }}
+        </div>
+        <div class="two dop">
+            {{ form.comments.errors }}
+            <div>
+                <label for="{{ form.comments.id_for_label }}">Комментарий:</label>
+            </div>
+            {{ form.comments }}
+        </div>
+        <input class="submit filter" value="Отправить" type="submit">
+    </form>
+</div>
+</body>
+</html>

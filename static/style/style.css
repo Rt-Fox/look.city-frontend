@@ -144,10 +144,6 @@ html, body {
     box-shadow: -5px -5px 5px rgba(0, 0, 0, 0.2);
 }
 
-.back {
-    display: none;
-}
-
 .brand img {
     width: 100%;
     height: 100%;
@@ -457,7 +453,7 @@ html, body {
     font-weight: 700;
     font-size: x-large;
     background-color: #f4f4f4;
-    background-image: url(../img/konvert.png);
+    background-image: url(../img/message.png);
     background-position-y: 50%;
     background-position-x: -70%;
     background-size: 40vh;

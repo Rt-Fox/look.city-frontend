@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Кинопутеводитель</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="/favicon.ico" rel="icon" type="image/x-icon">
+    <meta content="#FF422B1F" name="theme-color">
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" rel="stylesheet">
+    <link href="/static/style/phone_style.css" rel="stylesheet">
+</head>
+<body>
+<div class="scrol">
+    <div class="headerthree">
+        <div class="headerthree_title">
+            <div>{{ title|upper }}</div>
+        </div>
+        <div class="krestik"></div>
+    </div>
+    <div class="movie">
+        <div class="contents">
+            <div class="cont">
+                <div class="title">{{ name }}</div>
+
+                <video width="400" height="320" controls="controls" {% if autoplay %}autoplay="autoplay"{% endif %}
+                       poster="/{{ photo }}">
+                    <source src="{{ video_link }}" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+                    Тег video не поддерживается вашим браузером.
+                </video>
+                <div class="cont_coment">
+                    <div class="fa inline">
+                        <i class="fa fa-comment"></i>
+                        <i class="fa fa-map-marker"></i>
+                        <i class="fa fa-share"></i>
+                    </div>
+                </div>
+                <div class="divtext">{{ text }}</div>
+                <div class="map_min" id="map"></div>
+                <button class="comment">
+                    {% load comments %}
+                    {% get_comment_count for data as comment_count %}
+                    <div class="button">
+                        <span>Коментарии</span>
+                        <div>{{ comment_count }}</div>
+                    </div>
+                    <div class="comment_v">
+                        {% render_comment_list for data %}
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <button class="filterbig">Оставить отзыв</button>
+        <button class="filterbig">Посмотреть фильм на карте</button>
+        <button class="filterbig">Поделиться фильмом</button>
+    </div>
+</div>
+</body>
+</html>

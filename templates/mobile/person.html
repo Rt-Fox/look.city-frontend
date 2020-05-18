@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Кинопутеводитель</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="/favicon.ico" rel="icon" type="image/x-icon">
+    <meta content="#FF422B1F" name="theme-color">
+    <link href="/static/style/phone_style.css" rel="stylesheet">
+</head>
+<body>
+<div class="scrol">
+    <div class="headerthree">
+        <div class="headerthree_title">
+            <div>{{ title }}</div>
+        </div>
+        <div class="krestik"></div>
+    </div>
+    <div class="bio">
+        <img src="/{{ photo }}">
+        <div class="bio_text">
+            <div>{{ description|safe }}</div>
+        </div>
+    </div>
+    <div class="movie">
+        <div class="movie_title">Фильмы</div>
+        <div class="contents">
+            {% for movie in data %}
+                <a href="{{ movie.href }}" class="cont">
+                    <img class="film_person" src="/{{ movie.photo }}">
+                    <div>{{ movie.name }}</div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+</body>
+</html>

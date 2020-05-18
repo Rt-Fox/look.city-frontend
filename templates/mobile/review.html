@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Кинопутеводитель</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="/favicon.ico" rel="icon" type="image/x-icon">
+    <link href="/static/style/phone_style.css" rel="stylesheet">
+</head>
+<body>
+<div class="mid">
+    <form class="main-wrapper" action="/feedback" method="post">
+        <div class="headline">
+            <div class="title">ОТЗЫВ</div>
+            <a href="https://beta.loook.city/" class="back"></a>
+        </div>
+
+        {% csrf_token %}
+
+        {{ form.non_field_errors }}
+        <div class="one">
+            {{ form.name.errors }}
+            <div>
+                <label for="{{ form.name.id_for_label }}">Имя:</label>
+            </div>
+            {{ form.name }}
+        </div>
+        <div class="one">
+            {{ form.email.errors }}
+            <div>
+                <label for="{{ form.email.id_for_label }}">Email:</label>
+            </div>
+            {{ form.email }}
+        </div>
+        <div class="two">
+            {{ form.text.errors }}
+            <span>
+                <label for="{{ form.text.id_for_label }}">Комментарий:</label>
+            </span>
+            {{ form.text }}
+        </div>
+        <input class="submit filter" value="Отправить" type="submit">
+    </form>
+</div>
+</body>
+</html>

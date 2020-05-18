@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Кинопутеводитель</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" rel="stylesheet">
+    <link href="/static/style/phone_style.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style/decades.css">
+</head>
+<body>
+<div class="mid">
+    <div class="main-wrapper wrap-years">
+        <div class="headline">
+            <div class="title">Годы</div>
+            <a href="https://beta.loook.city/" class="back whiteback"></a>
+        </div>
+        <div class="contents">
+            {% for decade in data %}
+                <a href="{{ decade.href }}" class="el yr {{ decade.class }}">
+                    <span>{{ decade.name }}</span>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+</body>
+</html>
