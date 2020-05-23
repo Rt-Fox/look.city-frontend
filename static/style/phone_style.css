@@ -10,7 +10,8 @@
     font-size: 5pt;
 }
 
-html, body {
+html,
+body {
     margin: 0;
     overflow: hidden;
     font-size: 100%;
@@ -36,13 +37,13 @@ html, body {
     --filter-text-size: 1fr;
 
     --menu-color: #422b1f;
-    --menu-bg-color: #F5F5F5;
+    --menu-bg-color: #f5f5f5;
     --menu-border-radius: 18px;
     --menu-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
     --menu-text-size: x-large;
-    --zoom-bg-color: #F5F5F5;
+    --zoom-bg-color: #f5f5f5;
     --color-active: #422b1f;
-    --bg-color-active: #F5F5F5;
+    --bg-color-active: #f5f5f5;
 
     --new-color: #000000;
     --new-border-radius: 2vw;
@@ -161,14 +162,16 @@ span:first-letter {
 }
 
 .brand {
-    background-color: rgba(0, 0, 0, 0);
+    background-color: white;
     padding: 0;
     height: 100%;
     width: 80px;
     margin-right: 10px;
     border-radius: var(--brend-border-radius);
     border: 0;
-    box-shadow: -5px -5px 13px rgba(197, 197, 197, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9), -5px 5px 10px rgba(197, 197, 197, 0.2), 5px -5px 10px rgba(197, 197, 197, 0.2), inset 1px 1px 2px rgba(197, 197, 197, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
+    box-shadow: -5px -5px 13px rgba(197, 197, 197, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9),
+    -5px 5px 10px rgba(197, 197, 197, 0.2), 5px -5px 10px rgba(197, 197, 197, 0.2),
+    inset 1px 1px 2px rgba(197, 197, 197, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .brand img {
@@ -182,7 +185,7 @@ span:first-letter {
     align-items: center;
     justify-content: center;
     margin: auto;
-    width: 40%;
+    width: 35%;
     height: 100%;
     text-align: center;
     color: var(--menu-color);
@@ -196,7 +199,9 @@ span:first-letter {
     font-size: var(--menu-text-size);
     letter-spacing: 5px;
     z-index: 100;
-    box-shadow: -5px -5px 13px rgba(197, 197, 197, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9), -5px 5px 10px rgba(197, 197, 197, 0.2), 5px -5px 10px rgba(197, 197, 197, 0.2), inset 1px 1px 2px rgba(197, 197, 197, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
+    box-shadow: -5px -5px 13px rgba(197, 197, 197, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9),
+    -5px 5px 10px rgba(197, 197, 197, 0.2), 5px -5px 10px rgba(197, 197, 197, 0.2),
+    inset 1px 1px 2px rgba(197, 197, 197, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .container {
@@ -217,8 +222,10 @@ span:first-letter {
     left: 0;
     width: 100%;
     height: 100%;
-    box-shadow: -5px -5px 13px rgba(197, 197, 197, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9), -5px 5px 10px rgba(197, 197, 197, 0.2), 5px -5px 10px rgba(197, 197, 197, 0.2), inset 1px 1px 2px rgba(197, 197, 197, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
-    background: #F5F5F5;;
+    box-shadow: -5px -5px 13px rgba(197, 197, 197, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9),
+    -5px 5px 10px rgba(197, 197, 197, 0.2), 5px -5px 10px rgba(197, 197, 197, 0.2),
+    inset 1px 1px 2px rgba(197, 197, 197, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
+    background: #f5f5f5;
     border-radius: 25%;
     transition: all 1s;
     z-index: 100;
@@ -281,7 +288,7 @@ span:first-letter {
     font-size: small;
     font-weight: bolder;
     letter-spacing: 0.1em;
-    background: #F5F5F5;
+    background: #f5f5f5;
 }
 
 .container input:hover {
@@ -365,6 +372,29 @@ span:first-letter {
 
     height: 100%;
     width: 27%;
+
+    background-color: var(--filter-bg-color);
+    color: var(--filter-color);
+    border-radius: var(--filter-border-radius);
+    border-color: rgba(0, 0, 0, 0);
+
+    font-family: var(--font1);
+    font-weight: 700;
+    font-size: var(--filter-text-size);
+
+    box-shadow: var(--filter-shadow);
+    text-decoration: none;
+}
+
+
+/*more*/
+.reset_filters {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+    width: 95%;
 
     background-color: var(--filter-bg-color);
     color: var(--filter-color);
@@ -504,10 +534,13 @@ span:first-letter {
     align-items: center;
     text-align: center;
     text-transform: uppercase;
-    font-size: 6vw;
+    font-size: 4vw;
 }
 
-.krestik, .bell, .back, .loupe {
+.krestik,
+.header_button,
+.back,
+.loupe {
     padding: 0;
     min-height: 30px;
     min-width: 30px;
@@ -527,37 +560,40 @@ span:first-letter {
     background-size: 60%;
 }
 
-.container.bell {
+.container.header_button {
     position: static;
     margin: 0 0 0 2vw;
     max-height: 50px;
     max-width: 50px;
     width: 50px;
     height: 50px;
-    box-shadow: -5px -5px 13px rgba(197, 197, 197, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9), -5px 5px 10px rgba(197, 197, 197, 0.2), 5px -5px 10px rgba(197, 197, 197, 0.2), inset 1px 1px 2px rgba(197, 197, 197, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
+    box-shadow: -5px -5px 13px rgba(197, 197, 197, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9),
+    -5px 5px 10px rgba(197, 197, 197, 0.2), 5px -5px 10px rgba(197, 197, 197, 0.2),
+    inset 1px 1px 2px rgba(197, 197, 197, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .bell {
-    background: url("../img/white_bell.svg") center no-repeat;
-    background-color: #44250b;
+    background: #44250b url("../img/white_bell.svg") no-repeat center;
     background-size: 50%;
 }
 
 .whitebell {
-    background: url("../img/black_bell.svg") center no-repeat;
-    background-color: #f5f5f5;
+    background: #f5f5f5 url("../img/black_bell.svg") no-repeat center;
+    background-size: 50%;
+}
+
+.addpoint {
+    background: #f5f5f5 url("../img/addplace.svg") no-repeat center;
     background-size: 50%;
 }
 
 .back {
-    background: url("../img/white_back.svg") center no-repeat;
-    background-color: #44250b;
+    background: #44250b url("../img/white_back.svg") no-repeat center;
     background-size: 40%;
 }
 
 .whiteback {
-    background: url("../img/black_back.svg") center no-repeat;
-    background-color: #ECEBEA;
+    background: #ecebea url("../img/black_back.svg") no-repeat center;
     background-size: 40%;
 }
 
@@ -592,7 +628,7 @@ span:first-letter {
     align-items: center;
     width: 90%;
     height: 50%;
-    margin: 5vh 0;
+    margin: 4vh 0;
 }
 
 .fr_content img,
@@ -602,11 +638,13 @@ span:first-letter {
     justify-content: space-around;
     width: 48%;
     height: 100%;
-    margin-left: 2vh;
+    margin-left: 1vh;
 }
 
 .fr_content img {
-    box-shadow: -2px -2px 20px rgba(183, 183, 183, 0.9), 5px 5px 15px rgba(255, 255, 255, 0.9), -10px 10px 20px rgba(183, 183, 183, 0.2), 5px -5px 20px rgba(183, 183, 183, 0.2), inset 1px 1px 2px rgba(183, 183, 183, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
+    box-shadow: -2px -2px 20px rgba(183, 183, 183, 0.9), 5px 5px 15px rgba(255, 255, 255, 0.9),
+    -10px 10px 20px rgba(183, 183, 183, 0.2), 5px -5px 20px rgba(183, 183, 183, 0.2),
+    inset 1px 1px 2px rgba(183, 183, 183, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
     border-radius: 17px;
 }
 
@@ -630,13 +668,14 @@ span:first-letter {
 }
 
 .without {
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
 }
 
 .without img {
-    width: 80%;
-    height: 80%;
+    width: 44vw;
+    height: 50%;
 }
 
 .without .fr_text {
@@ -665,10 +704,9 @@ span:first-letter {
 .mn_content li {
     list-style-type: none;
     text-decoration: none;
-    color: #422B1F;
+    color: #422b1f;
     height: 50%;
     width: 100%;
-
 }
 
 .mn_content li a {
@@ -679,7 +717,7 @@ span:first-letter {
     font-size: var(--menu-text-size);
     height: 100%;
     width: 100%;
-    color: #422B1F;
+    color: #422b1f;
 }
 
 .mn_content li:first-child {
@@ -699,7 +737,7 @@ button {
     height: 96vh;
     grid-template-rows: 0.4fr 0.45fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: "message city city city city city krest" "new new new new new new new" "town town town zero1 top top top" "film film film zero1 year year year" "genres genres genres zero1 personage personage personage" "producer producer producer zero1 actors actors actors" "popular popular popular zero2 places places places";
+    grid-template-areas: "message city city city city city krest" "town town town town town town town" "new new new zero1 top top top" "film film film zero1 year year year" "genres genres genres zero1 personage personage personage" "producer producer producer zero1 actors actors actors" "popular popular popular zero2 places places places";
     grid-gap: 10px;
 }
 
@@ -802,8 +840,11 @@ button {
 .new {
     grid-area: new;
     padding-bottom: 5vh;
-    box-shadow: -5px -5px 15px rgba(201, 200, 199, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9), -5px 5px 10px rgba(201, 200, 199, 0.2), 5px -5px 10px rgba(201, 200, 199, 0.2), inset 1px 1px 2px rgba(201, 200, 199, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
+    box-shadow: -5px -5px 15px rgba(201, 200, 199, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9),
+    -5px 5px 10px rgba(201, 200, 199, 0.2), 5px -5px 10px rgba(201, 200, 199, 0.2),
+    inset 1px 1px 2px rgba(201, 200, 199, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
 }
+
 .new a {
     background-image: url(/static/img/new.png);
     background-position-y: center;
@@ -814,7 +855,9 @@ button {
 
 .town {
     grid-area: town;
-    box-shadow: -5px -5px 15px rgba(201, 200, 199, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9), -5px 5px 10px rgba(201, 200, 199, 0.2), 5px -5px 10px rgba(201, 200, 199, 0.2), inset 1px 1px 2px rgba(201, 200, 199, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
+    box-shadow: -5px -5px 15px rgba(201, 200, 199, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9),
+    -5px 5px 10px rgba(201, 200, 199, 0.2), 5px -5px 10px rgba(201, 200, 199, 0.2),
+    inset 1px 1px 2px rgba(201, 200, 199, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .town a {
@@ -827,7 +870,9 @@ button {
 
 .top {
     grid-area: top;
-    box-shadow: 5px -5px 15px rgba(207, 207, 207, 0.9), -5px 5px 10px rgba(255, 255, 255, 0.9), 5px 5px 10px rgba(207, 207, 207, 0.2), -5px -5px 10px rgba(207, 207, 207, 0.2), inset -1px 1px 2px rgba(207, 207, 207, 0.5), inset 1px -1px 2px rgba(255, 255, 255, 0.3);
+    box-shadow: 5px -5px 15px rgba(207, 207, 207, 0.9), -5px 5px 10px rgba(255, 255, 255, 0.9),
+    5px 5px 10px rgba(207, 207, 207, 0.2), -5px -5px 10px rgba(207, 207, 207, 0.2),
+    inset -1px 1px 2px rgba(207, 207, 207, 0.5), inset 1px -1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .top a {
@@ -840,7 +885,9 @@ button {
 
 .film {
     grid-area: film;
-    box-shadow: -5px -5px 15px rgba(201, 200, 199, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9), -5px 5px 10px rgba(201, 200, 199, 0.2), 5px -5px 10px rgba(201, 200, 199, 0.2), inset 1px 1px 2px rgba(201, 200, 199, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
+    box-shadow: -5px -5px 15px rgba(201, 200, 199, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9),
+    -5px 5px 10px rgba(201, 200, 199, 0.2), 5px -5px 10px rgba(201, 200, 199, 0.2),
+    inset 1px 1px 2px rgba(201, 200, 199, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .film a {
@@ -853,7 +900,9 @@ button {
 
 .year {
     grid-area: year;
-    box-shadow: 5px -5px 15px rgba(207, 207, 207, 0.9), -5px 5px 10px rgba(255, 255, 255, 0.9), 5px 5px 10px rgba(207, 207, 207, 0.2), -5px -5px 10px rgba(207, 207, 207, 0.2), inset -1px 1px 2px rgba(207, 207, 207, 0.5), inset 1px -1px 2px rgba(255, 255, 255, 0.3);
+    box-shadow: 5px -5px 15px rgba(207, 207, 207, 0.9), -5px 5px 10px rgba(255, 255, 255, 0.9),
+    5px 5px 10px rgba(207, 207, 207, 0.2), -5px -5px 10px rgba(207, 207, 207, 0.2),
+    inset -1px 1px 2px rgba(207, 207, 207, 0.5), inset 1px -1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .year a {
@@ -866,7 +915,9 @@ button {
 
 .genres {
     grid-area: genres;
-    box-shadow: -5px -5px 15px rgba(201, 200, 199, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9), -5px 5px 10px rgba(201, 200, 199, 0.2), 5px -5px 10px rgba(201, 200, 199, 0.2), inset 1px 1px 2px rgba(201, 200, 199, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
+    box-shadow: -5px -5px 15px rgba(201, 200, 199, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9),
+    -5px 5px 10px rgba(201, 200, 199, 0.2), 5px -5px 10px rgba(201, 200, 199, 0.2),
+    inset 1px 1px 2px rgba(201, 200, 199, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .genres a {
@@ -879,7 +930,9 @@ button {
 
 .personage {
     grid-area: personage;
-    box-shadow: 5px -5px 15px rgba(207, 207, 207, 0.9), -5px 5px 10px rgba(255, 255, 255, 0.9), 5px 5px 10px rgba(207, 207, 207, 0.2), -5px -5px 10px rgba(207, 207, 207, 0.2), inset -1px 1px 2px rgba(207, 207, 207, 0.5), inset 1px -1px 2px rgba(255, 255, 255, 0.3);
+    box-shadow: 5px -5px 15px rgba(207, 207, 207, 0.9), -5px 5px 10px rgba(255, 255, 255, 0.9),
+    5px 5px 10px rgba(207, 207, 207, 0.2), -5px -5px 10px rgba(207, 207, 207, 0.2),
+    inset -1px 1px 2px rgba(207, 207, 207, 0.5), inset 1px -1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .personage a {
@@ -892,7 +945,9 @@ button {
 
 .producer {
     grid-area: producer;
-    box-shadow: -5px 5px 15px rgba(207, 207, 207, 0.9), 5px -5px 10px rgba(255, 255, 255, 0.9), -5px -5px 10px rgba(207, 207, 207, 0.2), 5px 5px 10px rgba(207, 207, 207, 0.2), inset 1px -1px 2px rgba(207, 207, 207, 0.5), inset -1px 1px 2px rgba(255, 255, 255, 0.3);
+    box-shadow: -5px 5px 15px rgba(207, 207, 207, 0.9), 5px -5px 10px rgba(255, 255, 255, 0.9),
+    -5px -5px 10px rgba(207, 207, 207, 0.2), 5px 5px 10px rgba(207, 207, 207, 0.2),
+    inset 1px -1px 2px rgba(207, 207, 207, 0.5), inset -1px 1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .producer a {
@@ -905,7 +960,9 @@ button {
 
 .actors {
     grid-area: actors;
-    box-shadow: 5px 5px 15px rgba(207, 207, 207, 0.9), -5px -5px 10px rgba(255, 255, 255, 0.9), 5px -5px 10px rgba(207, 207, 207, 0.2), -5px 5px 10px rgba(207, 207, 207, 0.2), inset -1px -1px 2px rgba(207, 207, 207, 0.5), inset 1px 1px 2px rgba(255, 255, 255, 0.3);
+    box-shadow: 5px 5px 15px rgba(207, 207, 207, 0.9), -5px -5px 10px rgba(255, 255, 255, 0.9),
+    5px -5px 10px rgba(207, 207, 207, 0.2), -5px 5px 10px rgba(207, 207, 207, 0.2),
+    inset -1px -1px 2px rgba(207, 207, 207, 0.5), inset 1px 1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .actors a {
@@ -918,7 +975,9 @@ button {
 
 .popular {
     grid-area: popular;
-    box-shadow: -5px 5px 15px rgba(207, 207, 207, 0.9), 5px -5px 10px rgba(255, 255, 255, 0.9), -5px -5px 10px rgba(207, 207, 207, 0.2), 5px 5px 10px rgba(207, 207, 207, 0.2), inset 1px -1px 2px rgba(207, 207, 207, 0.5), inset -1px 1px 2px rgba(255, 255, 255, 0.3);
+    box-shadow: -5px 5px 15px rgba(207, 207, 207, 0.9), 5px -5px 10px rgba(255, 255, 255, 0.9),
+    -5px -5px 10px rgba(207, 207, 207, 0.2), 5px 5px 10px rgba(207, 207, 207, 0.2),
+    inset 1px -1px 2px rgba(207, 207, 207, 0.5), inset -1px 1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .popular a {
@@ -931,7 +990,9 @@ button {
 
 .places {
     grid-area: places;
-    box-shadow: 5px 5px 15px rgba(207, 207, 207, 0.9), -5px -5px 10px rgba(255, 255, 255, 0.9), 5px -5px 10px rgba(207, 207, 207, 0.2), -5px 5px 10px rgba(207, 207, 207, 0.2), inset -1px -1px 2px rgba(207, 207, 207, 0.5), inset 1px 1px 2px rgba(255, 255, 255, 0.3);
+    box-shadow: 5px 5px 15px rgba(207, 207, 207, 0.9), -5px -5px 10px rgba(255, 255, 255, 0.9),
+    5px -5px 10px rgba(207, 207, 207, 0.2), -5px 5px 10px rgba(207, 207, 207, 0.2),
+    inset -1px -1px 2px rgba(207, 207, 207, 0.5), inset 1px 1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .places a {
@@ -1105,21 +1166,20 @@ button {
     height: 100%;
     max-height: 45px;
 
-
     display: flex;
     align-items: center;
     justify-content: center;
 
     text-align: center;
     text-transform: uppercase;
-    color: #F6F6F6;
+    color: #f6f6f6;
 
     background-color: #44250b;
     border-radius: 30px;
     font-family: var(--font1);
     font-style: normal;
     font-weight: bold;
-    font-size: 2.5vh;;
+    font-size: 2.5vh;
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
 }
 
@@ -1235,8 +1295,10 @@ button {
     height: 14vh;
     width: 78vw;
     border-radius: 3vw;
-    background-color: #ECEBEA;
-    box-shadow: -5px -5px 25px rgba(212, 212, 211, 0.9), 5px 5px 20px rgba(255, 255, 255, 0.9), -5px 5px 20px rgba(212, 212, 211, 0.2), 5px -5px 20px rgba(212, 212, 211, 0.2), inset 1px 1px 2px rgba(212, 212, 211, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
+    background-color: #ecebea;
+    box-shadow: -5px -5px 25px rgba(212, 212, 211, 0.9), 5px 5px 20px rgba(255, 255, 255, 0.9),
+    -5px 5px 20px rgba(212, 212, 211, 0.2), 5px -5px 20px rgba(212, 212, 211, 0.2),
+    inset 1px 1px 2px rgba(212, 212, 211, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
 }
 
 a {
@@ -1284,7 +1346,7 @@ a {
     font-weight: normal;
     display: flex;
     align-items: center;
-    color: #422B1F;
+    color: #422b1f;
 }
 
 .contents {
@@ -1295,10 +1357,11 @@ a {
 }
 
 .contents_filt {
-    width: 80vw;
+    width: 75vw;
 }
 
-.cont:first-child {
+.cont:first-child,
+.filter_cont:first-child {
     margin-top: 3vh;
 }
 
@@ -1308,13 +1371,29 @@ a {
     align-items: center;
     justify-content: center;
     width: 100%;
-    min-height: 6vh;
     margin: 0 0 4vh 0;
     color: #958682;
     height: 14vh;
     border-radius: 20px;
     font-family: var(--font1);
     font-weight: 700;
+}
+
+.filter_cont {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: auto;
+    min-height: 7vh;
+    margin: 0 0 3vh 0;
+    color: #958682;
+    font-family: var(--font1);
+    font-weight: 700;
+    border-bottom-color: rgba(149, 134, 130, 0.7);
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
 }
 
 .checkbox {
@@ -1346,7 +1425,7 @@ a {
     box-shadow: inset 1vh 1vh 1vh rgba(0, 0, 0, 0.2);
 }
 
-.checkbox:checked + label:before {
+.checkbox.active + label:before {
     background: #44250b;
     box-shadow: inset 1vh 1vh 1vh rgba(0, 0, 0, 0.2);
 }
@@ -1574,13 +1653,12 @@ a {
 }
 
 .bio_text div {
-    color: #422B1F;
+    color: #422b1f;
     font-family: var(--font2);
     font-style: normal;
     font-weight: normal;
     font-size: 13px;
     line-height: 150%;
-
 }
 
 .movie .movie_title {
@@ -1595,7 +1673,7 @@ a {
     text-align: center;
     font-style: normal;
 
-    color: #422B1F;
+    color: #422b1f;
 }
 
 .movie .contents {
@@ -1634,7 +1712,8 @@ a {
     height: auto;
 }
 
-.movie .cont video, .movie .cont img {
+.movie .cont video,
+.movie .cont img {
     width: 100%;
     height: 29vh;
     border-radius: 20px;
@@ -1645,11 +1724,11 @@ a {
     border-radius: 0;
     box-shadow: none;
     height: 30vh;
-    width: 100%;
+    width: 70%;
 }
 
 .cont .divtext {
-    margin: 1vh;
+    margin: 2vh;
     width: 78vw;
     font-family: var(--font2);
     text-align: left;
@@ -1660,11 +1739,13 @@ a {
     display: flex;
     align-items: center;
 
-    color: #422B1F;
+    color: #422b1f;
 }
 
 .movie .cont .film_person {
-    box-shadow: -5px -5px 15px rgba(183, 183, 183, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9), -5px 5px 15px rgba(183, 183, 183, 0.2), 5px -5px 10px rgba(183, 183, 183, 0.2), inset 1px 1px 2px rgba(183, 183, 183, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
+    box-shadow: -5px -5px 15px rgba(183, 183, 183, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9),
+    -5px 5px 15px rgba(183, 183, 183, 0.2), 5px -5px 10px rgba(183, 183, 183, 0.2),
+    inset 1px 1px 2px rgba(183, 183, 183, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .scrol .cont_coment {
@@ -1687,8 +1768,8 @@ a {
     font-family: var(--font2);
     font-size: 15px;
     font-weight: 400;
-    text-align: left;;
-    color: #422B1F;
+    text-align: left;
+    color: #422b1f;
 }
 
 .cont_coment .fa {
@@ -1714,7 +1795,8 @@ a {
 .cont .title {
     margin: 5% 0;
     width: 100%;
-    height: 100%;
+    height: auto;
+    max-height: none;
 
     display: flex;
     align-items: center;
@@ -1725,7 +1807,7 @@ a {
     border-radius: 30px;
     font-family: var(--font1);
     font-weight: 700;
-    font-size: 3vh;
+    font-size: 20px;
     text-align: left;
     box-shadow: none;
 }
@@ -1756,7 +1838,7 @@ a {
     display: flex;
     align-items: center;
     line-height: 100%;
-    color: #422B1F;
+    color: #422b1f;
 }
 
 .comment {
@@ -1780,7 +1862,8 @@ a {
     background-color: #ecebea;
 }
 
-.button span, .button div {
+.button span,
+.button div {
     font-family: var(--font);
     font-style: normal;
     font-weight: 500;
@@ -1885,6 +1968,10 @@ a {
         border-radius: var(--square-border-radius);
         border-color: rgba(0, 0, 0, 0);
     }
+
+    .new {
+        padding-bottom: 5vh;
+    }
 }
 
 /*адаптация*/
@@ -1915,6 +2002,10 @@ a {
         border-radius: var(--square-border-radius);
         border-color: rgba(0, 0, 0, 0);
     }
+
+    .new {
+        padding-bottom: 5vh;
+    }
 }
 
 @media (max-device-width: 540px), (max-device-height: 600px) {
@@ -1937,7 +2028,7 @@ a {
     }
 
     .brand {
-        background-color: rgba(0, 0, 0, 0);
+        background-color: white;
         margin: 0 0;
     }
 
@@ -1946,7 +2037,7 @@ a {
     }
 
     .title {
-        font-size: small;
+        font-size: 16px;
     }
 
     .el {
@@ -1973,7 +2064,8 @@ a {
         font-size: 2.8vh;
     }
 
-    .fr_text span, .fr_text button {
+    .fr_text span,
+    .fr_text button {
         font-size: 11px;
     }
 

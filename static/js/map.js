@@ -1,5 +1,7 @@
 //let info = axios.GET().then((response) => response.data)
 var myMap;
+var geoObjects = [];
+var new_placemark = null;
 
 function init() {
     myMap = new ymaps.Map("map", {
@@ -58,10 +60,7 @@ function init() {
     let zoomControl = new ymaps.control.ZoomControl({ options: { layout: ZoomLayout } });
     myMap.controls.add(zoomControl);
 
-    let geoObjects = [];
-
     // Создание точек
-    let new_placemark = null;
     vm.info.points.forEach(function add_placemark(point) {
         new_placemark = new ymaps.Placemark(
             // Координаты
@@ -77,7 +76,7 @@ function init() {
             }
         );
         new_placemark.events.add("click", function () {
-            vm.showPopUp(point.fragments_id);
+            vm.showPopUp(point.fragments_id, 0);
         });
         geoObjects.push(new_placemark);
     });
