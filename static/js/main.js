@@ -5,7 +5,7 @@ let vm = new Vue({
 
     data: {
         colors: {
-            "Multiple": "red",
+            Multiple: "red",
             "1900e": "black",
             "1910e": "black",
             "1920e": "black",
@@ -21,12 +21,12 @@ let vm = new Vue({
             "2020e": "pink",
         },
         filterNames: {
-            0: 'АКТЕРЫ',
-            1: 'РЕЖИССЕРЫ',
-            2: 'ПЕРСОНАЖИ',
-            3: 'ФИЛЬМЫ',
-            4: 'ГОДЫ',
-            5: 'ЖАНРЫ',
+            0: "АКТЕРЫ",
+            1: "РЕЖИССЕРЫ",
+            2: "ПЕРСОНАЖИ",
+            3: "ФИЛЬМЫ",
+            4: "ГОДЫ",
+            5: "ЖАНРЫ",
         },
         menu: false,
         map: true,
@@ -43,7 +43,7 @@ let vm = new Vue({
         filteredData: [],
         filterOpen: false,
         filterChosen: null,
-        filterType: null
+        filterType: null,
     },
 
     methods: {
@@ -122,14 +122,13 @@ let vm = new Vue({
             this.showPopUp(this.pointFragments, this.fragmentNumber);
         },
 
-
         OtherFragments(val) {
             this.filterType = 3;
-            this.filterData({'id': val})
+            this.filterData({ id: val });
         },
 
         filterData(val) {
-            this.filterChosen = val['id'];
+            this.filterChosen = val["id"];
             switch (this.filterType) {
                 case 0:
                     this.filterDataActors();
@@ -144,14 +143,13 @@ let vm = new Vue({
                     this.filterDataMovie();
                     break;
                 case 4:
-                    this.filterChosen = val['name']
+                    this.filterChosen = val["name"];
                     this.filterDataYear();
                     break;
                 case 5:
                     this.filterDataGenre();
                     break;
             }
-
 
             this.pointPopUp = false;
             this.filterOpen = false;
@@ -179,7 +177,6 @@ let vm = new Vue({
             this.filteredData = [];
             this.updateMap(this.info.points);
         },
-
 
         // Фильтрует дату по фильтру кино
         filterDataMovie() {
@@ -295,7 +292,6 @@ let vm = new Vue({
                 }
             });
 
-
             let temporary_data = Object.assign([], this.info.points);
 
             matchedFragments.forEach((fragment) => {
@@ -388,14 +384,13 @@ let vm = new Vue({
 
     mounted() {
         // Получение даты
-        axios.get("/api/points").then(function (response) {
+        axios.get("/points.json").then(function (response) {
             vm.info = response.data;
             ymaps.ready(init);
 
             setTimeout(function () {
                 fadeOutnojquery(hellopreloader);
             }, 1000);
-
         });
     },
 });
