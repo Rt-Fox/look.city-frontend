@@ -11,134 +11,142 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=0ebae56a-379d-4e2c-8821-bf1a67d366e2"
-        type="text/javascript"></script>
+            type="text/javascript"></script>
     <script src="https://yandex.st/jquery/2.2.3/jquery.min.js" type="text/javascript"></script>
     <script src="/static/js/map.js" type="text/javascript"></script>
     <link href="/static/style/phone_style.css" rel="stylesheet">
 </head>
 
 <body>
-    <div class="mid" id="root">
-        <div class="main-wrapper" v-show="map">
+<div class="mid" id="root">
+    <div class="main-wrapper" v-show="map">
 
-            <!-- Карта -->
-            <div class="map" id="map"></div>
+        <!-- Карта -->
+        <div class="map" id="map"></div>
 
-            <!-- Поиск и фильтры -->
-            <div class="header">
-                <!-- Кнопка меню -->
-                <div class="headerone">
-                    <button v-show="!search" class="brand">
-                        <img alt="Кинопутеводитель" src="/static/img/kino.png">
-                    </button>
-                    <span v-show="!search" @click="changeMenuState" class="menu">МЕНЮ</span>
-                    <a v-show="!search" href="#" class="container bell whitebell"></a>
-                    <form class="container">
-                        <input @focus="searchAnim" @blur="searchAnim" placeholder="Search..." type="text">
-                        <div class="search"></div>
-                    </form>
-                </div>
-                <div class="filters" v-if="!addButtons">
-                    <span @click="movieFilter" class="filter">ФИЛЬМЫ</span>
-                    <span class="filter">ЖАНРЫ</span>
-                    <span class="filter">ГОДЫ</span>
-                    <span @click="changeButtons" class="filter">ДРУГОЕ</span>
-                </div>
-                <div class="filters" v-else>
-                    <span class="filterbig">ПЕРСОНАЖИ</span>
-                    <span class="filterbig">РЕЖИССЕРЫ</span>
-                    <span class="filterbig">АКТЕРЫ</span>
-                    <span @click="changeButtons" class="filtermin"> &lt;</span>
-                </div>
+        <!-- Поиск и фильтры -->
+        <div class="header">
+            <!-- Кнопка меню -->
+            <div class="headerone">
+                <button v-show="!search" class="brand">
+                    <img alt="Кинопутеводитель" src="/static/img/kino.png">
+                </button>
+                <a v-show="!search" href="/add_point" class="container header_button addpoint"></a>
+                <span v-show="!search" @click="changeMenuState" class="menu">МЕНЮ</span>
+                <a v-show="!search" href="#" class="container header_button whitebell"></a>
+                <form class="container">
+                    <input @focus="searchAnim" @blur="searchAnim" placeholder="Search..." type="text">
+                    <div class="search"></div>
+                </form>
             </div>
-            <!-- Поп-ап с инф о проекте-->
-            <div class="menu_open nd">
-                <div class="window">
-                    <div class="headertwo">
-                        <img src="/static/img/brend.png">
-                        <div class="krestik">
-                        </div>
-                    </div>
-                </div>
+            <div class="filters" v-if="!addButtons && filterChosen === null">
+                <span @click="OpenFilter(3)" class="filter">ФИЛЬМЫ</span>
+                <span @click="OpenFilter(5)" class="filter">ЖАНРЫ</span>
+                <span @click="OpenFilter(4)" class="filter">ГОДЫ</span>
+                <span @click="changeButtons" class="filter">ДРУГОЕ</span>
             </div>
-            <!-- Поп-ап при нажатии на фрагмент-->
-            <div @click="closePopUp" v-if="pointPopUp" id="pointPop" class="menu_open fr">
-                <div class="window">
-                    <div class="headertwo">
-                        <span>[[ currentFragment.name ]]</span>
-                        <div id="x" class="krestik"></div>
-                    </div>
-                    <!--с текстом-->
-                    <div class="fr_content" v-bind:class="{ without : !popUpText}">
-                        <button v-if="moreThanOne" @click="previousFragment">&lt</button>
-                        <img src="/static/img/kino.png">
-                        <div class="fr_text">
-                            <span v-if="popUpText">[[ currentFragment.short_description ]]</span>
-                            <button class="filterbig">Другие фрагменты</button>
-                        </div>
-                        <button v-if="moreThanOne" @click="nextFragment">&gt</button>
+            <div class="filters" v-if="addButtons && filterChosen === null">
+                <span @click="OpenFilter(2)" class="filterbig">ПЕРСОНАЖИ</span>
+                <span @click="OpenFilter(1)" class="filterbig">РЕЖИССЕРЫ</span>
+                <span @click="OpenFilter(0)" class="filterbig">АКТЕРЫ</span>
+                <span @click="changeButtons" class="filtermin"> &lt;</span>
+            </div>
+            <div class="filters" v-if="filterChosen != null">
+                <span @click="FilterRemoven" class="reset_filters">СБРОСИТЬ ФИЛЬТРЫ</span>
+            </div>
+        </div>
+        <!-- Поп-ап с инф о проекте-->
+        <div class="menu_open nd">
+            <div class="window">
+                <div class="headertwo">
+                    <img src="/static/img/brend.png">
+                    <div class="krestik">
                     </div>
                 </div>
             </div>
         </div>
-
-
-        <!-- Открытое меню -->
-        <div class="grid-main-wrapper" v-if="menu">
-            <div class="message">
-                <a @click="feedbackPopUp" href="#"></a>
-            </div>
-            <div class="city">
-                <input placeholder="Поиск">
-            </div>
-            <div @click="changeMenuState" class="krest">
-                <div></div>
-            </div>
-            <div class="new square">
-                <a href="/new_movies">НОВИНКИ</a>
-            </div>
-            <div class="town square">
-                <a href="/cities">Города</a>
-            </div>
-            <div class="top square">
-                <a href="/stories">ЛУЧШИЕ КИНО-РАССКАЗЫ</a>
-            </div>
-            <div class="film square">
-                <a href="/movies">ФИЛЬМЫ</a>
-            </div>
-            <div class="year square">
-                <a href="/decades">ГОДЫ</a>
-            </div>
-            <div class="genres square">
-                <a href="/genres">ЖАНРЫ</a>
-            </div>
-            <div class="personage square">
-                <a href="/heroes">ПЕРСОНАЖИ</a>
-            </div>
-            <div class="producer square">
-                <a href="/producers">РЕЖИССЕРЫ</a>
-            </div>
-            <div class="actors square">
-                <a href="/actors">АКТЕРЫ</a>
-            </div>
-            <div class="popular square">
-                <a href="/popular_places">ПОПУЛЯРНЫЕ МЕСТА</a>
-            </div>
-            <div class="places square">
-                <a href="/undefined_places">НЕОПОЗНАННЫЕ МЕСТА</a>
-            </div>
-
-            <!-- Поп-ап -->
-            <div @click="feedbackPopUp" v-show="feedback" class="menu_open mn">
-                <div class="window">
-                    <div class="krestik"></div>
-                    <div class="mn_content">
-                        <ul>
-                            <li><a href="/feedback">Оставить отзыв</a></li>
-                            <li><a href="/add_point">Предложить место</a></li>
-                        </ul>
-                    </div>
+        <!-- Поп-ап при нажатии на фрагмент-->
+        <div @click="closePopUp" v-if="pointPopUp" id="pointPop" class="menu_open fr">
+            <div class="window">
+                <div class="headertwo">
+                    <span>[[ currentFragment.movie.name ]]</span>
+                    <div id="x" class="krestik"></div>
                 </div>
+                <!--с текстом-->
+                <div class="fr_content">
+                    <button v-if="moreThanOne" @click="previousFragment">&lt</button>
+                    <img :src="currentFragment.preview">
+                    <div class="fr_text">
+                        <span>[[ currentFragment.name ]]</span>
+                        <button @click="OtherFragments(currentFragment.movie.id)" class="filterbig">
+                            Другие фрагменты
+                        </button>
+                    </div>
+                    <button v-if="moreThanOne" @click="nextFragment">&gt</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Открытое меню -->
+    <div class="grid-main-wrapper" v-if="menu">
+        <div class="message">
+            <a href="/feedback"></a>
+        </div>
+        <div class="city">
+            <input placeholder="Поиск">
+        </div>
+        <div @click="changeMenuState" class="krest">
+            <div></div>
+        </div>
+        <div class="town square">
+            <a href="/cities">ГОРОДА</a>
+        </div>
+        <div class="new square">
+            <a href="/new_movies">НОВИНКИ</a>
+        </div>
+        <div class="top square">
+            <a href="/stories">ЛУЧШИЕ КИНО-РАССКАЗЫ</a>
+        </div>
+        <div class="film square">
+            <a href="/movies">ФИЛЬМЫ</a>
+        </div>
+        <div class="year square">
+            <a href="/decades">ГОДЫ</a>
+        </div>
+        <div class="genres square">
+            <a href="/genres">ЖАНРЫ</a>
+        </div>
+        <div class="personage square">
+            <a href="/heroes">ПЕРСОНАЖИ</a>
+        </div>
+        <div class="producer square">
+            <a href="/producers">РЕЖИССЕРЫ</a>
+        </div>
+        <div class="actors square">
+            <a href="/actors">АКТЕРЫ</a>
+        </div>
+        <div class="popular square">
+            <a href="/popular_places">ПОПУЛЯРНЫЕ МЕСТА</a>
+        </div>
+        <div class="places square">
+            <a href="/undefined_places">НЕОПОЗНАННЫЕ МЕСТА</a>
+        </div>
+
+    </div>
+    <!-- Фильтр кино -->
+    <div v-if="filterOpen" class="main-wrapper wrap-filt">
+        <div class="headline">
+            <div class="title">[[ filterNames[filterType] ]]</div>
+            <div @click="closeFilter" class="krestik"></div>
+        </div>
+        <div class="contents contents_filt">
+            <div v-for="value in info.filters[filterType]" class="filter_cont">
+                <input v-show="filterChosen != value['id']" class="checkbox" v-bind:id="value['id']"
+                       type="checkbox"/>
+                <label v-show="filterChosen != value['id']" @click="filterData(value)"
+                       v-bind:for="value['id']">[[ value['name'] ]]</label>
             </div>
         </div>
         <!-- Фильтры -->
@@ -155,28 +163,53 @@
             </div>
         </div>
     </div>
-    <!-- Скрипт вью -->
-    <script src="/static/js/main.js"></script>
-    <!-- Прелоадер -->
-    <style type="text/css">
-        #hellopreloader_preload {
-            display: block;
-            position: fixed;
-            z-index: 99999;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            min-width: 1000px;
-            background: #22313F url(http://hello-site.ru//main/images/preloads/ball-triangle.svg) center center no-repeat;
-            background-size: 62px;
-        }
-    </style>
-    <div id="hellopreloader">
-        <div id="hellopreloader_preload"></div>
+</div>
+<!-- Скрипт вью -->
+<script src="/static/js/main.js"></script>
+<!-- Прелоадер -->
+<style type="text/css">
+    #preloader_preload {
+        display: block;
+        position: fixed;
+        z-index: 99999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        min-width: 1000px;
+        background: #422b1f;
+        background-size: 62px;
+    }
+
+    #preloader_preload img {
+        position: absolute;
+        left: calc(50vw - 31px);
+        top: calc(50vh - 31px);
+        width: 62px;
+        height: 62px;
+
+    }
+
+</style>
+<div id="preloader">
+    <div id="preloader_preload">
+        <img src="https://beta.loook.city/static/img/preloader.svg">
     </div>
-    <script
-        type="text/javascript">var hellopreloader = document.getElementById("hellopreloader_preload"); function fadeOutnojquery(el) { el.style.opacity = 1; var interhellopreloader = setInterval(function () { el.style.opacity = el.style.opacity - 0.05; if (el.style.opacity <= 0.05) { clearInterval(interhellopreloader); hellopreloader.style.display = "none"; } }, 16); } window.onload = function () { setTimeout(function () { fadeOutnojquery(hellopreloader); }, 1000); };</script>
+</div>
+<script type="text/javascript">
+    var hellopreloader = document.getElementById("preloader_preload");
+
+    function fadeOutnojquery(el) {
+        el.style.opacity = 1;
+        var interhellopreloader = setInterval(function () {
+            el.style.opacity = el.style.opacity - 0.05;
+            if (el.style.opacity <= 0.05) {
+                clearInterval(interhellopreloader);
+                hellopreloader.style.display = "none";
+            }
+        }, 16);
+    }
+</script>
 
 </body>
 
