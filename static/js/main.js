@@ -129,7 +129,11 @@ let vm = new Vue({
 
         filterData(val) {
             this.filterChosen = val["id"];
-
+            if (this.filterType == 4) {
+                window.history.pushState({}, document.title, "/" + "?t=" + this.filterType + "&i=" + val["name"]);
+            } else if (!!this.filterType) {
+                window.history.pushState({}, document.title, "/" + "?t=" + this.filterType + "&i=" + val["id"]);
+            }
             switch (this.filterType) {
                 case 0:
                     this.filterDataActors();
@@ -410,16 +414,19 @@ let vm = new Vue({
 
         updateMapQuerry() {
             let queryString = window.location.search;
-            let urlParams = new URLSearchParams(queryString);
-            let type = urlParams.get("t");
-            this.filterType = +type;
-            let value = urlParams.get("i");
-            let filterValues = {
-                id: +value,
-                name: value,
-            };
-
-            this.filterData(filterValues);
+            if (queryString) {
+                let urlParams = new URLSearchParams(queryString);
+                let type = urlParams.get("t");
+                this.filterType = +type;
+                let value = urlParams.get("i");
+                let filterValues = {
+                    id: +value,
+                    name: value,
+                };
+                this.filterData(filterValues);
+            } else {
+                this.updateMap(this.info.points);
+            }
         },
     },
 
