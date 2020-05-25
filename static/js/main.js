@@ -129,6 +129,7 @@ let vm = new Vue({
 
         filterData(val) {
             this.filterChosen = val["id"];
+
             switch (this.filterType) {
                 case 0:
                     this.filterDataActors();
@@ -141,6 +142,7 @@ let vm = new Vue({
                     break;
                 case 3:
                     this.filterDataMovie();
+
                     break;
                 case 4:
                     this.filterChosen = val["name"];
@@ -149,6 +151,11 @@ let vm = new Vue({
                 case 5:
                     this.filterDataGenre();
                     break;
+                case 6:
+                    this.filterDataFragment();
+                    break;
+                case 7:
+                    this.filterDataPoint();
             }
 
             this.pointPopUp = false;
@@ -178,10 +185,25 @@ let vm = new Vue({
             this.updateMap(this.info.points);
         },
 
+        // Находит все точки с заданным фрагментом обновляет карту
+        filterDataFragment() {
+            this.filteredData = [];
+            this.info.points.forEach((point) => {
+                for (let i = 0; i < point.fragments_id.length; i++) {
+                    if (point.fragments_id[i] == this.filterChosen) {
+                        filteredData.push(point);
+                    }
+                }
+            });
+            this.updateMap(this.filteredData);
+        },
+
+        filterDataPoint() {},
         // Фильтрует дату по фильтру кино
         filterDataMovie() {
+            this.filteredData = [];
             let matchedFragments = this.info.fragments.filter((fragment) => {
-                if (fragment.movie.id === this.filterChosen) {
+                if (fragment.movie.id == this.filterChosen) {
                     return true;
                 }
             });
@@ -191,7 +213,7 @@ let vm = new Vue({
             matchedFragments.forEach((fragment) => {
                 for (let a = 0; a < temporary_data.length; a++) {
                     for (let i = 0; i < temporary_data[a].fragments_id.length; i++) {
-                        if (temporary_data[a].fragments_id[i] === fragment.id) {
+                        if (temporary_data[a].fragments_id[i] == fragment.id) {
                             this.filteredData.push(temporary_data[a]);
                             temporary_data.splice(a, 1);
                             break;
@@ -205,6 +227,7 @@ let vm = new Vue({
 
         // Фильтрует дату по фильтру жанра
         filterDataGenre() {
+            this.filteredData = [];
             let matchedFragments = this.info.fragments.filter((fragment) => {
                 for (let i = 0; i < fragment.genre.length; i++) {
                     if (fragment.genre[i].id == this.filterChosen) {
@@ -232,6 +255,7 @@ let vm = new Vue({
 
         // Фильтрует дату по фильтру жанра
         filterDataActors() {
+            this.filteredData = [];
             let matchedFragments = this.info.fragments.filter((fragment) => {
                 for (let i = 0; i < fragment.actors.length; i++) {
                     if (fragment.actors[i].id == this.filterChosen) {
@@ -257,8 +281,9 @@ let vm = new Vue({
             this.updateMap(this.filteredData);
         },
 
-        // Фильтрует дату по фильтру жанра
+        // Фильтрует дату по персонажам
         filterDataHeroes() {
+            this.filteredData = [];
             let matchedFragments = this.info.fragments.filter((fragment) => {
                 for (let i = 0; i < fragment.heroes.length; i++) {
                     if (fragment.heroes[i].id == this.filterChosen) {
@@ -286,6 +311,7 @@ let vm = new Vue({
 
         // Фильтрует дату по фильтру года
         filterDataYear() {
+            this.filteredData = [];
             let matchedFragments = this.info.fragments.filter((fragment) => {
                 if (~~(fragment.year / 10) == this.filterChosen.slice(0, -2)) {
                     return true;
@@ -309,10 +335,11 @@ let vm = new Vue({
             this.updateMap(this.filteredData);
         },
 
-        // Фильтрует дату по фильтру жанра
+        // Фильтрует дату по режиссерам
         filterDataProducers() {
+            this.filteredData = [];
             let matchedFragments = this.info.fragments.filter((fragment) => {
-                if (fragment.producer.id === this.filterChosen) {
+                if (fragment.producer.id == this.filterChosen) {
                     return true;
                 }
             });
@@ -379,6 +406,20 @@ let vm = new Vue({
             clusterer.add(geoObjects);
             // Добавление кластеризатора в карту
             myMap.geoObjects.add(clusterer);
+        },
+
+        updateMapQuerry() {
+            let queryString = window.location.search;
+            let urlParams = new URLSearchParams(queryString);
+            let type = urlParams.get("t");
+            this.filterType = +type;
+            let value = urlParams.get("i");
+            let filterValues = {
+                id: +value,
+                name: value,
+            };
+
+            this.filterData(filterValues);
         },
     },
 
