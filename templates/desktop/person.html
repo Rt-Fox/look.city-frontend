@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Кинопутеводитель</title>
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="/favicon.ico" rel="icon" type="image/x-icon">
+    <meta content="#FF422B1F" name="theme-color">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link href="/static/style/style_desktop_rus.css" rel="stylesheet">
+</head>
+<body>
+    <div class="main-wrapper">
+        <div class="menu_desktop">
+            <div class="message">
+                <a href="/feedback"></a>
+            </div>
+            <span class="filter_header">{{ title }}</span>
+            <a href="https://beta.loook.city/" class="krestik"></a>
+        </div>
+        <div class="menu_desktop pos"></div>
+        <div class="line">
+            <div class="list">
+                <div class="card">
+                    <img src="/{{ photo }}">
+                    <div class="card_text">{{ description|safe }}</div>
+                </div>
+            </div>
+            <div class="list">
+                {% for movie in data %}
+                <a href="{{ movie.href }}" class="list_element">
+                    <img class="list_text" src="/{{movie.photo}}">
+                    <div class="list_text">{{ movie.name }}</div>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="footer"></div>
+</body>

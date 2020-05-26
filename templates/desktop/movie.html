@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Кинопутеводитель</title>
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="/favicon.ico" rel="icon" type="image/x-icon">
+    <meta content="#FF422B1F" name="theme-color">
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link href="/static/style/style_desktop_rus.css" rel="stylesheet">
+</head>
+<body>
+<div class="main-wrapper ">
+    <div class="menu_desktop">
+        <div class="message">
+            <a href="/feedback"></a>
+        </div>
+        <span class="filter_header">>{{ title|upper }}</span>
+        <div class="krestik"></div>
+    </div>
+    <div class="menu_desktop pos"></div>
+    <div class="line line_fragment">
+        <div class="list">
+            <div class="card">
+                <img class="main" alt="" src="{{ image }}">
+                <div class="cont_coment">
+                    <div class="fa">
+                        <i class="fa fa-comment"></i>
+                        <i class="fa fa-map-marker"></i>
+                        <i class="fa fa-share"></i>
+                    </div>
+                    <div class="cont_text">
+                        <span>{{ description|safe }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="list">
+            {% for fragment in fragments %}
+            {% load comments %}
+            {% get_comment_count for parent as comment_count %}
+            <div class="list_element">
+                <div class="list_text">
+                    <a class="video" href="{{ fragment.href }}?p">
+                        <img alt="" src="/{{ fragment.photo }}">
+                    </a>
+                    <div class="fa">
+                        <i class="fa fa-comment"></i>
+                        <i class="fa fa-map-marker"></i>
+                        <i class="fa fa-share"></i>
+                    </div>
+                </div>
+                <div class="list_text">
+                    <div class="title">{{ fragment.name }}</div>
+                    <span>{{ fragment.description }}</span>
+                    <button class="comment">
+                        <div class="button">
+                            <span>Коментарии</span>
+                            <div>{{ comment_count }}</div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            {% endfor %}
+            <div class="list_element">
+                <div class="list_text">
+                    <video class="video"></video>
+                    <div class="fa">
+                        <i class="fa fa-comment"></i>
+                        <i class="fa fa-map-marker"></i>
+                        <i class="fa fa-share"></i>
+                    </div>
+                </div>
+                <div class="list_text">
+                    <div class="title">02. Мансуровский пер, 11. Это дом архитектора Кузнецова. 1984г.</div>
+                    <span>Это единственный частный дом Москвы, остающийся в потомственном фамильном владении с царского времени.<br>
+                       Т.е. единственный дом, который не отняли у владельцев большевики. Не отобрал Сталин. Не снёс Хрущев или Брежнев. И даже Лужков не тронул...<br>
+                        Наследники хозяина продолжают им владеть и в нём жить до сих пор.</span>
+                    <button class="comment">
+                        <div class="button">
+                            <div>Коментарии</div>
+                            <div>10</div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="footer"></div>
+</body>
+</html>

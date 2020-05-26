@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Кинопутеводитель</title>
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="/favicon.ico" rel="icon" type="image/x-icon">
+    <meta content="#FF422B1F" name="theme-color">
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link href="/static/style/style_desktop_rus.css" rel="stylesheet">
+</head>
+<body>
+    <div class="main-wrapper ">
+        <div class="menu_desktop">
+            <div class="message">
+                <a href="/feedback"></a>
+            </div>
+            <span class="filter_header">{{ title|upper }}</span>
+            <div class="krestik"></div>
+        </div>
+        <div class="menu_desktop pos"></div>
+        <div class="inline line_fragment">
+            <div class="list">
+                <div class="card">
+                    <video controls="controls" {% if autoplay %}autoplay="autoplay"{% endif %}
+                           poster="/{{ photo }}">
+                        <source src="{{ video_link }}" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+                        Тег video не поддерживается вашим браузером.
+                    </video>
+                    <div class="cont_coment">
+                        <div class="fa white">
+                            <i class="fa fa-comment"></i>
+                            <i class="fa fa-map-marker"></i>
+                            <i class="fa fa-share"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="list">
+                <div class="list_text">
+                    <span>{{ text }}</span>
+                    <div class="map_min" id="map"></div>
+                    {% load comments %}
+                    {% get_comment_count for data as comment_count %}
+                    <button class="comment">
+                        {% load comments %}
+                        {% get_comment_count for data as comment_count %}
+                        <div class="button">
+                            <span>Коментарии</span>
+                            <div>{{ comment_count }}</div>
+                        </div>
+                        <div class="comment_v">
+                            {% render_comment_list for data %}
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer"></div>
+</body>
+</html>
