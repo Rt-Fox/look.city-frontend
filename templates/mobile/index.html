@@ -29,7 +29,7 @@
             <!-- Кнопка меню -->
             <div class="headerone">
                 <button v-show="!search" class="brand">
-                    <img alt="Кинопутеводитель" src="/static/img/kino.png">
+                    <img alt="Кинопутеводитель" src="../../static/img/kino.png">
                 </button>
                 <a v-show="!search" href="/add_point" class="container header_button addpoint"></a>
                 <span v-show="!search" @click="changeMenuState" class="menu">МЕНЮ</span>
@@ -65,6 +65,7 @@
                 </div>
             </div>
         </div>
+
         <!-- Поп-ап при нажатии на фрагмент-->
         <div @click="closePopUp" v-if="pointPopUp" id="pointPop" class="menu_open fr">
             <div class="window">
@@ -74,34 +75,31 @@
                 </div>
                 <!--с текстом-->
                 <div class="fr_content">
-                    <button v-if="moreThanOne" @click="previousFragment">&lt</button>
-                    <img :src="currentFragment.preview">
-                    <div class="fr_text">
-                        <span>[[ currentFragment.name ]]</span>
-                        <button @click="OtherFragments(currentFragment.movie.id)" class="filterbig">
-                            Другие фрагменты
-                        </button>
+                    <button class="more" v-if="moreThanOne" @click="previousFragment"><img src="../../static/img/black_back.svg"></button>
+                    <div class="fr_block">
+                        <img :src="currentFragment.preview">
+                        <div class="fr_text">
+                            <span>[[ currentFragment.name ]]</span>
+                            <button class="filterbig">Поделиться</button>
+                            <button @click="OtherFragments(currentFragment.movie.id)" class="filterbig">Другие фрагменты</button>
+                        </div>
                     </div>
-                    <button v-if="moreThanOne" @click="nextFragment">&gt</button>
+                    <button class="more" @click="nextFragment"><img src="../../static/img/Vector.png"></button>
                 </div>
             </div>
         </div>
     </div>
-
 
     <!-- Открытое меню -->
     <div class="grid-main-wrapper" v-if="menu">
         <div class="message">
             <a href="/feedback"></a>
         </div>
-        <div class="city">
-            <input placeholder="Поиск">
+        <div class="city square">
+            <a href="/cities">ГОРОДА</a>
         </div>
         <div @click="changeMenuState" class="krest">
             <div></div>
-        </div>
-        <div class="town square">
-            <a href="/cities">ГОРОДА</a>
         </div>
         <div class="new square">
             <a href="/new_movies">НОВИНКИ</a>
@@ -133,7 +131,6 @@
         <div class="places square">
             <a href="/undefined_places">НЕОПОЗНАННЫЕ МЕСТА</a>
         </div>
-
     </div>
     <!-- Фильтр кино -->
     <div v-if="filterOpen" class="main-wrapper wrap-filt">

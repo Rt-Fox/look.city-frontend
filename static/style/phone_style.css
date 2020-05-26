@@ -40,7 +40,7 @@ body {
     --menu-bg-color: #f5f5f5;
     --menu-border-radius: 18px;
     --menu-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
-    --menu-text-size: x-large;
+    --menu-text-size: 1em;
     --zoom-bg-color: #f5f5f5;
     --color-active: #422b1f;
     --bg-color-active: #f5f5f5;
@@ -53,7 +53,7 @@ body {
 
     --square-color: #000000;
     --square-border-radius: 12px;
-    --square-bg-color: #fef6e9;
+    --square-bg-color: #ECEBEA;
     --square-text-size: 2.5vh;
     --img-radius: 15%;
     --krest-radius: 12px;
@@ -162,7 +162,7 @@ span:first-letter {
 }
 
 .brand {
-    background-color: white;
+    background-color: #f5f5f5;
     padding: 0;
     height: 100%;
     width: 80px;
@@ -175,9 +175,7 @@ span:first-letter {
 }
 
 .brand img {
-    width: 80%;
-    height: 80%;
-    border-radius: var(--brend-border-radius);
+    height: 50%;
 }
 
 .menu {
@@ -197,8 +195,6 @@ span:first-letter {
     font-family: var(--font2);
     font-weight: 900;
     font-size: var(--menu-text-size);
-    letter-spacing: 5px;
-    z-index: 100;
     box-shadow: -5px -5px 13px rgba(197, 197, 197, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9),
     -5px 5px 10px rgba(197, 197, 197, 0.2), 5px -5px 10px rgba(197, 197, 197, 0.2),
     inset 1px 1px 2px rgba(197, 197, 197, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
@@ -279,7 +275,7 @@ span:first-letter {
     border: none;
     color: black;
     text-shadow: 0 0 10px white;
-    padding: 0 50px 0 20px;
+    padding: 0 50px 0 5vw;
     border-radius: 10px;
     box-shadow: -5px -5px 5px 0 rgba(0, 0, 0, 0.2);
     transition: all 1s;
@@ -296,7 +292,7 @@ span:first-letter {
 }
 
 .container input:focus {
-    transform: translateX(calc(-75vw - 10px));
+    transform: translateX(calc(-80vw ));
     transition: all 0.5s ease-out;
     opacity: 1;
     width: 75vw;
@@ -489,7 +485,8 @@ span:first-letter {
     position: fixed;
     bottom: 0;
     width: 100vw;
-    height: 40vh;
+    height: auto;
+    min-height: 20vh;
 }
 
 .mn .window {
@@ -523,7 +520,9 @@ span:first-letter {
     grid-template-columns: 4vw 1fr 1fr 1fr 1fr 13vw;
     grid-template-areas: "zero img img img img krestik";
 }
-
+.fr .headertwo {
+    margin:3vh 0;
+}
 .nd img,
 .fr .headertwo span {
     grid-area: img;
@@ -562,7 +561,7 @@ span:first-letter {
 
 .container.header_button {
     position: static;
-    margin: 0 0 0 2vw;
+    margin: 0 2vw;
     max-height: 50px;
     max-width: 50px;
     width: 50px;
@@ -624,34 +623,55 @@ span:first-letter {
 .fr_content {
     display: flex;
     flex-direction: row;
+    width: 90%;
+    height: auto;
+    min-height: 15vh;
+}
+.fr_block {
+    display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     width: 90%;
-    height: 50%;
-    margin: 4vh 0;
+    height: 100%;
+}
+.fr_content .more{
+    width: 10%;
+    height: 100%;
+    border: none;
+    padding: 10px 10px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.fr_content .more img{
+    width: 100%;
 }
 
-.fr_content img,
+.fr_block img,
 .fr_text {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 48%;
-    height: 100%;
     margin-left: 1vh;
 }
 
-.fr_content img {
+.fr_block img {
     box-shadow: -2px -2px 20px rgba(183, 183, 183, 0.9), 5px 5px 15px rgba(255, 255, 255, 0.9),
     -10px 10px 20px rgba(183, 183, 183, 0.2), 5px -5px 20px rgba(183, 183, 183, 0.2),
     inset 1px 1px 2px rgba(183, 183, 183, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
     border-radius: 17px;
 }
-
+.fr_text {
+    height: 100%;
+}
 .fr_text span {
     overflow-y: auto;
     text-align: left;
-    height: 15vh;
+    height: auto;
+    max-height: 70%;
     width: 100%;
     font-size: 13px;
 }
@@ -659,12 +679,13 @@ span:first-letter {
 .fr_text button {
     padding: 0;
     width: 94%;
+    max-height: 15%;
+    height: auto;
     display: flex;
     justify-self: flex-end;
     align-self: flex-end;
-    height: 5vh;
     text-align: center;
-    font-size: 2vh;
+    font-size: 1.5vh;
 }
 
 .without {
@@ -730,78 +751,21 @@ button {
 }
 
 /*menu*/
-
 .grid-main-wrapper {
     display: grid;
     width: 62vh;
     height: 96vh;
-    grid-template-rows: 0.4fr 0.45fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: "message city city city city city krest" "town town town town town town town" "new new new zero1 top top top" "film film film zero1 year year year" "genres genres genres zero1 personage personage personage" "producer producer producer zero1 actors actors actors" "popular popular popular zero2 places places places";
+    grid-template-rows: 50px 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 40px 1fr 1fr 1fr 1fr 1fr 40px;
+    grid-template-areas:
+            "message city city city city city krest"
+            "new new new zero1 top top top"
+            "film film film zero1 year year year"
+            "genres genres genres zero1 personage personage personage"
+            "producer producer producer zero1 actors actors actors"
+            "popular popular popular zero1 places places places";
     grid-gap: 10px;
 }
-
-/*header*/
-.message {
-    grid-area: message;
-    margin-top: 5%;
-}
-
-.message a {
-    display: block;
-    height: 0;
-    width: 100%;
-    padding-bottom: 100%;
-    background: url("/static/img/message.png") center no-repeat;
-    background-color: #44250b;
-    background-size: 70%;
-    border-color: rgba(0, 0, 0, 0);
-    border-radius: var(--img-radius);
-    box-shadow: 5px -5px 20px rgba(0, 0, 0, 0.4);
-}
-
-.city {
-    grid-area: city;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.city input {
-    padding-left: 7px;
-    text-decoration: none;
-
-    width: 90%;
-    height: 50%;
-
-    color: var(--new-color);
-    border-color: rgba(0, 0, 0, 0);
-    background-color: #fff5f2ef;
-    border-radius: 10px;
-    box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.2);
-
-    font-family: var(--font);
-    font-weight: 700;
-    font-size: var(--new-text-size);
-}
-
-.krest {
-    grid-area: krest;
-    margin-top: 5%;
-}
-
-.krest div {
-    height: 0;
-    width: 100%;
-    padding-bottom: 100%;
-    background: url("/static/img/krest.png") center no-repeat;
-    background-color: #44250b;
-    background-size: 70%;
-    border-color: rgba(0, 0, 0, 0);
-    border-radius: var(--krest-radius);
-    box-shadow: 5px -5px 20px rgba(0, 0, 0, 0.4);
-}
-
 /*Общий стиль блоков body*/
 .square {
     display: flex;
@@ -811,6 +775,8 @@ button {
     width: 100%;
     padding-bottom: 13vh;
     height: 0;
+    margin-top: 1vh;
+
     color: var(--square-color);
     border-color: rgba(0, 0, 0, 0);
     border-radius: var(--square-border-radius);
@@ -836,10 +802,72 @@ button {
     font-size: var(--square-text-size);
 }
 
+
+/*header*/
+.message {
+    grid-area: message;
+    margin-top: 1vh;
+}
+
+.message a {
+    display: block;
+    height: 0;
+    width: 100%;
+    padding-bottom: 100%;
+    background: url("/static/img/message.png") center no-repeat;
+    background-color: #44250b;
+    background-size: 70%;
+    border-color: rgba(0, 0, 0, 0);
+    border-radius: var(--krest-radius);
+    box-shadow: 0px 5px 13px rgba(0, 0, 0, 0.25);;
+}
+.city {
+    grid-area: city;
+    height: 40px;
+    box-shadow: 0px 5px 13px rgba(0, 0, 0, 0.25);
+    margin-top: 1vh;
+    padding-bottom: 0;
+}
+.city a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+    color: var(--new-color);
+    border-color: rgba(0, 0, 0, 0);
+    background-image: url(/static/img/city.png);
+    background-position-y: 50%;
+    background-position-x: -70%;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    border-radius: var(--new-border-radius);
+
+    font-family: var(--font);
+    font-weight: 700;
+    font-size: var(--new-text-size);
+}
+
+.krest {
+    grid-area: krest;
+    margin-top: 1vh;
+}
+
+.krest div {
+    height: 0;
+    width: 100%;
+    padding-bottom: 100%;
+    background: url("/static/img/krest.png") center no-repeat;
+    background-color: #44250b;
+    background-size: 70%;
+    border-color: rgba(0, 0, 0, 0);
+    border-radius: var(--krest-radius);
+    box-shadow: 0px 5px 13px rgba(0, 0, 0, 0.25);;
+}
 /*индивидуальные стили*/
 .new {
     grid-area: new;
-    padding-bottom: 5vh;
     box-shadow: -5px -5px 15px rgba(201, 200, 199, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9),
     -5px 5px 10px rgba(201, 200, 199, 0.2), 5px -5px 10px rgba(201, 200, 199, 0.2),
     inset 1px 1px 2px rgba(201, 200, 199, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
@@ -847,22 +875,7 @@ button {
 
 .new a {
     background-image: url(/static/img/new.png);
-    background-position-y: center;
-    background-position-x: -10%;
-    background-size: 40%;
-    background-repeat: no-repeat;
-}
-
-.town {
-    grid-area: town;
-    box-shadow: -5px -5px 15px rgba(201, 200, 199, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9),
-    -5px 5px 10px rgba(201, 200, 199, 0.2), 5px -5px 10px rgba(201, 200, 199, 0.2),
-    inset 1px 1px 2px rgba(201, 200, 199, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
-}
-
-.town a {
-    background-image: url(/static/img/city.png);
-    background-position-y: calc(20% + var(--position));
+    background-position-y: calc(25% + var(--position));
     background-position-x: -340%;
     background-size: 90%;
     background-repeat: no-repeat;
@@ -1151,6 +1164,7 @@ button {
 }
 
 .submit {
+    margin: 0 auto;
     height: 5vh;
     border-radius: 20px;
     width: 20vw;
@@ -1407,22 +1421,8 @@ a {
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: 0 0 0 7vh;
     cursor: pointer;
     font-size: 3vh;
-}
-
-.checkbox + label:before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 0;
-    width: 5vh;
-    padding-bottom: 5vh;
-    border-radius: 10%;
-    background: #faf8f6;
-    box-shadow: inset 1vh 1vh 1vh rgba(0, 0, 0, 0.2);
 }
 
 .checkbox.active + label:before {
@@ -1594,8 +1594,14 @@ a {
 /*card_actor.html*/
 .scrol {
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     overflow: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 122;
 }
 
 .headerthree {
@@ -1640,7 +1646,6 @@ a {
 }
 
 .bio img {
-    height: 35vh;
     width: 43vw;
 }
 
@@ -1738,8 +1743,14 @@ a {
 
     display: flex;
     align-items: center;
-
+    flex-direction: column;
     color: #422b1f;
+}
+.cont .divtext h3{
+    width: 100%;
+}
+.cont .divtext h3 img{
+    width: 100%;
 }
 
 .movie .cont .film_person {
@@ -1940,40 +1951,6 @@ a {
         width: 30vw;
     }
 }
-
-@media (max-device-width: 600px) {
-    html,
-    body {
-        --new-text-size: 4vw;
-        --square-text-size: 4vw;
-    }
-
-    .grid-main-wrapper {
-        display: grid;
-        width: 93vw;
-        grid-template-areas: "message city city city city city krest" "new new new new new new new" "town town town zero1 top top top" "film film film zero1 year year year" "genres genres genres zero1 personage personage personage" "producer producer producer zero1 actors actors actors" "popular popular popular zero2 places places places";
-        grid-gap: 10px;
-    }
-
-    .square {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        width: 100%;
-        padding-bottom: 13vh;
-        height: 0;
-        color: var(--square-color);
-        background-color: var(--square-bg-color);
-        border-radius: var(--square-border-radius);
-        border-color: rgba(0, 0, 0, 0);
-    }
-
-    .new {
-        padding-bottom: 5vh;
-    }
-}
-
 /*адаптация*/
 @media (max-device-width: 600px) {
     html,
@@ -1985,7 +1962,6 @@ a {
     .grid-main-wrapper {
         display: grid;
         width: 93vw;
-        grid-template-areas: "message city city city city city krest" "new new new new new new new" "town town town zero1 top top top" "film film film zero1 year year year" "genres genres genres zero1 personage personage personage" "producer producer producer zero1 actors actors actors" "popular popular popular zero2 places places places";
         grid-gap: 10px;
     }
 
@@ -2002,9 +1978,9 @@ a {
         border-radius: var(--square-border-radius);
         border-color: rgba(0, 0, 0, 0);
     }
-
-    .new {
-        padding-bottom: 5vh;
+    .city {
+        height: 40px;
+        padding-bottom: 0;
     }
 }
 
@@ -2012,7 +1988,7 @@ a {
     html,
     body {
         --filter-text-size: 0.8em;
-        --menu-text-size: 0.9em;
+        --menu-text-size: 1em;
     }
 
     .header {
@@ -2032,10 +2008,6 @@ a {
         margin: 0 0;
     }
 
-    .menu {
-        margin: auto;
-    }
-
     .title {
         font-size: 16px;
     }
@@ -2053,7 +2025,7 @@ a {
     html,
     body {
         --filter-text-size: 0.65em;
-        --menu-text-size: large;
+        --menu-text-size: 0.8em;
     }
 
     .window {
@@ -2075,6 +2047,10 @@ a {
 
     .headerthree_title {
         font-size: 15px;
+    }
+    .city {
+        height: 40px;
+        padding-bottom: 0;
     }
 }
 
