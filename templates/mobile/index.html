@@ -56,11 +56,11 @@
                 </div>
             </div>
             <!-- Поп-ап с инф о проекте-->
-            <div class="menu_open nd">
+            <div @click="closeFirstPopUp" v-if="firstPopUp" id="first_pop" class="menu_open nd">
                 <div class="window">
                     <div class="headertwo">
                         <img src="/static/img/brend.png">
-                        <div class="krestik">
+                        <div id="first_x" class="krestik">
                         </div>
                     </div>
                 </div>

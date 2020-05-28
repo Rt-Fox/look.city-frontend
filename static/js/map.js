@@ -59,6 +59,7 @@ function init() {
     );
     let zoomControl = new ymaps.control.ZoomControl({ options: { layout: ZoomLayout } });
     myMap.controls.add(zoomControl);
+
     vm.updateMapQuerry();
 }
 

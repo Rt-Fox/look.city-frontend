@@ -44,6 +44,7 @@ let vm = new Vue({
         filterOpen: false,
         filterChosen: null,
         filterType: null,
+        firstPopUp: false,
     },
 
     methods: {
@@ -102,6 +103,14 @@ let vm = new Vue({
             }
         },
 
+        closeFirstPopUp(e) {
+            let firstBg = document.querySelector("#first_pop"),
+                firstX = document.querySelector("#first_x");
+            if (e.target == firstBg || e.target == firstX) {
+                this.firstPopUp = false;
+            }
+        },
+
         // Следующий фрагмент в поп-апе точки
         nextFragment() {
             if (this.fragmentNumber >= this.pointFragments.length - 1) {
@@ -122,17 +131,28 @@ let vm = new Vue({
             this.showPopUp(this.pointFragments, this.fragmentNumber);
         },
 
+        // Показывает другие точки фрагмента
         OtherFragments(val) {
             this.filterType = 3;
             this.filterData({ id: val });
         },
 
+        // Передает все данные по выбранному фильтру и выбирает функцию фильтрации
         filterData(val) {
+            myMap.setCenter([55.75, 37.61], 10);
             this.filterChosen = val["id"];
             if (this.filterType == 4) {
-                window.history.pushState({}, document.title, "/" + "?t=" + this.filterType + "&i=" + val["name"]);
+                window.history.pushState(
+                    {},
+                    document.title,
+                    window.location.pathname + "?t=" + this.filterType + "&i=" + val["name"]
+                );
             } else if (!!this.filterType) {
-                window.history.pushState({}, document.title, "/" + "?t=" + this.filterType + "&i=" + val["id"]);
+                window.history.pushState(
+                    {},
+                    document.title,
+                    window.location.pathname + "?t=" + this.filterType + "&i=" + val["id"]
+                );
             }
             switch (this.filterType) {
                 case 0:
@@ -146,7 +166,6 @@ let vm = new Vue({
                     break;
                 case 3:
                     this.filterDataMovie();
-
                     break;
                 case 4:
                     this.filterChosen = val["name"];
@@ -186,6 +205,9 @@ let vm = new Vue({
             this.filterType = null;
             this.filterChosen = null;
             this.filteredData = [];
+
+            myMap.setCenter([55.75, 37.61], 10);
+            window.history.pushState({}, document.title, window.location.pathname);
             this.updateMap(this.info.points);
         },
 
@@ -202,7 +224,17 @@ let vm = new Vue({
             this.updateMap(this.filteredData);
         },
 
-        filterDataPoint() {},
+        // Находит точку
+        filterDataPoint() {
+            this.filteredData = [];
+            let matchedPoint = this.info.points.find((point) => {
+                return point.id == this.filterChosen;
+            });
+
+            this.filteredData.push(matchedPoint);
+
+            this.updateMap(this.filteredData);
+        },
         // Фильтрует дату по фильтру кино
         filterDataMovie() {
             this.filteredData = [];
@@ -440,6 +472,10 @@ let vm = new Vue({
                 fadeOutnojquery(hellopreloader);
             }, 1000);
         });
+
+        if (!document.cookie) {
+            this.firstPopUp = true;
+        }
     },
 });
 
