@@ -1306,7 +1306,7 @@ button {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    height: 14vh;
+    height: auto;
     width: 78vw;
     border-radius: 3vw;
     background-color: #ecebea;
@@ -1322,7 +1322,7 @@ a {
 .el video {
     margin: 2vw;
     border-radius: 2vw;
-    height: 10vh;
+    height: auto;
     width: 28vw;
 }
 
@@ -1330,16 +1330,16 @@ a {
     margin: 2vw;
     margin-left: 10vw;
     border-radius: 2vw;
-    height: 7vh;
-    width: auto;
+    height: auto;
+    width: 25vw;
 }
 
 .el_person img {
     margin: 2vw;
     margin-left: 5vw;
     border-radius: 2vw;
-    height: 11vh;
-    width: 30vw;
+    height: auto;
+    width: 25vw;
 }
 
 .el .el_text {
