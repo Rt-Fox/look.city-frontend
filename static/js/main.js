@@ -433,11 +433,12 @@ let vm = new Vue({
                 groupByCoordinates: false,
                 // Размер ячейки кластеризатора
                 gridSize: 50,
-                clusterDisableClickZoom: false,
-                // clusterHideIconOnBalloonOpen: false,
-                // geoObjectHideIconOnBalloonOpen: false,
+                clusterDisableClickZoom: true,
             });
 
+            clusterer.events.add("click", (e) => {
+                myMap.setCenter(e.get("coords"), myMap.getZoom() + 2);
+            });
             // Добавление точек в кластеризатор
             clusterer.add(geoObjects);
             // Добавление кластеризатора в карту
