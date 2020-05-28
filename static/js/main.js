@@ -134,7 +134,7 @@ let vm = new Vue({
         // Показывает другие точки фрагмента
         OtherFragments(val) {
             this.filterType = 3;
-            this.filterData({ id: val });
+            this.filterData({id: val});
         },
 
         // Передает все данные по выбранному фильтру и выбирает функцию фильтрации
@@ -466,11 +466,9 @@ let vm = new Vue({
             let input = document.querySelector("#searchInput"),
                 value = input.value;
 
-            input.value = "";
-            ymaps
-                .geocode(value, {
-                    result: 1,
-                })
+            ymaps.geocode(value, {
+                result: 1,
+            })
                 .then((res) => {
                     let coords = res.geoObjects.get(0).geometry.getCoordinates();
                     myMap.setCenter(coords, 14);
@@ -480,7 +478,7 @@ let vm = new Vue({
 
     mounted() {
         // Получение даты
-        axios.get("/points.json").then(function (response) {
+        axios.get("/api/points").then(function (response) {
             vm.info = response.data;
             ymaps.ready(init);
 

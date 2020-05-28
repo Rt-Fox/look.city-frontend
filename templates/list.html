@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }} | Loook.city</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/static/style/style.css">
+    <link rel="stylesheet" href="/static/style/menu.css">
+    <link rel="stylesheet" href="/static/style/film.css">
+    {% if decades %}
+        <link rel="stylesheet" href="/static/style/decades.css">
+    {% endif %}
+</head>
+
+<body>
+<div class="mid">
+    <div class="main-wrapper wrap-popular_places">
+        <div class="headline">
+            <div class="title">{% if decade %}{{ title|lower }}{% else %}{{ title|upper }}{% endif %}</div>
+            <div class="krestik"></div>
+        </div>
+        <div class="contents">
+            {% for elem in data %}
+
+                <a href="{{ elem.href }}" class="cont hg">
+                    <div class="el{{ elem.class }}">
+
+                        {% if elem.photo %}
+                            <img src="/{{ elem.photo }}">
+                        {% else %}
+                            <style>
+                                .el div {
+                                    margin: 2vw auto;
+                                }
+                            </style>
+                        {% endif %}
+                        <div>
+                            <span>{{ elem.h1 }}</span>
+                            {% if elem.h2 %}
+                                <span>{{ elem.h2 }}</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                </a>
+
+            {% endfor %}
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

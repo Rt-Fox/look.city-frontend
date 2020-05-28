@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }} | Loook.city</title>
+    <style>
+        img {
+            width: 192px;
+            height: 108px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="header">
+        <div class="hedaline">
+            <span>{{ title|upper }}</span>
+        </div>
+        <div class="menu"></div>
+    </div>
+    <div class="container">
+        {% load comments %}
+        {% get_comment_count for parent as comment_count %}
+        <a href="#comments">
+            <p>Комментариев: {{ comment_count }}</p>
+        </a>
+        {% if map_link %}
+            <a href="{{ map_link }}">
+                <p>Карта</p>
+            </a>
+        {% endif %}
+        <a href="">
+            <p>Поделиться</p>
+        </a>
+
+        {% for elem in data %}
+            <div>
+
+                <a href="{{ elem.link }}">
+                    <p>{{ elem.priority }}</p>
+                    <p>{{ elem.h1 }}</p>
+                    <p>{{ elem.h2 }}</p>
+                </a>
+                <a href="{{ elem.link }}?p">
+                    <img src="/{{ elem.photo }}"/>
+                </a>
+                {{ elem.text|safe }}
+            </div>
+            {% get_comment_count for elem.element as comment_count %}
+            <a href="{{ elem.link }}#comments">
+                <p>Комментариев: {{ comment_count }}</p>
+            </a>
+            <a href="{{ elem.link }}#map">
+                <p>Карта</p>
+            </a>
+            <a href="">
+                <p>Поделиться</p>
+            </a>
+            <hr>
+            {#            {% for comment in comment_list %}#}
+            {#                {% if comment.is_public %}#}
+            {#                    <p>{{ comment.site }}</p>#}
+            {#                    <p>{{ comment.user_name }}</p>#}
+            {#                    <p>{{ comment.user_url }}</p>#}
+            {#                    <p>{{ comment.comment }}</p>#}
+            {#                    <p>{{ comment.submit_date }}</p>#}
+            {#                {% endif %}#}
+            {#            {% endfor %}#}
+            {#            {% render_comment_form for elem.element %}#}
+
+
+        {% endfor %}
+
+        <div id="comments">
+            {% render_comment_list for parent %}
+            {% render_comment_form for parent %}
+        </div>
+
+        {#    {% lorem 3 w %}#}
+    </div>
+</div>
+</body>
+</html>

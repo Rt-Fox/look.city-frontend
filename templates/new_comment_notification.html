@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loook.city notification</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap" rel="stylesheet">
+    <style>
+        .wrapper {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .header div {
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+
+        .header div img {
+            border-radius: 20%;
+            width: 60%;
+        }
+
+        .header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .body {
+            width: 100%;
+            align-items: center;
+        }
+
+        .body h1 {
+
+            width: fit-content;
+            margin: 5% auto;
+        }
+
+        .body table {
+            width: 60%;
+            text-align: left;
+            font-size: large;
+            margin: auto auto 5%;
+        }
+
+        .body tr {
+            text-align: left;
+            font-size: large;
+            height: 10%;
+        }
+
+        .links {
+            width: 100%;
+        }
+
+        .link {
+            width: 49%;
+            margin: 0;
+            float: left;
+            text-align: center;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="header">
+        <div class="left">
+            <a href="https://beta.loook.city">
+                <img alt="Кинопутеводитель" src="https://beta.loook.city/static/img/kino.png">
+            </a>
+        </div>
+    </div>
+    <div class="body">
+        <h1>Новый комментарий</h1>
+        <table>
+            <tr>
+                <td>Тип объекта</td>
+                <td>{{ comment.content_type.name }}</td>
+            </tr>
+            <tr>
+                <td>Объект</td>
+                <td>{{ obj.name }}</td>
+            </tr>
+            <tr>
+                <td>Текст комментария</td>
+                <td>{{ comment.comment }}</td>
+            </tr>
+            <tr>
+                <td>Имя комментатора</td>
+                <td>{{ comment.user_name }}</td>
+            </tr>
+            <tr>
+                <td>Почта комментатора</td>
+                <td><a href="mailto:{{ comment.user_email }}">{{ comment.user_email }}</a></td>
+            </tr>
+            <tr>
+                <td>Дата и время отправки</td>
+                <td>{{ comment.submit_date }}</td>
+            </tr>
+            <tr>
+                <td>IP адрес</td>
+                <td>{{ comment.ip_address }}</td>
+            </tr>
+        </table>
+        <div class="links">
+            <div class="link">
+                <a style="color: green;"
+                   href="https://beta.loook.city/admin/django_comments/comment/{{ comment.id }}/change/">Редактировать</a>
+            </div>
+            <div class="link">
+                <a style="color: red;"
+                   href="https://beta.loook.city/admin/django_comments/comment/{{ comment.id }}/delete/">Удалить</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
