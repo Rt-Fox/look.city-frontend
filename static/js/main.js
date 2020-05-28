@@ -461,6 +461,21 @@ let vm = new Vue({
                 this.updateMap(this.info.points);
             }
         },
+
+        searchFunc() {
+            let input = document.querySelector("#searchInput"),
+                value = input.value;
+
+            input.value = "";
+            ymaps
+                .geocode(value, {
+                    result: 1,
+                })
+                .then((res) => {
+                    let coords = res.geoObjects.get(0).geometry.getCoordinates();
+                    myMap.setCenter(coords, 14);
+                });
+        },
     },
 
     mounted() {
@@ -474,9 +489,14 @@ let vm = new Vue({
             }, 1000);
         });
 
-        if (!document.cookie) {
+        console.log(document.cookie);
+        let cookieDate = new Date();
+        cookieDate.setTime(cookieDate.getTime() + 30 * 24 * 60 * 60 * 1000);
+        let visit_reg = /visited=true/g;
+        if (!visit_reg.test(document.cookie)) {
             this.firstPopUp = true;
         }
+        document.cookie = "visited=true; expires=" + cookieDate.toGMTString();
     },
 });
 

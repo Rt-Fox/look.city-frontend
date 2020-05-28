@@ -34,8 +34,9 @@
                     <a v-show="!search" href="/add_point" class="container header_button addpoint"></a>
                     <span v-show="!search" @click="changeMenuState" class="menu">МЕНЮ</span>
                     <a v-show="!search" href="#" class="container header_button whitebell"></a>
-                    <form class="container">
-                        <input @focus="searchAnim" @blur="searchAnim" placeholder="Search..." type="text">
+                    <form @submit.prevent="searchFunc" class="container">
+                        <input id="searchInput" @focus="searchAnim" @blur="searchAnim" placeholder="Search..."
+                            type="text">
                         <div class="search"></div>
                     </form>
                 </div>
