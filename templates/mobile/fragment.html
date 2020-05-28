@@ -36,7 +36,7 @@
                         <i class="fa fa-share"></i>
                     </div>
                 </div>
-                <div class="divtext">{{ text }}</div>
+                <div class="divtext">{{ text|safe }}</div>
                 <div class="map_min" id="map"></div>
                 <button class="comment">
                     {% load comments %}

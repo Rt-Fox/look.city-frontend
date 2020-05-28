@@ -85,11 +85,6 @@ let vm = new Vue({
                 this.moreThanOne = false;
             }
 
-            if (this.currentFragment.short_description == null) {
-                this.popUpText = false;
-            } else {
-                this.popUpText = true;
-            }
             this.pointPopUp = true;
         },
 
@@ -142,17 +137,34 @@ let vm = new Vue({
             myMap.setCenter([55.75, 37.61], 10);
             this.filterChosen = val["id"];
             if (this.filterType == 4) {
-                window.history.pushState(
-                    {},
-                    document.title,
-                    window.location.pathname + "?t=" + this.filterType + "&i=" + val["name"]
-                );
-            } else if (!!this.filterType) {
-                window.history.pushState(
-                    {},
-                    document.title,
-                    window.location.pathname + "?t=" + this.filterType + "&i=" + val["id"]
-                );
+
+                if (window.location.search) {
+                    window.history.pushState(
+                        {},
+                        document.title,
+                        window.location.pathname + window.location.search + "&t=" + this.filterType + "&i=" + val["name"]
+                    )
+                } else {
+                    window.history.pushState(
+                        {},
+                        document.title,
+                        window.location.pathname + "?t=" + this.filterType + "&i=" + val["name"]
+                    )
+                }
+            } else if (this.filterType != null) {
+                if (window.location.search) {
+                    window.history.pushState(
+                        {},
+                        document.title,
+                        window.location.pathname + window.location.search + "&t=" + this.filterType + "&i=" + val["id"]
+                    )
+                } else {
+                    window.history.pushState(
+                        {},
+                        document.title,
+                        window.location.pathname + "?t=" + this.filterType + "&i=" + val["id"]
+                    )
+                }
             }
             switch (this.filterType) {
                 case 0:
@@ -193,6 +205,7 @@ let vm = new Vue({
             this.filterOpen = true;
             this.map = false;
         },
+
         // Закрывает список фильтров, открывает карту
         closeFilter() {
             this.pointPopUp = false;
@@ -200,6 +213,7 @@ let vm = new Vue({
             this.filterOpen = false;
             this.map = true;
         },
+
         // Сброс фильтров
         FilterRemoven() {
             this.filterType = null;
@@ -207,7 +221,20 @@ let vm = new Vue({
             this.filteredData = [];
 
             myMap.setCenter([55.75, 37.61], 10);
-            window.history.pushState({}, document.title, window.location.pathname);
+            let queryString = window.location.search
+
+            let urlParams = new URLSearchParams(queryString);
+            let city = urlParams.get("c");
+            if (city == null) {
+                window.history.pushState({}, document.title, window.location.pathname);
+            } else {
+                window.history.pushState(
+                    {},
+                    document.title,
+                    window.location.pathname + "?c=" + city
+                )
+            }
+
             this.updateMap(this.info.points);
         },
 
@@ -235,6 +262,7 @@ let vm = new Vue({
 
             this.updateMap(this.filteredData);
         },
+
         // Фильтрует дату по фильтру кино
         filterDataMovie() {
             this.filteredData = [];
@@ -450,16 +478,18 @@ let vm = new Vue({
             if (queryString) {
                 let urlParams = new URLSearchParams(queryString);
                 let type = urlParams.get("t");
-                this.filterType = +type;
-                let value = urlParams.get("i");
-                let filterValues = {
-                    id: +value,
-                    name: value,
-                };
-                this.filterData(filterValues);
-            } else {
-                this.updateMap(this.info.points);
+                if (type != null) {
+                    this.filterType = +type;
+                    let value = urlParams.get("i");
+                    let filterValues = {
+                        id: +value,
+                        name: value,
+                    };
+                    this.filterData(filterValues);
+                }
             }
+            this.updateMap(this.info.points);
+
         },
 
         searchFunc() {
@@ -481,7 +511,6 @@ let vm = new Vue({
         axios.get("/api/points").then(function (response) {
             vm.info = response.data;
             ymaps.ready(init);
-
             setTimeout(function () {
                 fadeOutnojquery(hellopreloader);
             }, 1000);
