@@ -5,7 +5,7 @@ let vm = new Vue({
 
     data: {
         colors: {
-            "Multiple": "red",
+            Multiple: "red",
             "1900e": "black",
             "1910e": "black",
             "1920e": "black",
@@ -21,12 +21,12 @@ let vm = new Vue({
             "2020e": "pink",
         },
         filterNames: {
-            0: 'АКТЕРЫ',
-            1: 'РЕЖИССЕРЫ',
-            2: 'ПЕРСОНАЖИ',
-            3: 'ФИЛЬМЫ',
-            4: 'ГОДЫ',
-            5: 'ЖАНРЫ',
+            0: "АКТЕРЫ",
+            1: "РЕЖИССЕРЫ",
+            2: "ПЕРСОНАЖИ",
+            3: "ФИЛЬМЫ",
+            4: "ГОДЫ",
+            5: "ЖАНРЫ",
         },
         menu: false,
         map: true,
@@ -43,7 +43,8 @@ let vm = new Vue({
         filteredData: [],
         filterOpen: false,
         filterChosen: null,
-        filterType: null
+        filterType: null,
+        firstPopUp: false,
     },
 
     methods: {
@@ -102,6 +103,14 @@ let vm = new Vue({
             }
         },
 
+        closeFirstPopUp(e) {
+            let firstBg = document.querySelector("#first_pop"),
+                firstX = document.querySelector("#first_x");
+            if (e.target == firstBg || e.target == firstX) {
+                this.firstPopUp = false;
+            }
+        },
+
         // Следующий фрагмент в поп-апе точки
         nextFragment() {
             if (this.fragmentNumber >= this.pointFragments.length - 1) {
@@ -122,14 +131,29 @@ let vm = new Vue({
             this.showPopUp(this.pointFragments, this.fragmentNumber);
         },
 
-
+        // Показывает другие точки фрагмента
         OtherFragments(val) {
             this.filterType = 3;
-            this.filterData({'id': val})
+            this.filterData({ id: val });
         },
 
+        // Передает все данные по выбранному фильтру и выбирает функцию фильтрации
         filterData(val) {
-            this.filterChosen = val['id'];
+            myMap.setCenter([55.75, 37.61], 10);
+            this.filterChosen = val["id"];
+            if (this.filterType == 4) {
+                window.history.pushState(
+                    {},
+                    document.title,
+                    window.location.pathname + "?t=" + this.filterType + "&i=" + val["name"]
+                );
+            } else if (!!this.filterType) {
+                window.history.pushState(
+                    {},
+                    document.title,
+                    window.location.pathname + "?t=" + this.filterType + "&i=" + val["id"]
+                );
+            }
             switch (this.filterType) {
                 case 0:
                     this.filterDataActors();
@@ -144,14 +168,18 @@ let vm = new Vue({
                     this.filterDataMovie();
                     break;
                 case 4:
-                    this.filterChosen = val['name']
+                    this.filterChosen = val["name"];
                     this.filterDataYear();
                     break;
                 case 5:
                     this.filterDataGenre();
                     break;
+                case 6:
+                    this.filterDataFragment();
+                    break;
+                case 7:
+                    this.filterDataPoint();
             }
-
 
             this.pointPopUp = false;
             this.filterOpen = false;
@@ -177,14 +205,41 @@ let vm = new Vue({
             this.filterType = null;
             this.filterChosen = null;
             this.filteredData = [];
+
+            myMap.setCenter([55.75, 37.61], 10);
+            window.history.pushState({}, document.title, window.location.pathname);
             this.updateMap(this.info.points);
         },
 
+        // Находит все точки с заданным фрагментом обновляет карту
+        filterDataFragment() {
+            this.filteredData = [];
+            this.info.points.forEach((point) => {
+                for (let i = 0; i < point.fragments_id.length; i++) {
+                    if (point.fragments_id[i] == this.filterChosen) {
+                        filteredData.push(point);
+                    }
+                }
+            });
+            this.updateMap(this.filteredData);
+        },
 
+        // Находит точку
+        filterDataPoint() {
+            this.filteredData = [];
+            let matchedPoint = this.info.points.find((point) => {
+                return point.id == this.filterChosen;
+            });
+
+            this.filteredData.push(matchedPoint);
+
+            this.updateMap(this.filteredData);
+        },
         // Фильтрует дату по фильтру кино
         filterDataMovie() {
+            this.filteredData = [];
             let matchedFragments = this.info.fragments.filter((fragment) => {
-                if (fragment.movie.id === this.filterChosen) {
+                if (fragment.movie.id == this.filterChosen) {
                     return true;
                 }
             });
@@ -194,7 +249,7 @@ let vm = new Vue({
             matchedFragments.forEach((fragment) => {
                 for (let a = 0; a < temporary_data.length; a++) {
                     for (let i = 0; i < temporary_data[a].fragments_id.length; i++) {
-                        if (temporary_data[a].fragments_id[i] === fragment.id) {
+                        if (temporary_data[a].fragments_id[i] == fragment.id) {
                             this.filteredData.push(temporary_data[a]);
                             temporary_data.splice(a, 1);
                             break;
@@ -208,6 +263,7 @@ let vm = new Vue({
 
         // Фильтрует дату по фильтру жанра
         filterDataGenre() {
+            this.filteredData = [];
             let matchedFragments = this.info.fragments.filter((fragment) => {
                 for (let i = 0; i < fragment.genre.length; i++) {
                     if (fragment.genre[i].id == this.filterChosen) {
@@ -235,6 +291,7 @@ let vm = new Vue({
 
         // Фильтрует дату по фильтру жанра
         filterDataActors() {
+            this.filteredData = [];
             let matchedFragments = this.info.fragments.filter((fragment) => {
                 for (let i = 0; i < fragment.actors.length; i++) {
                     if (fragment.actors[i].id == this.filterChosen) {
@@ -260,8 +317,9 @@ let vm = new Vue({
             this.updateMap(this.filteredData);
         },
 
-        // Фильтрует дату по фильтру жанра
+        // Фильтрует дату по персонажам
         filterDataHeroes() {
+            this.filteredData = [];
             let matchedFragments = this.info.fragments.filter((fragment) => {
                 for (let i = 0; i < fragment.heroes.length; i++) {
                     if (fragment.heroes[i].id == this.filterChosen) {
@@ -289,12 +347,12 @@ let vm = new Vue({
 
         // Фильтрует дату по фильтру года
         filterDataYear() {
+            this.filteredData = [];
             let matchedFragments = this.info.fragments.filter((fragment) => {
                 if (~~(fragment.year / 10) == this.filterChosen.slice(0, -2)) {
                     return true;
                 }
             });
-
 
             let temporary_data = Object.assign([], this.info.points);
 
@@ -313,10 +371,11 @@ let vm = new Vue({
             this.updateMap(this.filteredData);
         },
 
-        // Фильтрует дату по фильтру жанра
+        // Фильтрует дату по режиссерам
         filterDataProducers() {
+            this.filteredData = [];
             let matchedFragments = this.info.fragments.filter((fragment) => {
-                if (fragment.producer.id === this.filterChosen) {
+                if (fragment.producer.id == this.filterChosen) {
                     return true;
                 }
             });
@@ -374,29 +433,70 @@ let vm = new Vue({
                 groupByCoordinates: false,
                 // Размер ячейки кластеризатора
                 gridSize: 50,
-                clusterDisableClickZoom: false,
-                // clusterHideIconOnBalloonOpen: false,
-                // geoObjectHideIconOnBalloonOpen: false,
+                clusterDisableClickZoom: true,
             });
 
+            clusterer.events.add("click", (e) => {
+                myMap.setCenter(e.get("coords"), myMap.getZoom() + 2);
+            });
             // Добавление точек в кластеризатор
             clusterer.add(geoObjects);
             // Добавление кластеризатора в карту
             myMap.geoObjects.add(clusterer);
         },
+
+        updateMapQuerry() {
+            let queryString = window.location.search;
+            if (queryString) {
+                let urlParams = new URLSearchParams(queryString);
+                let type = urlParams.get("t");
+                this.filterType = +type;
+                let value = urlParams.get("i");
+                let filterValues = {
+                    id: +value,
+                    name: value,
+                };
+                this.filterData(filterValues);
+            } else {
+                this.updateMap(this.info.points);
+            }
+        },
+
+        searchFunc() {
+            let input = document.querySelector("#searchInput"),
+                value = input.value;
+
+            input.value = "";
+            ymaps
+                .geocode(value, {
+                    result: 1,
+                })
+                .then((res) => {
+                    let coords = res.geoObjects.get(0).geometry.getCoordinates();
+                    myMap.setCenter(coords, 14);
+                });
+        },
     },
 
     mounted() {
         // Получение даты
-        axios.get("/api/points").then(function (response) {
+        axios.get("/points.json").then(function (response) {
             vm.info = response.data;
             ymaps.ready(init);
 
             setTimeout(function () {
                 fadeOutnojquery(hellopreloader);
             }, 1000);
-
         });
+
+        console.log(document.cookie);
+        let cookieDate = new Date();
+        cookieDate.setTime(cookieDate.getTime() + 30 * 24 * 60 * 60 * 1000);
+        let visit_reg = /visited=true/g;
+        if (!visit_reg.test(document.cookie)) {
+            this.firstPopUp = true;
+        }
+        document.cookie = "visited=true; expires=" + cookieDate.toGMTString();
     },
 });
 

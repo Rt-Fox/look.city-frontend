@@ -170,8 +170,8 @@ span:first-letter {
     border-radius: var(--brend-border-radius);
     border: 0;
     box-shadow: -5px -5px 13px rgba(197, 197, 197, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9),
-    -5px 5px 10px rgba(197, 197, 197, 0.2), 5px -5px 10px rgba(197, 197, 197, 0.2),
-    inset 1px 1px 2px rgba(197, 197, 197, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
+        -5px 5px 10px rgba(197, 197, 197, 0.2), 5px -5px 10px rgba(197, 197, 197, 0.2),
+        inset 1px 1px 2px rgba(197, 197, 197, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .brand img {
@@ -196,8 +196,8 @@ span:first-letter {
     font-weight: 900;
     font-size: var(--menu-text-size);
     box-shadow: -5px -5px 13px rgba(197, 197, 197, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9),
-    -5px 5px 10px rgba(197, 197, 197, 0.2), 5px -5px 10px rgba(197, 197, 197, 0.2),
-    inset 1px 1px 2px rgba(197, 197, 197, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
+        -5px 5px 10px rgba(197, 197, 197, 0.2), 5px -5px 10px rgba(197, 197, 197, 0.2),
+        inset 1px 1px 2px rgba(197, 197, 197, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .container {
@@ -219,8 +219,8 @@ span:first-letter {
     width: 100%;
     height: 100%;
     box-shadow: -5px -5px 13px rgba(197, 197, 197, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9),
-    -5px 5px 10px rgba(197, 197, 197, 0.2), 5px -5px 10px rgba(197, 197, 197, 0.2),
-    inset 1px 1px 2px rgba(197, 197, 197, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
+        -5px 5px 10px rgba(197, 197, 197, 0.2), 5px -5px 10px rgba(197, 197, 197, 0.2),
+        inset 1px 1px 2px rgba(197, 197, 197, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
     background: #f5f5f5;
     border-radius: 25%;
     transition: all 1s;
@@ -382,7 +382,6 @@ span:first-letter {
     text-decoration: none;
 }
 
-
 /*more*/
 .reset_filters {
     display: flex;
@@ -438,7 +437,7 @@ span:first-letter {
 
 /*pop-up на главной*/
 .nd {
-    display: none;
+    display: flex;
 }
 
 /*pop-up при нажатии на фрагмент*/
@@ -567,8 +566,8 @@ span:first-letter {
     width: 50px;
     height: 50px;
     box-shadow: -5px -5px 13px rgba(197, 197, 197, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9),
-    -5px 5px 10px rgba(197, 197, 197, 0.2), 5px -5px 10px rgba(197, 197, 197, 0.2),
-    inset 1px 1px 2px rgba(197, 197, 197, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
+        -5px 5px 10px rgba(197, 197, 197, 0.2), 5px -5px 10px rgba(197, 197, 197, 0.2),
+        inset 1px 1px 2px rgba(197, 197, 197, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .bell {
@@ -660,8 +659,8 @@ span:first-letter {
 
 .fr_block img {
     box-shadow: -2px -2px 20px rgba(183, 183, 183, 0.9), 5px 5px 15px rgba(255, 255, 255, 0.9),
-    -10px 10px 20px rgba(183, 183, 183, 0.2), 5px -5px 20px rgba(183, 183, 183, 0.2),
-    inset 1px 1px 2px rgba(183, 183, 183, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
+        -10px 10px 20px rgba(183, 183, 183, 0.2), 5px -5px 20px rgba(183, 183, 183, 0.2),
+        inset 1px 1px 2px rgba(183, 183, 183, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
     border-radius: 17px;
 }
 .fr_text {
@@ -869,8 +868,8 @@ button {
 .new {
     grid-area: new;
     box-shadow: -5px -5px 15px rgba(201, 200, 199, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9),
-    -5px 5px 10px rgba(201, 200, 199, 0.2), 5px -5px 10px rgba(201, 200, 199, 0.2),
-    inset 1px 1px 2px rgba(201, 200, 199, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
+        -5px 5px 10px rgba(201, 200, 199, 0.2), 5px -5px 10px rgba(201, 200, 199, 0.2),
+        inset 1px 1px 2px rgba(201, 200, 199, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .new a {
@@ -884,8 +883,8 @@ button {
 .top {
     grid-area: top;
     box-shadow: 5px -5px 15px rgba(207, 207, 207, 0.9), -5px 5px 10px rgba(255, 255, 255, 0.9),
-    5px 5px 10px rgba(207, 207, 207, 0.2), -5px -5px 10px rgba(207, 207, 207, 0.2),
-    inset -1px 1px 2px rgba(207, 207, 207, 0.5), inset 1px -1px 2px rgba(255, 255, 255, 0.3);
+        5px 5px 10px rgba(207, 207, 207, 0.2), -5px -5px 10px rgba(207, 207, 207, 0.2),
+        inset -1px 1px 2px rgba(207, 207, 207, 0.5), inset 1px -1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .top a {
@@ -899,8 +898,8 @@ button {
 .film {
     grid-area: film;
     box-shadow: -5px -5px 15px rgba(201, 200, 199, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9),
-    -5px 5px 10px rgba(201, 200, 199, 0.2), 5px -5px 10px rgba(201, 200, 199, 0.2),
-    inset 1px 1px 2px rgba(201, 200, 199, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
+        -5px 5px 10px rgba(201, 200, 199, 0.2), 5px -5px 10px rgba(201, 200, 199, 0.2),
+        inset 1px 1px 2px rgba(201, 200, 199, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .film a {
@@ -914,8 +913,8 @@ button {
 .year {
     grid-area: year;
     box-shadow: 5px -5px 15px rgba(207, 207, 207, 0.9), -5px 5px 10px rgba(255, 255, 255, 0.9),
-    5px 5px 10px rgba(207, 207, 207, 0.2), -5px -5px 10px rgba(207, 207, 207, 0.2),
-    inset -1px 1px 2px rgba(207, 207, 207, 0.5), inset 1px -1px 2px rgba(255, 255, 255, 0.3);
+        5px 5px 10px rgba(207, 207, 207, 0.2), -5px -5px 10px rgba(207, 207, 207, 0.2),
+        inset -1px 1px 2px rgba(207, 207, 207, 0.5), inset 1px -1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .year a {
@@ -929,8 +928,8 @@ button {
 .genres {
     grid-area: genres;
     box-shadow: -5px -5px 15px rgba(201, 200, 199, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9),
-    -5px 5px 10px rgba(201, 200, 199, 0.2), 5px -5px 10px rgba(201, 200, 199, 0.2),
-    inset 1px 1px 2px rgba(201, 200, 199, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
+        -5px 5px 10px rgba(201, 200, 199, 0.2), 5px -5px 10px rgba(201, 200, 199, 0.2),
+        inset 1px 1px 2px rgba(201, 200, 199, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .genres a {
@@ -944,8 +943,8 @@ button {
 .personage {
     grid-area: personage;
     box-shadow: 5px -5px 15px rgba(207, 207, 207, 0.9), -5px 5px 10px rgba(255, 255, 255, 0.9),
-    5px 5px 10px rgba(207, 207, 207, 0.2), -5px -5px 10px rgba(207, 207, 207, 0.2),
-    inset -1px 1px 2px rgba(207, 207, 207, 0.5), inset 1px -1px 2px rgba(255, 255, 255, 0.3);
+        5px 5px 10px rgba(207, 207, 207, 0.2), -5px -5px 10px rgba(207, 207, 207, 0.2),
+        inset -1px 1px 2px rgba(207, 207, 207, 0.5), inset 1px -1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .personage a {
@@ -959,8 +958,8 @@ button {
 .producer {
     grid-area: producer;
     box-shadow: -5px 5px 15px rgba(207, 207, 207, 0.9), 5px -5px 10px rgba(255, 255, 255, 0.9),
-    -5px -5px 10px rgba(207, 207, 207, 0.2), 5px 5px 10px rgba(207, 207, 207, 0.2),
-    inset 1px -1px 2px rgba(207, 207, 207, 0.5), inset -1px 1px 2px rgba(255, 255, 255, 0.3);
+        -5px -5px 10px rgba(207, 207, 207, 0.2), 5px 5px 10px rgba(207, 207, 207, 0.2),
+        inset 1px -1px 2px rgba(207, 207, 207, 0.5), inset -1px 1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .producer a {
@@ -974,8 +973,8 @@ button {
 .actors {
     grid-area: actors;
     box-shadow: 5px 5px 15px rgba(207, 207, 207, 0.9), -5px -5px 10px rgba(255, 255, 255, 0.9),
-    5px -5px 10px rgba(207, 207, 207, 0.2), -5px 5px 10px rgba(207, 207, 207, 0.2),
-    inset -1px -1px 2px rgba(207, 207, 207, 0.5), inset 1px 1px 2px rgba(255, 255, 255, 0.3);
+        5px -5px 10px rgba(207, 207, 207, 0.2), -5px 5px 10px rgba(207, 207, 207, 0.2),
+        inset -1px -1px 2px rgba(207, 207, 207, 0.5), inset 1px 1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .actors a {
@@ -989,8 +988,8 @@ button {
 .popular {
     grid-area: popular;
     box-shadow: -5px 5px 15px rgba(207, 207, 207, 0.9), 5px -5px 10px rgba(255, 255, 255, 0.9),
-    -5px -5px 10px rgba(207, 207, 207, 0.2), 5px 5px 10px rgba(207, 207, 207, 0.2),
-    inset 1px -1px 2px rgba(207, 207, 207, 0.5), inset -1px 1px 2px rgba(255, 255, 255, 0.3);
+        -5px -5px 10px rgba(207, 207, 207, 0.2), 5px 5px 10px rgba(207, 207, 207, 0.2),
+        inset 1px -1px 2px rgba(207, 207, 207, 0.5), inset -1px 1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .popular a {
@@ -1004,8 +1003,8 @@ button {
 .places {
     grid-area: places;
     box-shadow: 5px 5px 15px rgba(207, 207, 207, 0.9), -5px -5px 10px rgba(255, 255, 255, 0.9),
-    5px -5px 10px rgba(207, 207, 207, 0.2), -5px 5px 10px rgba(207, 207, 207, 0.2),
-    inset -1px -1px 2px rgba(207, 207, 207, 0.5), inset 1px 1px 2px rgba(255, 255, 255, 0.3);
+        5px -5px 10px rgba(207, 207, 207, 0.2), -5px 5px 10px rgba(207, 207, 207, 0.2),
+        inset -1px -1px 2px rgba(207, 207, 207, 0.5), inset 1px 1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .places a {
@@ -1332,8 +1331,8 @@ button {
     border-radius: 3vw;
     background-color: #ecebea;
     box-shadow: -5px -5px 25px rgba(212, 212, 211, 0.9), 5px 5px 20px rgba(255, 255, 255, 0.9),
-    -5px 5px 20px rgba(212, 212, 211, 0.2), 5px -5px 20px rgba(212, 212, 211, 0.2),
-    inset 1px 1px 2px rgba(212, 212, 211, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
+        -5px 5px 20px rgba(212, 212, 211, 0.2), 5px -5px 20px rgba(212, 212, 211, 0.2),
+        inset 1px 1px 2px rgba(212, 212, 211, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
 }
 
 a {
@@ -1776,8 +1775,8 @@ a {
 
 .movie .cont .film_person {
     box-shadow: -5px -5px 15px rgba(183, 183, 183, 0.9), 5px 5px 10px rgba(255, 255, 255, 0.9),
-    -5px 5px 15px rgba(183, 183, 183, 0.2), 5px -5px 10px rgba(183, 183, 183, 0.2),
-    inset 1px 1px 2px rgba(183, 183, 183, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
+        -5px 5px 15px rgba(183, 183, 183, 0.2), 5px -5px 10px rgba(183, 183, 183, 0.2),
+        inset 1px 1px 2px rgba(183, 183, 183, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .scrol .cont_coment {

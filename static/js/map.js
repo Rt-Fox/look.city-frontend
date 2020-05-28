@@ -60,48 +60,7 @@ function init() {
     let zoomControl = new ymaps.control.ZoomControl({ options: { layout: ZoomLayout } });
     myMap.controls.add(zoomControl);
 
-    // Создание точек
-    vm.info.points.forEach(function add_placemark(point) {
-        new_placemark = new ymaps.Placemark(
-            // Координаты
-            [+point.lat, +point.lon],
-            // Контент
-            {
-                iconContent: point.text,
-                hasBalloon: false,
-            },
-            {
-                preset: "islands#" + vm.colors[point.group] + "StretchyIcon",
-                iconColor: vm.colors[point.group],
-            }
-        );
-        new_placemark.events.add("click", function () {
-            vm.showPopUp(point.fragments_id, 0);
-        });
-        geoObjects.push(new_placemark);
-    });
-
-    // Создание кластеризатора
-    let clusterer = new ymaps.Clusterer({
-        // Макет метки кластера pieChart.
-        clusterIconLayout: "default#pieChart",
-        // Радиус диаграммы в пикселях.
-        clusterIconPieChartRadius: 25,
-        // Определяет наличие поля balloon.
-        hasBalloon: false,
-        // Группировать только по одиаковым координатам
-        groupByCoordinates: false,
-        // Размер ячейки кластеризатора
-        gridSize: 50,
-        clusterDisableClickZoom: false,
-        // clusterHideIconOnBalloonOpen: false,
-        // geoObjectHideIconOnBalloonOpen: false,
-    });
-
-    // Добавление точек в кластеризатор
-    clusterer.add(geoObjects);
-    // Добавление кластеризатора в карту
-    myMap.geoObjects.add(clusterer);
+    vm.updateMapQuerry();
 }
 
 /*     // Создание макета точки
