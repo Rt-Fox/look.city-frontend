@@ -1301,6 +1301,27 @@ button {
 /*    background-color: #b00121;*/
 /*    color: white;*/
 /*}*/
+.search_query {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin: 2vh auto;
+}
+.nothing_found {
+
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin: 2vh auto;
+}
+.nothing_found span, .search_query span {
+    font-family: var(--font1);
+    font-size: 3.4vh;
+    color: #44250b;
+    font-style: normal;
+    font-weight: normal;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
 .el {
     display: flex;
     flex-direction: row;
