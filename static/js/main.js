@@ -143,44 +143,23 @@ let vm = new Vue({
             this.filterData({ id: val });
         },
 
-        // Передает все данные по выбранному фильтру и выбирает функцию фильтрации
-        filterData(val) {
+        // Передает все данные по выбранному фильтру и выбирает функцию фильтрации (второй аргумент это надо ли менять url)
+        filterData(val, urlChange) {
             myMap.setCenter([55.75, 37.61], 10);
             this.filterChosen = val["id"];
-            if (this.filterType == 4) {
-                if (window.location.search) {
-                    window.history.pushState(
-                        {},
-                        document.title,
-                        window.location.pathname +
-                            window.location.search +
-                            "&t=" +
-                            this.filterType +
-                            "&i=" +
-                            val["name"]
-                    );
+            if (urlChange) {
+                let params = new URLSearchParams(window.location.search);
+                params.delete("t");
+                params.delete("i");
+                params.append("t", this.filterType);
+                if (this.filterType == 4) {
+                    params.append("i", val["name"]);
                 } else {
-                    window.history.pushState(
-                        {},
-                        document.title,
-                        window.location.pathname + "?t=" + this.filterType + "&i=" + val["name"]
-                    );
+                    params.append("i", val["id"]);
                 }
-            } else if (this.filterType != null) {
-                if (window.location.search) {
-                    window.history.pushState(
-                        {},
-                        document.title,
-                        window.location.pathname + window.location.search + "&t=" + this.filterType + "&i=" + val["id"]
-                    );
-                } else {
-                    window.history.pushState(
-                        {},
-                        document.title,
-                        window.location.pathname + "?t=" + this.filterType + "&i=" + val["id"]
-                    );
-                }
+                history.pushState({}, document.title, window.location.pathname + "?" + params);
             }
+
             switch (this.filterType) {
                 case 0:
                     this.filterDataActors();
@@ -236,16 +215,10 @@ let vm = new Vue({
             this.filteredData = [];
 
             myMap.setCenter([55.75, 37.61], 10);
-            let queryString = window.location.search;
-
-            let urlParams = new URLSearchParams(queryString);
-            let city = urlParams.get("c");
-            if (city == null) {
-                window.history.pushState({}, document.title, window.location.pathname);
-            } else {
-                window.history.pushState({}, document.title, window.location.pathname + "?c=" + city);
-            }
-
+            let urlParams = new URLSearchParams(window.location.search);
+            urlParams.delete("t");
+            urlParams.delete("i");
+            history.pushState({}, document.title, window.location.pathname + "?" + urlParams);
             this.updateMap(this.info.points);
         },
 
@@ -485,21 +458,19 @@ let vm = new Vue({
         },
 
         updateMapQuerry() {
-            let queryString = window.location.search;
-            if (queryString) {
-                let urlParams = new URLSearchParams(queryString);
+            let urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get("t") != null) {
                 let type = urlParams.get("t");
-                if (type != null) {
-                    this.filterType = +type;
-                    let value = urlParams.get("i");
-                    let filterValues = {
-                        id: +value,
-                        name: value,
-                    };
-                    this.filterData(filterValues);
-                }
+                this.filterType = +type;
+                let value = urlParams.get("i");
+                let filterValues = {
+                    id: +value,
+                    name: value,
+                };
+                this.filterData(filterValues, false);
+            } else {
+                this.updateMap(this.info.points);
             }
-            this.updateMap(this.info.points);
         },
 
         searchFunc() {
