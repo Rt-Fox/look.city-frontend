@@ -45,6 +45,7 @@ let vm = new Vue({
         filterChosen: null,
         filterType: null,
         firstPopUp: false,
+        socialButtons: false,
     },
 
     methods: {
@@ -98,6 +99,16 @@ let vm = new Vue({
             }
         },
 
+        shareButton() {
+            this.socialButtons = true;
+            this.map = false;
+        },
+
+        closeSocial() {
+            this.map = true;
+            this.socialButtons = false;
+        },
+
         closeFirstPopUp(e) {
             let firstBg = document.querySelector("#first_pop"),
                 firstX = document.querySelector("#first_x");
@@ -129,7 +140,7 @@ let vm = new Vue({
         // Показывает другие точки фрагмента
         OtherFragments(val) {
             this.filterType = 3;
-            this.filterData({id: val});
+            this.filterData({ id: val });
         },
 
         // Передает все данные по выбранному фильтру и выбирает функцию фильтрации
@@ -137,19 +148,23 @@ let vm = new Vue({
             myMap.setCenter([55.75, 37.61], 10);
             this.filterChosen = val["id"];
             if (this.filterType == 4) {
-
                 if (window.location.search) {
                     window.history.pushState(
                         {},
                         document.title,
-                        window.location.pathname + window.location.search + "&t=" + this.filterType + "&i=" + val["name"]
-                    )
+                        window.location.pathname +
+                            window.location.search +
+                            "&t=" +
+                            this.filterType +
+                            "&i=" +
+                            val["name"]
+                    );
                 } else {
                     window.history.pushState(
                         {},
                         document.title,
                         window.location.pathname + "?t=" + this.filterType + "&i=" + val["name"]
-                    )
+                    );
                 }
             } else if (this.filterType != null) {
                 if (window.location.search) {
@@ -157,13 +172,13 @@ let vm = new Vue({
                         {},
                         document.title,
                         window.location.pathname + window.location.search + "&t=" + this.filterType + "&i=" + val["id"]
-                    )
+                    );
                 } else {
                     window.history.pushState(
                         {},
                         document.title,
                         window.location.pathname + "?t=" + this.filterType + "&i=" + val["id"]
-                    )
+                    );
                 }
             }
             switch (this.filterType) {
@@ -221,18 +236,14 @@ let vm = new Vue({
             this.filteredData = [];
 
             myMap.setCenter([55.75, 37.61], 10);
-            let queryString = window.location.search
+            let queryString = window.location.search;
 
             let urlParams = new URLSearchParams(queryString);
             let city = urlParams.get("c");
             if (city == null) {
                 window.history.pushState({}, document.title, window.location.pathname);
             } else {
-                window.history.pushState(
-                    {},
-                    document.title,
-                    window.location.pathname + "?c=" + city
-                )
+                window.history.pushState({}, document.title, window.location.pathname + "?c=" + city);
             }
 
             this.updateMap(this.info.points);
@@ -489,16 +500,16 @@ let vm = new Vue({
                 }
             }
             this.updateMap(this.info.points);
-
         },
 
         searchFunc() {
             let input = document.querySelector("#searchInput"),
                 value = input.value;
 
-            ymaps.geocode(value, {
-                result: 1,
-            })
+            ymaps
+                .geocode(value, {
+                    result: 1,
+                })
                 .then((res) => {
                     let coords = res.geoObjects.get(0).geometry.getCoordinates();
                     myMap.setCenter(coords, 14);
@@ -508,7 +519,7 @@ let vm = new Vue({
 
     mounted() {
         // Получение даты
-        axios.get("/api/points").then(function (response) {
+        axios.get("/points.json").then(function (response) {
             vm.info = response.data;
             ymaps.ready(init);
             setTimeout(function () {
