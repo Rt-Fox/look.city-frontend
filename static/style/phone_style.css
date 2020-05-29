@@ -13,8 +13,8 @@
 html,
 body {
     margin: 0;
-    overflow: hidden;
     font-size: 100%;
+    width: 100vw;
     min-height: 100vh;
     --font: "Acrom-Regular";
     --font1: "Acrom-Regular";
@@ -70,7 +70,7 @@ span:first-letter {
     align-items: center;
     flex-direction: column;
     justify-content: center;
-
+    overflow: hidden;
     width: 100vw;
     height: 100vh;
 }
@@ -632,9 +632,10 @@ span:first-letter {
     justify-content: center;
     align-items: center;
     width: 90%;
-    height: 100%;
+    height: auto;
 }
 .fr_content .more{
+    margin: auto;
     width: 10%;
     height: 100%;
     border: none;
@@ -648,7 +649,6 @@ span:first-letter {
     width: 100%;
 }
 
-.fr_block img,
 .fr_text {
     display: flex;
     flex-direction: column;
@@ -656,8 +656,8 @@ span:first-letter {
     width: 48%;
     margin-left: 1vh;
 }
-
 .fr_block img {
+    width: 100%;
     box-shadow: -2px -2px 20px rgba(183, 183, 183, 0.9), 5px 5px 15px rgba(255, 255, 255, 0.9),
         -10px 10px 20px rgba(183, 183, 183, 0.2), 5px -5px 20px rgba(183, 183, 183, 0.2),
         inset 1px 1px 2px rgba(183, 183, 183, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
@@ -678,7 +678,8 @@ span:first-letter {
 .fr_text button {
     padding: 0;
     width: 94%;
-    max-height: 15%;
+    max-height: 30%;
+    margin: 1vh;
     height: auto;
     display: flex;
     justify-self: flex-end;
@@ -1065,6 +1066,46 @@ button {
     height: 40px;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
 }
+/*анимация поле поиска в списках*/
+.headline .container input:focus {
+    transform: translateX(-10px);
+    transition: all 0.5s ease-out;
+    opacity: 1;
+    width: 75vw;
+    cursor: text;
+}
+.headline .container input {
+    width: 0;
+}
+.headline .container .search {
+    padding: 0;
+    min-height: 30px;
+    min-width: 30px;
+    max-width: 40px;
+    max-height: 40px;
+    background-color: #44250b;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+}
+.headline .container .search::before {
+    top: 19px;
+    right: 0;
+    bottom: 0;
+    left: 19px;
+    height: 2px;
+    width: 10px;
+    background: #f6f6f6;
+}
+.headline .container .search::after {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #f6f6f6;
+}
+.headline .container input:focus ~ .search {
+    left: 76vw;
+}
+.headline .container input:focus ~.search::before {
+    background-color: #44250b;
+}
 
 .one {
     display: flex;
@@ -1327,7 +1368,8 @@ button {
     justify-content: flex-start;
     align-items: center;
     height: auto;
-    width: 78vw;
+    width: 79vw;
+    padding: 1vw;
     border-radius: 3vw;
     background-color: #ecebea;
     box-shadow: -5px -5px 25px rgba(212, 212, 211, 0.9), 5px 5px 20px rgba(255, 255, 255, 0.9),
@@ -1405,9 +1447,9 @@ a {
     align-items: center;
     justify-content: center;
     width: 100%;
-    margin: 0 0 4vh 0;
+    margin: 4vh 0;
     color: #958682;
-    height: 14vh;
+    height: auto;
     border-radius: 20px;
     font-family: var(--font1);
     font-weight: 700;
@@ -1596,7 +1638,7 @@ a {
 .poisk input {
     padding-left: 7px;
     text-decoration: none;
-    margin-top: 20px;
+    margin: 3vh 0;
     width: 80vw;
     height: 30px;
 
@@ -1740,7 +1782,7 @@ a {
 .movie .cont video,
 .movie .cont img {
     width: 100%;
-    height: 29vh;
+    height: auto;
     border-radius: 20px;
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
 }
@@ -1748,13 +1790,14 @@ a {
 .movie .cont .main {
     border-radius: 0;
     box-shadow: none;
-    height: 30vh;
-    width: 70%;
+    height: auto;
+    width: 80vw;
 }
 
 .cont .divtext {
-    margin: 2vh;
-    width: 78vw;
+    margin: 2vh 0;
+    width: 100%;
+    max-width: 100vw;
     font-family: var(--font2);
     text-align: left;
     font-style: normal;
@@ -2030,10 +2073,6 @@ a {
 
     .title {
         font-size: 16px;
-    }
-
-    .el {
-        width: 80vw;
     }
 
     .el span {

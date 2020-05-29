@@ -10,13 +10,17 @@
 <div class="mid">
     <div class="main-wrapper wrap-movies">
         <div class="headline">
-            <a href="#" class="loupe"></a>
+            <form @submit.prevent="searchFunc" class="container">
+                <input id="searchInput" @focus="searchAnim" @blur="searchAnim" placeholder="Введите адрес и нажмите Enter"
+                       type="text">
+                <div class="search"></div>
+            </form>
             <div class="title">{{ title|upper }}</div>
             <a href="https://beta.loook.city/" class="back"></a>
         </div>
         <div class="contents">
             {% for movie in data %}
-            <a href="{{ movie.href }}" class="cont hg">
+            <a href="{{ movie.href }}" class="cont">
                 <div class="el">
                     <img class="el_movie" src="/{{ movie.photo }}">
                     <div class="el_text">

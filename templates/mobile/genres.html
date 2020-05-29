@@ -14,7 +14,11 @@
 <div class="mid">
     <div class="main-wrapper wrap-genres">
         <div class="headline">
-            <a href="#" class="loupe"></a>
+            <form @submit.prevent="searchFunc" class="container">
+                <input id="searchInput" @focus="searchAnim" @blur="searchAnim" placeholder="Введите адрес и нажмите Enter"
+                       type="text">
+                <div class="search"></div>
+            </form>
             <div class="title">Жанры</div>
             <a href="https://beta.loook.city/" class="back"></a>
         </div>

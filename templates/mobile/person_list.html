@@ -10,13 +10,17 @@
 <div class="mid">
     <div class="main-wrapper {{ class }}">
         <div class="headline">
-            <a href="#" class="loupe"></a>
+            <form @submit.prevent="searchFunc" class="container">
+                <input id="searchInput" @focus="searchAnim" @blur="searchAnim" placeholder="Введите адрес и нажмите Enter"
+                       type="text">
+                <div class="search"></div>
+            </form>
             <div class="title">{{ title|upper }}</div>
             <a href="https://beta.loook.city/" class="back"></a>
         </div>
         <div class="contents">
             {% for person in data %}
-            <a href="{{ person.href }}" class="cont hg">
+            <a href="{{ person.href }}" class="cont">
                 <div class="el el_person">
                     <img src="{{ person.photo }}">
                     <div>
