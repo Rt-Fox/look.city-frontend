@@ -53,7 +53,7 @@ body {
 
     --square-color: #000000;
     --square-border-radius: 12px;
-    --square-bg-color: #ECEBEA;
+    --square-bg-color: #ecebea;
     --square-text-size: 2.5vh;
     --img-radius: 15%;
     --krest-radius: 12px;
@@ -292,7 +292,7 @@ span:first-letter {
 }
 
 .container input:focus {
-    transform: translateX(calc(-80vw ));
+    transform: translateX(calc(-80vw));
     transition: all 0.5s ease-out;
     opacity: 1;
     width: 75vw;
@@ -520,7 +520,7 @@ span:first-letter {
     grid-template-areas: "zero img img img img krestik";
 }
 .fr .headertwo {
-    margin:3vh 0;
+    margin: 3vh 0;
 }
 .nd img,
 .fr .headertwo span {
@@ -645,7 +645,7 @@ span:first-letter {
     align-items: center;
     justify-content: center;
 }
-.fr_content .more img{
+.fr_content .more img {
     width: 100%;
 }
 
@@ -758,12 +758,12 @@ button {
     grid-template-rows: 50px 1fr 1fr 1fr 1fr 1fr;
     grid-template-columns: 40px 1fr 1fr 1fr 1fr 1fr 40px;
     grid-template-areas:
-            "message city city city city city krest"
-            "new new new zero1 top top top"
-            "film film film zero1 year year year"
-            "genres genres genres zero1 personage personage personage"
-            "producer producer producer zero1 actors actors actors"
-            "popular popular popular zero1 places places places";
+        "message city city city city city krest"
+        "new new new zero1 top top top"
+        "film film film zero1 year year year"
+        "genres genres genres zero1 personage personage personage"
+        "producer producer producer zero1 actors actors actors"
+        "popular popular popular zero1 places places places";
     grid-gap: 10px;
 }
 /*Общий стиль блоков body*/
@@ -802,7 +802,6 @@ button {
     font-size: var(--square-text-size);
 }
 
-
 /*header*/
 .message {
     grid-area: message;
@@ -819,7 +818,7 @@ button {
     background-size: 70%;
     border-color: rgba(0, 0, 0, 0);
     border-radius: var(--krest-radius);
-    box-shadow: 0px 5px 13px rgba(0, 0, 0, 0.25);;
+    box-shadow: 0px 5px 13px rgba(0, 0, 0, 0.25);
 }
 .city {
     grid-area: city;
@@ -828,7 +827,7 @@ button {
     margin-top: 1vh;
     padding-bottom: 0;
 }
-.city a{
+.city a {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -863,7 +862,7 @@ button {
     background-size: 70%;
     border-color: rgba(0, 0, 0, 0);
     border-radius: var(--krest-radius);
-    box-shadow: 0px 5px 13px rgba(0, 0, 0, 0.25);;
+    box-shadow: 0px 5px 13px rgba(0, 0, 0, 0.25);
 }
 /*индивидуальные стили*/
 .new {
@@ -1348,19 +1347,19 @@ button {
     margin: 2vh auto;
 }
 .nothing_found {
-
     display: flex;
     text-align: center;
     justify-content: center;
     margin: 2vh auto;
 }
-.nothing_found span, .search_query span {
+.nothing_found span,
+.search_query span {
     font-family: var(--font1);
     font-size: 3.4vh;
     color: #44250b;
     font-style: normal;
     font-weight: normal;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 .el {
     display: flex;
@@ -1809,10 +1808,10 @@ a {
     flex-direction: column;
     color: #422b1f;
 }
-.cont .divtext h3{
+.cont .divtext h3 {
     width: 100%;
 }
-.cont .divtext h3 img{
+.cont .divtext h3 img {
     width: 100%;
 }
 
@@ -2113,8 +2112,14 @@ a {
     }
 }
 
+.social_wrap {
+    width: 100vw;
+    height: 100vh;
+    background: white;
+}
+
 /* Точки на карте */
-.point {
+/* .point {
     width: 20px;
     height: 20px;
 }
@@ -2169,4 +2174,4 @@ a {
 
 .p2020 {
     fill: #b00121;
-}
+} */
